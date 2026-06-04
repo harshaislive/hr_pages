@@ -4,15 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>HR Quick Pages</title>
+    <script src="auth.js"></script>
     <style>
       :root {
         color-scheme: light;
-        --ink: #231f20;
-        --muted: #6d665f;
-        --paper: #f7f3ea;
-        --panel: #fffdfa;
-        --line: #d8d0c2;
+        --ink: #242424;
+        --muted: #666a5d;
+        --paper: #f5f0e7;
+        --panel: #fffdf8;
+        --line: #d7d0c2;
         --accent: #2f6f57;
+        --accent-2: #8f3f2b;
       }
 
       * {
@@ -28,41 +30,79 @@
       }
 
       main {
-        width: min(920px, calc(100% - 32px));
+        width: min(1120px, calc(100% - 32px));
         margin: 0 auto;
-        padding: 56px 0;
+        padding: 42px 0;
+      }
+
+      header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 28px;
       }
 
       h1 {
-        margin: 0 0 10px;
+        margin: 0 0 8px;
         font-size: clamp(2rem, 4vw, 3.5rem);
         line-height: 1;
-        font-weight: 700;
+        font-weight: 750;
       }
 
       p {
         max-width: 640px;
-        margin: 0 0 28px;
+        margin: 0;
         color: var(--muted);
         font-size: 1rem;
         line-height: 1.6;
       }
 
+      .controls {
+        display: inline-flex;
+        padding: 4px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .controls button {
+        min-width: 84px;
+        height: 36px;
+        border: 0;
+        border-radius: 6px;
+        background: transparent;
+        color: var(--muted);
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .controls button[aria-pressed="true"] {
+        background: var(--accent);
+        color: white;
+      }
+
       .pages {
         display: grid;
-        gap: 12px;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 14px;
         margin: 0;
         padding: 0;
         list-style: none;
       }
 
+      .pages.list {
+        grid-template-columns: 1fr;
+      }
+
       .page-link {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
         gap: 20px;
-        min-height: 76px;
-        padding: 18px 20px;
+        min-height: 146px;
+        padding: 18px;
         border: 1px solid var(--line);
         border-radius: 8px;
         background: var(--panel);
@@ -70,19 +110,37 @@
         text-decoration: none;
       }
 
+      .pages.list .page-link {
+        min-height: 74px;
+        align-items: center;
+      }
+
       .page-link:hover {
         border-color: var(--accent);
       }
 
+      .tag {
+        display: inline-block;
+        margin-bottom: 22px;
+        color: var(--accent-2);
+        font-size: 0.78rem;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .pages.list .tag {
+        margin-bottom: 4px;
+      }
+
       .title {
         display: block;
-        font-size: 1.05rem;
-        font-weight: 700;
+        font-size: 1.1rem;
+        font-weight: 800;
       }
 
       .path {
         display: block;
-        margin-top: 4px;
+        margin-top: 6px;
         color: var(--muted);
         font-size: 0.9rem;
       }
@@ -91,18 +149,44 @@
         flex: 0 0 auto;
         color: var(--accent);
         font-size: 1.25rem;
+        line-height: 1;
+      }
+
+      @media (max-width: 680px) {
+        header {
+          display: grid;
+          align-items: start;
+        }
+
+        .controls {
+          width: 100%;
+        }
+
+        .controls button {
+          width: 50%;
+        }
       }
     </style>
   </head>
   <body>
     <main>
-      <h1>HR Quick Pages</h1>
-      <p>A small home for standalone HTML pages. Add new pages inside the <code>pages</code> folder and link them here.</p>
+      <header>
+        <div>
+          <h1>HR Quick Pages</h1>
+          <p>Standalone HR pages, forms, explainers, and internal links collected in one place.</p>
+        </div>
 
-      <ul class="pages">
+        <div class="controls" aria-label="View mode">
+          <button type="button" id="cardView" aria-pressed="true">Cards</button>
+          <button type="button" id="listView" aria-pressed="false">List</button>
+        </div>
+      </header>
+
+      <ul class="pages" id="pages">
         <li>
           <a class="page-link" href="pages/beforest-employee-onboarding.html">
             <span>
+              <span class="tag">Onboarding</span>
               <span class="title">Beforest Employee Onboarding</span>
               <span class="path">pages/beforest-employee-onboarding.html</span>
             </span>
@@ -111,5 +195,29 @@
         </li>
       </ul>
     </main>
+
+    <script>
+      var pages = document.getElementById("pages");
+      var cardView = document.getElementById("cardView");
+      var listView = document.getElementById("listView");
+
+      function setView(mode) {
+        var isList = mode === "list";
+        pages.classList.toggle("list", isList);
+        cardView.setAttribute("aria-pressed", String(!isList));
+        listView.setAttribute("aria-pressed", String(isList));
+        localStorage.setItem("hr_pages_view", mode);
+      }
+
+      cardView.addEventListener("click", function () {
+        setView("cards");
+      });
+
+      listView.addEventListener("click", function () {
+        setView("list");
+      });
+
+      setView(localStorage.getItem("hr_pages_view") || "cards");
+    </script>
   </body>
 </html>

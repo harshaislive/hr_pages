@@ -1,0 +1,9 @@
+{
+  "name": "hr-pages",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static quick pages for HR and internal links.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

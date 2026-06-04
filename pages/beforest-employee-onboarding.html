@@ -1,0 +1,2236 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Beforest Employee Onboarding</title>
+    <link
+      rel="preload"
+      href="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Light.e9c1597c.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Regular.cbcc518c.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Medium.7ce0f1db.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <style>
+@font-face {
+  font-family: "ABC Arizona Flare";
+  src:
+    url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Light.e9c1597c.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ABC Arizona Flare";
+  src:
+    url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Regular.cbcc518c.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ABC Arizona Flare";
+  src:
+    url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Medium.7ce0f1db.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --dark-earth: #342e29;
+  --rich-red: #86312b;
+  --forest-green: #344736;
+  --soft-green: #b8dc99;
+  --warm-yellow: #ffc083;
+  --off-white: #fdfbf7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--off-white);
+  color: #000000;
+  font-family: "ABC Arizona Flare", Georgia, serif;
+}
+
+.deck {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background: var(--off-white);
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.slide {
+  flex: 0 0 100vw;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+  scroll-snap-align: start;
+  background: var(--off-white);
+}
+
+.slide-cover {
+  background: var(--off-white);
+  color: #000000;
+}
+
+.brand-mark {
+  position: absolute;
+  top: 7.2%;
+  left: 7.2%;
+  width: 12.2%;
+  max-width: 205px;
+  min-width: 116px;
+  height: auto;
+  opacity: 0.92;
+  filter: invert(1) brightness(0.24) sepia(0.18) saturate(0.6);
+}
+
+.cover-copy {
+  position: absolute;
+  left: 7.2%;
+  bottom: 13.6%;
+  width: min(900px, 72%);
+  animation: copy-rise 900ms cubic-bezier(0.19, 1, 0.22, 1) 160ms both;
+}
+
+.company-name {
+  margin: 0 0 1.25rem;
+  color: var(--forest-green);
+  font-size: clamp(1.35rem, 2.55vw, 2.55rem);
+  font-weight: 300;
+  line-height: 1.08;
+}
+
+.botanical-rule {
+  display: flex;
+  align-items: center;
+  width: min(26rem, 48%);
+  height: 1.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.botanical-rule::before {
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.72rem;
+  border-radius: 50%;
+  background: var(--soft-green);
+  box-shadow: 0 0 22px rgba(184, 220, 153, 0.78);
+  content: "";
+}
+
+.botanical-rule span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(184, 220, 153, 0.9), rgba(255, 192, 131, 0.42), transparent);
+}
+
+h1 {
+  max-width: 12.2ch;
+  margin: 0;
+  color: var(--rich-red);
+  font-size: clamp(3.1rem, 8.2vw, 8.2rem);
+  font-weight: 300;
+  line-height: 0.96;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.slide-welcome {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  background: var(--off-white);
+  color: var(--dark-earth);
+}
+
+.welcome-copy {
+  position: relative;
+  z-index: 2;
+  align-self: center;
+  width: min(78%, 980px);
+  margin-left: 8.2%;
+  padding-top: 2vh;
+}
+
+.slide-number {
+  margin: 0 0 2.1rem;
+  color: var(--rich-red, #86312b);
+  font-size: clamp(1rem, 1.35vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.welcome-copy h2 {
+  margin: 0 0 1.4rem;
+  color: var(--forest-green);
+  font-size: clamp(5rem, 12vw, 10.8rem);
+  font-weight: 300;
+  line-height: 0.86;
+  letter-spacing: 0;
+}
+
+.welcome-text {
+  max-width: 54rem;
+  margin: 0;
+  color: #000000;
+  font-size: clamp(1.45rem, 2.35vw, 2.35rem);
+  font-weight: 300;
+  line-height: 1.34;
+}
+
+.slide-agenda {
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  column-gap: 4vw;
+  align-items: center;
+  padding: 7.2%;
+  background: var(--off-white);
+}
+
+.agenda-header {
+  align-self: center;
+}
+
+.agenda-header h2 {
+  max-width: 6.2ch;
+  margin: 0;
+  color: var(--rich-red);
+  font-size: clamp(3.4rem, 6.4vw, 6.8rem);
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.agenda-list {
+  display: grid;
+  gap: 0;
+  width: min(100%, 700px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(52, 46, 41, 0.18);
+}
+
+.agenda-list li {
+  display: grid;
+  grid-template-columns: 4.2rem 1fr;
+  align-items: center;
+  min-height: clamp(4.2rem, 9vh, 5.6rem);
+  border-bottom: 1px solid rgba(52, 46, 41, 0.18);
+  color: #000000;
+  font-size: clamp(1.24rem, 1.95vw, 2rem);
+  font-weight: 300;
+  line-height: 1.12;
+}
+
+.agenda-index {
+  color: var(--forest-green);
+  font-size: clamp(0.95rem, 1.25vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.slide-about {
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  column-gap: 7vw;
+  align-items: center;
+  padding: 7.2%;
+  background: var(--off-white);
+}
+
+.about-title h2 {
+  max-width: 7ch;
+  margin: 0;
+  color: var(--forest-green);
+  font-size: clamp(3.7rem, 7vw, 7.4rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.about-copy {
+  position: relative;
+  max-width: 48rem;
+  padding-left: 2.4rem;
+  border-left: 1px solid rgba(134, 49, 43, 0.34);
+}
+
+.about-copy::before {
+  position: absolute;
+  top: 0.28rem;
+  left: -0.34rem;
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 50%;
+  background: var(--rich-red);
+  content: "";
+}
+
+.about-copy p {
+  margin: 0;
+  color: #000000;
+  font-size: clamp(1.15rem, 1.78vw, 1.78rem);
+  font-weight: 300;
+  line-height: 1.38;
+}
+
+.slide-process {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: clamp(1.2rem, 3vh, 2.1rem);
+  padding: 5.8% 7.2% 6.4%;
+  background: var(--off-white);
+}
+
+.process-header {
+  display: block;
+}
+
+.process-header h2 {
+  margin: 0;
+  color: var(--rich-red);
+  font-size: clamp(2.9rem, 6.1vw, 6.3rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.process-header > p:last-child {
+  margin: 0.6rem 0 0;
+  color: var(--forest-green);
+  font-size: clamp(1.1rem, 1.85vw, 1.8rem);
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.process-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-content: center;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(52, 46, 41, 0.18);
+  border-left: 1px solid rgba(52, 46, 41, 0.18);
+}
+
+.process-list li {
+  display: grid;
+  grid-template-columns: 2.2rem 1fr;
+  column-gap: 0.9rem;
+  min-height: clamp(8rem, 20vh, 10rem);
+  padding: clamp(1rem, 2vh, 1.35rem);
+  border-right: 1px solid rgba(52, 46, 41, 0.18);
+  border-bottom: 1px solid rgba(52, 46, 41, 0.18);
+}
+
+.process-icon {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  color: var(--forest-green);
+}
+
+.process-icon svg {
+  width: 1.65rem;
+  height: 1.65rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.process-list h3 {
+  margin: 0 0 0.45rem;
+  color: var(--forest-green);
+  font-size: clamp(1.05rem, 1.55vw, 1.55rem);
+  font-weight: 400;
+  line-height: 1.04;
+}
+
+.process-list p {
+  margin: 0;
+  color: #000000;
+  font-size: clamp(0.92rem, 1.28vw, 1.2rem);
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.process-note {
+  justify-self: center;
+  margin: 0;
+  color: var(--rich-red);
+  font-size: clamp(1rem, 1.55vw, 1.45rem);
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.slide-collectives {
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  column-gap: 7vw;
+  align-items: center;
+  padding: 7.2%;
+  background: var(--off-white);
+}
+
+.collectives-title h2 {
+  margin: 0;
+  color: var(--rich-red);
+  font-size: clamp(3.4rem, 5.15vw, 5.8rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.collectives-title h2 span {
+  display: block;
+}
+
+.collectives-list {
+  display: grid;
+  gap: clamp(0.85rem, 2vh, 1.25rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.collectives-list li {
+  display: grid;
+  grid-template-columns: 2.8rem 1fr;
+  align-items: center;
+  min-height: clamp(3.8rem, 8.2vh, 5rem);
+  padding-bottom: clamp(0.85rem, 1.7vh, 1.1rem);
+  border-bottom: 1px solid rgba(52, 46, 41, 0.18);
+  color: #000000;
+  font-size: clamp(1.45rem, 2.1vw, 2.15rem);
+  font-weight: 300;
+  line-height: 1.05;
+}
+
+.collective-marker {
+  position: relative;
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 50%;
+  background: var(--forest-green);
+}
+
+.collective-marker::after {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  width: 1.15rem;
+  height: 1px;
+  background: rgba(134, 49, 43, 0.38);
+  content: "";
+}
+
+.slide-founders {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: clamp(2rem, 4vh, 3rem);
+  align-items: start;
+  padding: 6.2% 7.2% 7.8%;
+  background: var(--off-white);
+}
+
+.founders-title h2 {
+  margin: 0;
+  color: var(--forest-green);
+  font-size: clamp(3.4rem, 6.6vw, 6.8rem);
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.founder-roster {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-self: start;
+  gap: clamp(1.8rem, 3.5vw, 3.5rem);
+  width: min(100%, 72rem);
+  justify-self: center;
+}
+
+.founder-card {
+  display: grid;
+  justify-items: center;
+  min-width: 0;
+  text-align: center;
+}
+
+.founder-card img {
+  display: block;
+  width: clamp(8rem, 15vw, 13.2rem);
+  aspect-ratio: 1;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid rgba(52, 46, 41, 0.16);
+  border-radius: 50%;
+  background: #e7e4df;
+}
+
+.founder-card h3 {
+  margin: 1rem 0 0.4rem;
+  color: #000000;
+  font-size: clamp(1.25rem, 1.85vw, 1.9rem);
+  font-weight: 300;
+  line-height: 1.08;
+}
+
+.founder-card p {
+  margin: 0.16rem 0 0;
+  color: var(--rich-red);
+  font-size: clamp(0.95rem, 1.2vw, 1.14rem);
+  font-weight: 300;
+  line-height: 1.18;
+}
+
+.slide-vision {
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  column-gap: 7vw;
+  align-items: center;
+  padding: 7.2%;
+  background: var(--off-white);
+}
+
+.vision-title h2 {
+  max-width: 8ch;
+  margin: 0;
+  color: var(--rich-red);
+  font-size: clamp(3.5rem, 6.8vw, 7rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.vision-statements {
+  display: grid;
+  gap: clamp(2.2rem, 5vh, 3.4rem);
+  width: min(100%, 58rem);
+}
+
+.vision-statements article {
+  position: relative;
+  padding: 0 0 clamp(1.8rem, 3vh, 2.4rem);
+  border-bottom: 1px solid rgba(52, 46, 41, 0.18);
+}
+
+.statement-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 1.05rem;
+  color: var(--forest-green);
+  font-size: clamp(1rem, 1.25vw, 1.18rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.statement-label::before {
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--rich-red);
+  content: "";
+}
+
+.vision-statements article > p:last-child {
+  margin: 0;
+  color: #000000;
+  font-size: clamp(1.8rem, 3.25vw, 3.35rem);
+  font-weight: 300;
+  line-height: 1.06;
+}
+
+.slide-values {
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  column-gap: 7vw;
+  align-items: center;
+  padding: 7.2%;
+  background: var(--off-white);
+}
+
+.values-title h2 {
+  max-width: 8ch;
+  margin: 0;
+  color: var(--forest-green);
+  font-size: clamp(3.2rem, 6.3vw, 6.5rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.values-list {
+  display: grid;
+  gap: clamp(2.3rem, 5vh, 3.6rem);
+  width: min(100%, 62rem);
+}
+
+.values-list article {
+  padding-bottom: clamp(1.7rem, 3vh, 2.3rem);
+  border-bottom: 1px solid rgba(52, 46, 41, 0.18);
+}
+
+.value-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 0.95rem;
+  color: var(--rich-red);
+  font-size: clamp(1rem, 1.25vw, 1.18rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.value-kicker::before {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--forest-green);
+  content: "";
+}
+
+.values-list blockquote {
+  margin: 0 0 0.9rem;
+  color: #000000;
+  font-size: clamp(1.7rem, 2.8vw, 2.85rem);
+  font-weight: 300;
+  line-height: 1.08;
+}
+
+.values-list article > p:last-child {
+  max-width: 42rem;
+  margin: 0;
+  color: #000000;
+  font-size: clamp(1.05rem, 1.55vw, 1.42rem);
+  font-weight: 300;
+  line-height: 1.28;
+}
+
+.slide-value-focus {
+  display: grid;
+  grid-template-columns: 36% 1fr;
+  column-gap: 7vw;
+  align-items: center;
+  padding: 7.2%;
+  background: var(--off-white);
+}
+
+.value-focus-title h2 {
+  max-width: 8ch;
+  margin: 0;
+  color: var(--forest-green);
+  font-size: clamp(3.2rem, 6.3vw, 6.5rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.value-focus-card {
+  width: min(100%, 62rem);
+}
+
+.value-focus-card blockquote {
+  margin: 0 0 1.25rem;
+  color: var(--rich-red);
+  font-size: clamp(2.4rem, 4.7vw, 5rem);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.value-focus-card > p:last-child {
+  max-width: 42rem;
+  margin: 0;
+  color: #000000;
+  font-size: clamp(1.3rem, 2vw, 1.9rem);
+  font-weight: 300;
+  line-height: 1.26;
+}
+
+.slide-returns {
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  column-gap: 6vw;
+  align-items: center;
+  padding: 7.2%;
+  background: var(--off-white);
+}
+
+.returns-title h2 {
+  max-width: 8ch;
+  margin: 0;
+  color: var(--rich-red);
+  font-size: clamp(3rem, 5.7vw, 5.9rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.returns-title p {
+  margin: 1.2rem 0 0;
+  color: var(--forest-green);
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.returns-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.4rem, 3vh, 2.2rem) clamp(1.8rem, 3vw, 2.8rem);
+}
+
+.returns-grid article {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  column-gap: 1rem;
+  align-content: start;
+  min-height: clamp(9rem, 21vh, 12rem);
+  padding-bottom: 1.35rem;
+  border-bottom: 1px solid rgba(52, 46, 41, 0.18);
+}
+
+.return-icon {
+  display: grid;
+  width: 2.1rem;
+  height: 2.1rem;
+  place-items: center;
+  color: var(--forest-green);
+}
+
+.return-icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.returns-grid h3 {
+  margin: 0 0 0.75rem;
+  color: var(--forest-green);
+  font-size: clamp(1.15rem, 1.65vw, 1.65rem);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.returns-grid p {
+  grid-column: 2;
+  margin: 0;
+  color: #000000;
+  font-size: clamp(0.98rem, 1.35vw, 1.28rem);
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.slide-policies {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: clamp(1.8rem, 4vh, 2.8rem);
+  padding: 5.6% 7.2% 7%;
+  background: var(--off-white);
+}
+
+.policies-title h2 {
+  margin: 0;
+  color: var(--rich-red);
+  font-size: clamp(2.8rem, 4.65vw, 5rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.policies-title p {
+  max-width: 58rem;
+  margin: 1rem 0 0;
+  color: #000000;
+  font-size: clamp(1rem, 1.45vw, 1.32rem);
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+.policy-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-self: start;
+  gap: clamp(2rem, 4vh, 3rem) clamp(2.6rem, 5vw, 4rem);
+}
+
+.policy-groups article {
+  min-height: clamp(18rem, 44vh, 24rem);
+  padding-top: clamp(1.2rem, 2.4vh, 1.8rem);
+  padding-bottom: 1.4rem;
+  border-top: 1px solid rgba(52, 46, 41, 0.18);
+  border-bottom: 1px solid rgba(52, 46, 41, 0.18);
+}
+
+.policy-groups h3 {
+  margin: 0 0 0.75rem;
+  color: var(--forest-green);
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.policy-groups ul {
+  display: grid;
+  gap: 0.52rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.policy-groups li {
+  position: relative;
+  padding-left: 0.95rem;
+  color: #000000;
+  font-size: clamp(1.02rem, 1.36vw, 1.24rem);
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.policy-groups li::before {
+  position: absolute;
+  top: 0.58em;
+  left: 0;
+  width: 0.3rem;
+  height: 0.3rem;
+  border-radius: 50%;
+  background: var(--rich-red);
+  content: "";
+}
+
+.slide-organization {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: clamp(2.4rem, 6vh, 4.5rem);
+  align-items: center;
+  padding: 7.2%;
+  background: var(--off-white);
+}
+
+.organization-title h2 {
+  max-width: 12ch;
+  margin: 0;
+  color: var(--forest-green);
+  font-size: clamp(3.2rem, 6vw, 6.2rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.organization-content {
+  width: min(100%, 58rem);
+  align-self: start;
+  padding: clamp(1.8rem, 4vh, 3rem) 0;
+  border-top: 1px solid rgba(52, 46, 41, 0.18);
+  border-bottom: 1px solid rgba(52, 46, 41, 0.18);
+}
+
+.org-label {
+  margin: 0 0 1.2rem;
+  color: var(--rich-red);
+  font-size: clamp(2.4rem, 4.2vw, 4.3rem);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.org-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #000000;
+  font-size: clamp(1rem, 1.35vw, 1.25rem);
+  font-weight: 300;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.org-link::before {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--forest-green);
+  content: "";
+}
+
+.org-link::after {
+  color: var(--rich-red);
+  content: "\2197";
+}
+
+.slide-benefits {
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  column-gap: 7vw;
+  align-items: center;
+  padding: 7.2%;
+  background: var(--off-white);
+}
+
+.benefits-title h2 {
+  max-width: 8ch;
+  margin: 0;
+  color: var(--rich-red);
+  font-size: clamp(3.5rem, 6.7vw, 6.9rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.benefits-list {
+  display: grid;
+  gap: 0;
+  width: min(100%, 58rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(52, 46, 41, 0.18);
+}
+
+.benefits-list li {
+  position: relative;
+  min-height: clamp(3.8rem, 8vh, 5rem);
+  padding: clamp(1rem, 2vh, 1.35rem) 0 clamp(1rem, 2vh, 1.35rem) 2.1rem;
+  border-bottom: 1px solid rgba(52, 46, 41, 0.18);
+  color: #000000;
+  font-size: clamp(1.25rem, 1.9vw, 1.95rem);
+  font-weight: 300;
+  line-height: 1.12;
+}
+
+.benefits-list li::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 50%;
+  background: var(--forest-green);
+  content: "";
+  transform: translateY(-50%);
+}
+
+.slide-training {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: clamp(2.3rem, 5vh, 3.6rem);
+  align-items: center;
+  padding: 6.6% 7.2% 7.4%;
+  background: var(--off-white);
+}
+
+.training-title h2 {
+  max-width: 13ch;
+  margin: 0;
+  color: var(--forest-green);
+  font-size: clamp(3.1rem, 5.5vw, 5.8rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.training-copy {
+  position: relative;
+  width: min(100%, 72rem);
+  align-self: start;
+  padding: clamp(1.6rem, 3.4vh, 2.5rem) 0;
+  border-top: 1px solid rgba(52, 46, 41, 0.18);
+  border-bottom: 1px solid rgba(52, 46, 41, 0.18);
+}
+
+.training-copy p {
+  margin: 0;
+  color: #000000;
+  font-size: clamp(1.25rem, 1.95vw, 2rem);
+  font-weight: 300;
+  line-height: 1.28;
+}
+
+.slide-questions {
+  display: grid;
+  place-items: center;
+  padding: 7.2%;
+  background: var(--off-white);
+}
+
+.questions-content {
+  text-align: center;
+}
+
+.questions-content h2 {
+  margin: 0;
+  color: var(--rich-red);
+  font-size: clamp(3.6rem, 7.8vw, 8.2rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.slide-care {
+  display: grid;
+  place-items: center;
+  padding: 7.2%;
+  background: var(--off-white);
+}
+
+.care-content {
+  width: min(100%, 72rem);
+}
+
+.care-content > p:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 1.35rem;
+  color: var(--forest-green);
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.care-content > p:first-child::before {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--rich-red);
+  content: "";
+}
+
+.care-content h2 {
+  max-width: 13ch;
+  margin: 0;
+  color: var(--rich-red);
+  font-size: clamp(3.5rem, 7.4vw, 7.8rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.care-content > p:last-child {
+  max-width: 48rem;
+  margin: 2rem 0 0;
+  color: #000000;
+  font-size: clamp(1.2rem, 1.8vw, 1.72rem);
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.slide-thanks {
+  display: grid;
+  place-items: center;
+  padding: 7.2%;
+  background: var(--off-white);
+}
+
+.thanks-content {
+  text-align: center;
+}
+
+.thanks-content h2 {
+  margin: 0;
+  color: var(--rich-red);
+  font-size: clamp(4.2rem, 9vw, 9.5rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+@media (max-width: 820px) {
+  .brand-mark {
+    top: 7.8%;
+    left: 9%;
+    width: 28%;
+    min-width: 108px;
+    max-width: 132px;
+  }
+
+  .cover-copy {
+    left: 9%;
+    right: 9%;
+    bottom: 17.5%;
+    width: auto;
+  }
+
+  .company-name {
+    margin-bottom: 1rem;
+    font-size: clamp(1.18rem, 5.1vw, 1.55rem);
+    line-height: 1.12;
+  }
+
+  .botanical-rule {
+    width: min(100%, 18rem);
+    margin-bottom: 1rem;
+  }
+
+  .slide-cover h1 {
+    max-width: 8.8ch;
+    font-size: clamp(2.28rem, 7vw, 3rem);
+    line-height: 0.98;
+  }
+
+  .slide-welcome {
+    align-content: center;
+    padding: 7.2%;
+  }
+
+  .welcome-copy {
+    width: 100%;
+    margin-left: 0;
+    padding-top: 0;
+  }
+
+  .welcome-copy h2 {
+    margin-bottom: 1.1rem;
+    font-size: clamp(2.28rem, 7vw, 3rem);
+    line-height: 0.9;
+  }
+
+  .welcome-text {
+    max-width: 100%;
+    font-size: clamp(1.05rem, 3.15vw, 1.28rem);
+    line-height: 1.36;
+  }
+
+  .slide-agenda {
+    grid-template-columns: 1fr;
+    align-content: center;
+    row-gap: 2.4rem;
+    padding: 7.2%;
+  }
+
+  .agenda-header h2 {
+    max-width: 100%;
+    font-size: clamp(2.28rem, 7vw, 3rem);
+  }
+
+  .agenda-list {
+    width: 100%;
+  }
+
+  .agenda-list li {
+    grid-template-columns: 3.5rem 1fr;
+    min-height: 3.45rem;
+    font-size: clamp(1.05rem, 3.4vw, 1.45rem);
+  }
+
+  .slide-about {
+    grid-template-columns: 1fr;
+    align-content: center;
+    row-gap: 2.2rem;
+    padding: 7.2%;
+  }
+
+  .about-title h2 {
+    max-width: 100%;
+    font-size: clamp(2.28rem, 7vw, 3rem);
+  }
+
+  .about-copy {
+    max-width: 100%;
+    padding-left: 1.35rem;
+  }
+
+  .about-copy p {
+    font-size: clamp(1.05rem, 3.15vw, 1.28rem);
+  }
+
+  .slide-process {
+    grid-template-rows: auto auto auto;
+    align-content: center;
+    gap: 0.78rem;
+    padding: 3rem 8.2% 7.2rem;
+  }
+
+  .process-header h2 {
+    max-width: 11ch;
+    font-size: clamp(2.28rem, 7vw, 3rem);
+    line-height: 0.9;
+  }
+
+  .process-header > p:last-child {
+    margin-top: 0.32rem;
+    font-size: clamp(0.95rem, 2.85vw, 1.12rem);
+  }
+
+  .process-list {
+    grid-template-columns: 1fr;
+    align-content: start;
+    align-self: auto;
+    gap: 0;
+    border-top: 1px solid rgba(52, 46, 41, 0.14);
+    border-left: 0;
+  }
+
+  .process-list li {
+    grid-template-columns: 1.15rem 1fr;
+    column-gap: 0.62rem;
+    min-height: 0;
+    padding: 0.42rem 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(52, 46, 41, 0.14);
+  }
+
+  .process-icon {
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-top: 0.05rem;
+  }
+
+  .process-icon svg {
+    width: 1rem;
+    height: 1rem;
+    stroke-width: 1.8;
+  }
+
+  .process-list li > div {
+    display: grid;
+    grid-template-columns: minmax(7rem, auto) 1fr;
+    column-gap: 0.65rem;
+    align-items: baseline;
+  }
+
+  .process-list h3 {
+    margin: 0;
+    font-size: clamp(0.78rem, 2.25vw, 0.95rem);
+    line-height: 1.02;
+  }
+
+  .process-list p {
+    font-size: clamp(0.68rem, 1.95vw, 0.82rem);
+    line-height: 1.18;
+  }
+
+  .process-note {
+    justify-self: start;
+    margin-top: 0;
+    font-size: clamp(0.82rem, 2.35vw, 0.96rem);
+    text-align: left;
+  }
+
+  .slide-collectives {
+    grid-template-columns: 1fr;
+    align-content: center;
+    row-gap: 1.8rem;
+    padding: 7.2%;
+  }
+
+  .collectives-title h2 {
+    max-width: 100%;
+    font-size: clamp(2.28rem, 7vw, 3rem);
+  }
+
+  .collectives-list li {
+    grid-template-columns: 1.9rem 1fr;
+    min-height: 3.05rem;
+    padding-bottom: 0.72rem;
+    font-size: clamp(0.98rem, 3vw, 1.22rem);
+  }
+
+  .collective-marker::after {
+    display: none;
+  }
+
+  .slide-founders {
+    grid-template-rows: auto auto;
+    align-content: center;
+    row-gap: 1.8rem;
+    padding: 7.2%;
+  }
+
+  .founders-title h2 {
+    font-size: clamp(2.28rem, 7vw, 3rem);
+    text-align: left;
+  }
+
+  .founder-roster {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .founder-card {
+    grid-template-columns: 4.6rem 1fr;
+    column-gap: 1rem;
+    align-items: center;
+    justify-items: start;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(52, 46, 41, 0.14);
+    text-align: left;
+  }
+
+  .founder-card img {
+    width: 4.6rem;
+  }
+
+  .founder-card h3 {
+    margin-top: 0;
+    font-size: clamp(1.15rem, 3.4vw, 1.4rem);
+  }
+
+  .founder-card p {
+    font-size: clamp(0.88rem, 2.55vw, 1rem);
+  }
+
+  .slide-vision {
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 2.2rem;
+    padding: 7.2%;
+  }
+
+  .vision-title h2 {
+    max-width: 100%;
+    font-size: clamp(2.28rem, 7vw, 3rem);
+  }
+
+  .vision-statements {
+    grid-template-columns: 1fr;
+    gap: 1.9rem;
+  }
+
+  .vision-statements article > p:last-child {
+    font-size: clamp(0.98rem, 2.9vw, 1.16rem);
+    line-height: 1.36;
+  }
+
+  .slide-values {
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 2.2rem;
+    padding: 7.2%;
+  }
+
+  .values-title h2 {
+    max-width: 100%;
+    font-size: clamp(2.28rem, 7vw, 3rem);
+  }
+
+  .values-list {
+    gap: 1.6rem;
+  }
+
+  .values-list blockquote {
+    font-size: clamp(0.98rem, 2.9vw, 1.16rem);
+    line-height: 1.36;
+  }
+
+  .values-list article > p:last-child {
+    font-size: clamp(0.98rem, 2.9vw, 1.16rem);
+    line-height: 1.36;
+  }
+
+  .slide-value-focus {
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 2rem;
+    padding: 7.2%;
+  }
+
+  .value-focus-title h2 {
+    max-width: 100%;
+    font-size: clamp(2.28rem, 7vw, 3rem);
+  }
+
+  .value-focus-card blockquote {
+    font-size: clamp(0.98rem, 2.9vw, 1.16rem);
+    line-height: 1.36;
+  }
+
+  .value-focus-card > p:last-child {
+    font-size: clamp(0.98rem, 2.9vw, 1.16rem);
+    line-height: 1.36;
+  }
+
+  .slide-returns {
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 1.35rem;
+    padding: 7.2% 7.2% 7.2rem;
+  }
+
+  .returns-title h2 {
+    max-width: 100%;
+    font-size: clamp(2.28rem, 7vw, 3rem);
+  }
+
+  .returns-title p {
+    margin-top: 0.85rem;
+    font-size: clamp(1.05rem, 3.15vw, 1.28rem);
+  }
+
+  .returns-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: 1px solid rgba(52, 46, 41, 0.14);
+  }
+
+  .returns-grid article {
+    grid-template-columns: 1.35rem minmax(6rem, 9rem) 1fr;
+    column-gap: 0.62rem;
+    align-items: start;
+    min-height: 0;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(52, 46, 41, 0.14);
+  }
+
+  .return-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.08rem;
+  }
+
+  .return-icon svg {
+    width: 1.08rem;
+    height: 1.08rem;
+  }
+
+  .returns-grid h3 {
+    margin: 0;
+    font-size: clamp(0.82rem, 2.35vw, 0.98rem);
+    line-height: 1.08;
+  }
+
+  .returns-grid p {
+    grid-column: auto;
+    font-size: clamp(0.72rem, 2vw, 0.86rem);
+    line-height: 1.22;
+  }
+
+  .slide-policies {
+    grid-template-rows: auto auto;
+    align-content: center;
+    gap: 1.05rem;
+    padding: 7.2% 7.2% 7.2rem;
+  }
+
+  .policies-title h2 {
+    max-width: 100%;
+    font-size: clamp(2.28rem, 7vw, 3rem);
+    white-space: normal;
+  }
+
+  .policies-title p {
+    max-width: 100%;
+    margin-top: 0.75rem;
+    font-size: clamp(0.82rem, 2.35vw, 0.96rem);
+    line-height: 1.3;
+  }
+
+  .policy-groups {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .policy-groups article {
+    min-height: 0;
+    padding-top: 0.75rem;
+    padding-bottom: 0.8rem;
+    border-top: 0;
+  }
+
+  .policy-groups h3 {
+    margin-bottom: 0.5rem;
+    font-size: clamp(0.95rem, 2.65vw, 1.08rem);
+  }
+
+  .policy-groups li {
+    padding-left: 0.78rem;
+    font-size: clamp(0.72rem, 2vw, 0.86rem);
+    line-height: 1.18;
+  }
+
+  .policy-groups ul {
+    gap: 0.34rem;
+  }
+
+  .policy-groups li::before {
+    top: 0.56em;
+    width: 0.24rem;
+    height: 0.24rem;
+  }
+
+  .slide-organization {
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+    align-content: center;
+    justify-items: stretch;
+    gap: 2.2rem;
+    padding: 7.2%;
+    text-align: left;
+  }
+
+  .organization-title h2 {
+    max-width: 100%;
+    font-size: clamp(2.28rem, 7vw, 3rem);
+  }
+
+  .organization-content {
+    width: 100%;
+  }
+
+  .org-label {
+    font-size: clamp(1.7rem, 5.4vw, 2.25rem);
+  }
+
+  .org-link {
+    font-size: clamp(0.92rem, 2.65vw, 1.05rem);
+  }
+
+  .slide-benefits {
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 2rem;
+    padding: 7.2%;
+  }
+
+  .benefits-title h2 {
+    max-width: 100%;
+    font-size: clamp(2.28rem, 7vw, 3rem);
+  }
+
+  .benefits-list li {
+    min-height: 2.85rem;
+    padding: 0.65rem 0 0.65rem 1.35rem;
+    font-size: clamp(0.88rem, 2.6vw, 1.06rem);
+  }
+
+  .slide-training {
+    grid-template-rows: auto auto;
+    align-content: center;
+    gap: 2.2rem;
+    padding: 7.2%;
+  }
+
+  .training-title h2 {
+    max-width: 100%;
+    font-size: clamp(2.28rem, 7vw, 3rem);
+  }
+
+  .training-copy {
+    align-self: auto;
+    padding: 1.4rem 0;
+  }
+
+  .training-copy p {
+    font-size: clamp(0.92rem, 2.65vw, 1.05rem);
+    line-height: 1.32;
+  }
+
+  .questions-content h2 {
+    font-size: clamp(2.28rem, 7vw, 3rem);
+  }
+
+  .care-content h2 {
+    max-width: 100%;
+    font-size: clamp(2.28rem, 7vw, 3rem);
+  }
+
+  .care-content > p:last-child {
+    font-size: clamp(0.92rem, 2.65vw, 1.05rem);
+    line-height: 1.32;
+  }
+
+  .thanks-content h2 {
+    font-size: clamp(2.28rem, 7vw, 3rem);
+  }
+}
+
+.deck-nav {
+  position: fixed;
+  right: 2rem;
+  bottom: 1.6rem;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.45rem;
+  border: 1px solid rgba(52, 46, 41, 0.12);
+  border-radius: 999px;
+  background: rgba(253, 251, 247, 0.82);
+  box-shadow: 0 14px 40px rgba(52, 46, 41, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.nav-arrow {
+  display: grid;
+  width: 2.45rem;
+  height: 2.45rem;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--dark-earth);
+  color: var(--off-white);
+  cursor: pointer;
+}
+
+.nav-arrow:disabled {
+  cursor: not-allowed;
+  opacity: 0.32;
+}
+
+.nav-arrow svg {
+  width: 1.28rem;
+  height: 1.28rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.nav-count {
+  min-width: 3.1rem;
+  color: rgba(52, 46, 41, 0.74);
+  font-size: 0.86rem;
+  line-height: 1;
+  text-align: center;
+}
+
+@media (max-width: 820px) {
+  .deck-nav {
+    right: auto;
+    bottom: 1rem;
+    left: 50%;
+    gap: 0.82rem;
+    padding: 0.32rem 0.46rem;
+    border-color: rgba(52, 46, 41, 0.1);
+    background: rgba(253, 251, 247, 0.88);
+    box-shadow: 0 10px 28px rgba(52, 46, 41, 0.1);
+    transform: translateX(-50%);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-arrow {
+    width: 2.15rem;
+    height: 2.15rem;
+  }
+
+  .nav-arrow svg {
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+
+  .nav-count {
+    min-width: 2.75rem;
+    font-size: 0.82rem;
+  }
+}
+
+@keyframes panel-settle {
+  from {
+    transform: scale(1.035);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes copy-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cover-copy {
+    animation: none;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <main class="deck" aria-label="Beforest employee onboarding HTML deck">
+      <section id="slide-1" class="slide slide-cover" aria-label="Slide 1: New employee onboarding">
+        <img
+          class="brand-mark brand-mark-dark"
+          src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/beforest-logo-white.png"
+          alt="Beforest Nature at Work"
+        />
+
+        <div class="cover-copy">
+          <p class="company-name">Beforest Lifestyle Solutions</p>
+          <div class="botanical-rule" aria-hidden="true">
+            <span></span>
+          </div>
+          <h1>NEW EMPLOYEE ONBOARDING</h1>
+        </div>
+      </section>
+
+      <section id="slide-2" class="slide slide-welcome" aria-label="Slide 2: Hello welcome">
+        <div class="welcome-copy">
+          <h2>HELLO!</h2>
+          <p class="welcome-text">
+            Welcome to Beforest. We are stoked to have you with us. Your energy and
+            skills are exactly what we need, and we can't wait to see the awesome
+            things we'll achieve together. Feel at home, ask anything, and let's make
+            work a blast.
+          </p>
+        </div>
+      </section>
+
+      <section id="slide-3" class="slide slide-agenda" aria-label="Slide 3: Agenda overview">
+        <div class="agenda-header">
+          <h2>AGENDA OVERVIEW</h2>
+        </div>
+
+        <ol class="agenda-list">
+          <li>
+            <span class="agenda-index">01</span>
+            <span>About Our Company</span>
+          </li>
+          <li>
+            <span class="agenda-index">02</span>
+            <span>Our Vision and Mission</span>
+          </li>
+          <li>
+            <span class="agenda-index">03</span>
+            <span>Company culture &amp; Value</span>
+          </li>
+          <li>
+            <span class="agenda-index">04</span>
+            <span>Policies &amp; Procedures</span>
+          </li>
+          <li>
+            <span class="agenda-index">05</span>
+            <span>Organization Structure</span>
+          </li>
+          <li>
+            <span class="agenda-index">06</span>
+            <span>Benefits and Perks</span>
+          </li>
+        </ol>
+      </section>
+
+      <section id="slide-4" class="slide slide-about" aria-label="Slide 4: About our company">
+        <div class="about-title">
+          <h2>ABOUT OUR COMPANY</h2>
+        </div>
+
+        <div class="about-copy">
+          <p>
+            Beforest was founded in 2018, with our headquarters located in Hyderabad.
+            We focus on creating food and water-secure landscapes by applying
+            permaculture principles and natural farming techniques. We bring together
+            like-minded individuals passionate about sustainable agriculture, helping
+            them collectively purchase large estates. From planning and execution to
+            ongoing management, we oversee the estate on behalf of our member collective.
+          </p>
+        </div>
+      </section>
+
+      <section id="slide-5" class="slide slide-process" aria-label="Slide 5: The Beforest process">
+        <header class="process-header">
+          <h2>THE BEFOREST PROCESS</h2>
+          <p>Restoring nature. Rebuilding future.</p>
+        </header>
+
+        <ol class="process-list">
+          <li>
+            <span class="process-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="5" /><path d="m14 14 5 5" /></svg>
+            </span>
+            <div>
+              <h3>IDENTIFY</h3>
+              <p>Identify, evaluate, acquire abandoned landscapes.</p>
+            </div>
+          </li>
+          <li>
+            <span class="process-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 4h8" /><path d="M9 3h6v4H9z" /><path d="M6 5h12v17H6z" /><path d="m9 12 2 2 4-5" /><path d="M9 18h6" /></svg>
+            </span>
+            <div>
+              <h3>RESEARCH</h3>
+              <p>Carry out imaging, soil testing, and research on the history of land.</p>
+            </div>
+          </li>
+          <li>
+            <span class="process-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21s6-5.2 6-11a6 6 0 0 0-12 0c0 5.8 6 11 6 11z" /><circle cx="12" cy="10" r="2" /></svg>
+            </span>
+            <div>
+              <h3>MAP</h3>
+              <p>Map water courses, aquifers and reservoirs. If none, create them.</p>
+            </div>
+          </li>
+          <li>
+            <span class="process-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3" /><circle cx="17" cy="9" r="2.5" /><path d="M3 20c.7-4 3-6 5-6s4.3 2 5 6" /><path d="M13 20c.5-3 2.2-4.7 4-4.7 1.6 0 3.2 1.4 4 4.7" /></svg>
+            </span>
+            <div>
+              <h3>COLLABORATE</h3>
+              <p>Bring in collective members, and in construction of earth homes.</p>
+            </div>
+          </li>
+          <li>
+            <span class="process-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21V9" /><path d="M8 13c-3 0-5-2-5-5 3 0 5 2 5 5z" /><path d="M16 11c3 0 5-2 5-5-3 0-5 2-5 5z" /><path d="M6 21h12" /></svg>
+            </span>
+            <div>
+              <h3>CREATE ZONES</h3>
+              <p>Create zones for food forests, wilderness and human habitation.</p>
+            </div>
+          </li>
+          <li>
+            <span class="process-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 13c4-7 11-8 17-4-3 1-4 4-5 7-3-3-7-3-12-3z" /><path d="M5 19c5-2 9-6 12-10" /></svg>
+            </span>
+            <div>
+              <h3>STUDY &amp; REWILD</h3>
+              <p>Study the natural flora and fauna of the landscape, and rewild.</p>
+            </div>
+          </li>
+          <li>
+            <span class="process-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 10h14l-2 10H7z" /><path d="M8 10c0-3 2-5 4-5s4 2 4 5" /><circle cx="9" cy="14" r="1" /><circle cx="13" cy="15" r="1" /><circle cx="16" cy="13" r="1" /></svg>
+            </span>
+            <div>
+              <h3>GROW &amp; MARKET</h3>
+              <p>Grow and market forest friendly produce appropriately.</p>
+            </div>
+          </li>
+          <li>
+            <span class="process-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 22V4" /><path d="M6 5h12l-2.5 3L18 11H6z" /><path d="M8 22h8" /></svg>
+            </span>
+            <div>
+              <h3>EXIT &amp; HAND OVER</h3>
+              <p>Exit and hand over the landscape.</p>
+            </div>
+          </li>
+        </ol>
+
+        <p class="process-note">Together, we heal the earth and build a legacy.</p>
+      </section>
+
+      <section id="slide-6" class="slide slide-collectives" aria-label="Slide 6: Our collectives">
+        <div class="collectives-title">
+          <h2><span>OUR</span><span>COLLECTIVES</span></h2>
+        </div>
+
+        <ul class="collectives-list">
+          <li>
+            <span class="collective-marker"></span>
+            <span>Hyderabad Collective</span>
+          </li>
+          <li>
+            <span class="collective-marker"></span>
+            <span>Mumbai Collective</span>
+          </li>
+          <li>
+            <span class="collective-marker"></span>
+            <span>Bhopal Collective</span>
+          </li>
+          <li>
+            <span class="collective-marker"></span>
+            <span>Poomaale 1.0 Collective</span>
+          </li>
+          <li>
+            <span class="collective-marker"></span>
+            <span>Poomaale 2.0 Collective</span>
+          </li>
+          <li>
+            <span class="collective-marker"></span>
+            <span>Hammiyaala</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="slide-7" class="slide slide-founders" aria-label="Slide 7: Founders">
+        <div class="founders-title">
+          <h2>FOUNDERS</h2>
+        </div>
+
+        <div class="founder-roster">
+          <article class="founder-card">
+            <img src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/founder-sunith.png" alt="Sunith Reddy" />
+            <div>
+              <h3>Sunith Reddy</h3>
+              <p>CEO - Founder</p>
+              <p>Beforest</p>
+            </div>
+          </article>
+
+          <article class="founder-card">
+            <img src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/founder-shaurya.png" alt="Shaurya Chandra" />
+            <div>
+              <h3>Shaurya Chandra</h3>
+              <p>CFO - Founder</p>
+              <p>Beforest</p>
+            </div>
+          </article>
+
+          <article class="founder-card">
+            <img src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/founder-shruti.png" alt="Shruti Ajmera Reddy" />
+            <div>
+              <h3>Shruti Ajmera Reddy</h3>
+              <p>CEO - Founder Bewild</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="slide-8" class="slide slide-vision" aria-label="Slide 8: Our vision and mission">
+        <header class="vision-title">
+          <h2>OUR VISION AND MISSION</h2>
+        </header>
+
+        <div class="vision-statements">
+          <article>
+            <p class="statement-label">Our Vision</p>
+            <p>To build and foster communities that catalyze social change and inspire ecological transformation</p>
+          </article>
+
+          <article>
+            <p class="statement-label">Our Mission</p>
+            <p>To create landscapes that inspire and support life in all its forms</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="slide-9" class="slide slide-values" aria-label="Slide 9: Company culture and values">
+        <header class="values-title">
+          <h2>COMPANY CULTURE &amp; VALUES</h2>
+        </header>
+
+        <div class="values-list">
+          <article>
+            <p class="value-kicker">Purpose Driven Stewardship</p>
+            <blockquote>&ldquo;We don&rsquo;t own the land; we&rsquo;re entrusted with its future.&rdquo;</blockquote>
+            <p>Think and act with long-term sustainability and stakeholder impact in mind.</p>
+          </article>
+
+          <article>
+            <p class="value-kicker">Collaborative Innovation</p>
+            <blockquote>&ldquo;A different perspective can change the whole picture.&rdquo;</blockquote>
+            <p>Stay curious, collaborate openly, and create meaningful solutions together.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="slide-10" class="slide slide-values" aria-label="Slide 10: Company culture and values continued">
+        <header class="values-title">
+          <h2>COMPANY CULTURE &amp; VALUES</h2>
+        </header>
+
+        <div class="values-list">
+          <article>
+            <p class="value-kicker">Integrity In Action</p>
+            <blockquote>&ldquo;Trust is earned through honesty and accountability.&rdquo;</blockquote>
+            <p>Be transparent, keep commitments, and take ownership of your actions.</p>
+          </article>
+
+          <article>
+            <p class="value-kicker">Adaptability With Intent</p>
+            <blockquote>&ldquo;Change is the path; purpose is our compass.&rdquo;</blockquote>
+            <p>Embrace challenges, adapt quickly, and stay aligned with the mission.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="slide-11" class="slide slide-value-focus" aria-label="Slide 11: Commitment to impact">
+        <header class="value-focus-title">
+          <h2>COMPANY CULTURE &amp; VALUES</h2>
+        </header>
+
+        <article class="value-focus-card">
+          <p class="value-kicker">Commitment to Impact</p>
+          <blockquote>&ldquo;Every step should leave people and the planet better.&rdquo;</blockquote>
+          <p>Create measurable, long-term impact for people, nature, and business.</p>
+        </article>
+      </section>
+
+      <section id="slide-12" class="slide slide-returns" aria-label="Slide 12: Company culture and values four returns">
+        <header class="returns-title">
+          <h2>COMPANY CULTURE &amp; VALUES</h2>
+          <p>4 Returns</p>
+        </header>
+
+        <div class="returns-grid">
+          <article>
+            <span class="return-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21V9" /><path d="M8 13c-3 0-5-2-5-5 3 0 5 2 5 5z" /><path d="M16 11c3 0 5-2 5-5-3 0-5 2-5 5z" /></svg>
+            </span>
+            <h3>Return of Inspiration</h3>
+            <p>Create purpose, inspire people, and nurture a deeper connection with nature and culture.</p>
+          </article>
+
+          <article>
+            <span class="return-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3" /><circle cx="17" cy="9" r="2.5" /><path d="M3 20c.7-4 3-6 5-6s4.3 2 5 6" /><path d="M13 20c.5-3 2.2-4.7 4-4.7 1.6 0 3.2 1.4 4 4.7" /></svg>
+            </span>
+            <h3>Return of Social Capital</h3>
+            <p>Build stronger communities through collaboration, shared learning, and collective growth.</p>
+          </article>
+
+          <article>
+            <span class="return-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 13c4-7 11-8 17-4-3 1-4 4-5 7-3-3-7-3-12-3z" /><path d="M5 19c5-2 9-6 12-10" /></svg>
+            </span>
+            <h3>Return of Natural Capital</h3>
+            <p>Restore ecosystems, enrich soil, conserve water, and increase biodiversity.</p>
+          </article>
+
+          <article>
+            <span class="return-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 19h16" /><path d="M7 16V9" /><path d="M12 16V5" /><path d="M17 16v-4" /><path d="m9 7 3-3 3 3" /></svg>
+            </span>
+            <h3>Return of Financial Capital</h3>
+            <p>Drive sustainable growth through impactful and long-term value creation.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="slide-13" class="slide slide-policies" aria-label="Slide 13: Policies and procedures">
+        <header class="policies-title">
+          <h2>POLICIES AND PROCEDURES</h2>
+          <p>Upholding respect, integrity, and professionalism is at the core of our Code of Conduct, ensuring a safe and inclusive workplace.</p>
+        </header>
+
+        <div class="policy-groups">
+          <article>
+            <h3>Code of Conduct</h3>
+            <ul>
+              <li>Hiring Policy</li>
+              <li>Referral Policy</li>
+              <li>Disciplinary</li>
+              <li>DEI&amp;B</li>
+              <li>POSH</li>
+              <li>Exit/ separation policy</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Attendance Policy</h3>
+            <ul>
+              <li>Work Timings - 5 Working days (HO) &amp; Farm 6 WRD</li>
+              <li>Lunch break - 1 hr</li>
+              <li>Half Day Leave - 4hrs</li>
+              <li>Compensatory request</li>
+              <li>Holiday (12, 4 National &amp; 8 Public)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="slide-14" class="slide slide-policies" aria-label="Slide 14: More policies and procedures">
+        <header class="policies-title">
+          <h2>POLICIES AND PROCEDURES</h2>
+        </header>
+
+        <div class="policy-groups">
+          <article>
+            <h3>Leave Policy</h3>
+            <ul>
+              <li>Privileged Leave - 15/Y (HO) - 36 (CO)</li>
+              <li>Medical/Casual Leave - 12/Y</li>
+              <li>Bereavement Leave - 12/5/Y</li>
+              <li>Paternity Leave - 10/Y</li>
+              <li>Maternity Leave - 26 weeks</li>
+              <li>Marriage Leave - 10/Y</li>
+              <li>Compensatory Leave</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Other Policies</h3>
+            <ul>
+              <li>Hiring Policy</li>
+              <li>Referral Policy</li>
+              <li>Disciplinary</li>
+              <li>DEI&amp;B</li>
+              <li>POSH</li>
+              <li>Exit/ separation policy</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="slide-15" class="slide slide-organization" aria-label="Slide 15: Organization structures">
+        <header class="organization-title">
+          <h2>ORGANIZATION STRUCTURES</h2>
+        </header>
+
+        <div class="organization-content">
+          <p class="org-label">Departmental Tree</p>
+          <a
+            class="org-link"
+            href="https://people.zoho.in/60016186841/zp#home/organization/departmenttree-id:209952000000307980"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View organization department tree
+          </a>
+        </div>
+      </section>
+
+      <section id="slide-16" class="slide slide-benefits" aria-label="Slide 16: Benefits and perks">
+        <header class="benefits-title">
+          <h2>BENEFITS AND PERKS</h2>
+        </header>
+
+        <ul class="benefits-list">
+          <li>Performance Linked Incentive</li>
+          <li>Provident Fund</li>
+          <li>Health Insurance Coverage up to &#8377;5 Lakhs</li>
+          <li>Retirement Benefit - Age of 60 Years</li>
+          <li>Gratuity - 5 Years of Service</li>
+          <li>Leave Encashment</li>
+          <li>Travel &amp; Reimbursement</li>
+        </ul>
+      </section>
+
+      <section id="slide-17" class="slide slide-training" aria-label="Slide 17: Training and development">
+        <header class="training-title">
+          <h2>TRAINING AND DEVELOPMENT</h2>
+        </header>
+
+        <div class="training-copy">
+          <p>
+            Our training program equips you with the skills and knowledge to thrive in your role and contribute meaningfully. From comprehensive onboarding to ongoing professional development opportunities, we provide the tools for success. Workshops, mentorship, and access to external resources ensure you stay ahead in your career. Welcome to a culture of continuous learning and innovation.
+          </p>
+        </div>
+      </section>
+
+      <section id="slide-18" class="slide slide-questions" aria-label="Slide 18: Any questions">
+        <div class="questions-content">
+          <h2>ANY QUESTIONS?</h2>
+        </div>
+      </section>
+
+      <section id="slide-19" class="slide slide-care" aria-label="Slide 19: A call to care">
+        <div class="care-content">
+          <p>A Call to Care</p>
+          <h2>We are not separate from nature&mdash;we are part of it.</h2>
+          <p>To protect nature is to protect ourselves and the generations to come.</p>
+        </div>
+      </section>
+
+      <section id="slide-20" class="slide slide-thanks" aria-label="Slide 20: Thank you">
+        <div class="thanks-content">
+          <h2>Thank you</h2>
+        </div>
+      </section>
+
+      <nav class="deck-nav" aria-label="Slide navigation">
+        <button class="nav-arrow nav-prev" type="button" aria-label="Previous slide" disabled>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+        <span class="nav-count" aria-live="polite">1 / 2</span>
+        <button class="nav-arrow nav-next" type="button" aria-label="Next slide">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" />
+          </svg>
+        </button>
+      </nav>
+    </main>
+    <script>
+const slides = Array.from(document.querySelectorAll(".slide"));
+const previousButton = document.querySelector(".nav-prev");
+const nextButton = document.querySelector(".nav-next");
+const navCount = document.querySelector(".nav-count");
+let currentSlide = 0;
+
+function showSlide(index) {
+  currentSlide = Math.max(0, Math.min(index, slides.length - 1));
+  document.querySelector(".deck").scrollTo({
+    left: currentSlide * window.innerWidth,
+    behavior: "smooth",
+  });
+  previousButton.disabled = currentSlide === 0;
+  nextButton.disabled = currentSlide === slides.length - 1;
+  navCount.textContent = `${currentSlide + 1} / ${slides.length}`;
+}
+
+previousButton.addEventListener("click", () => showSlide(currentSlide - 1));
+nextButton.addEventListener("click", () => showSlide(currentSlide + 1));
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft") showSlide(currentSlide - 1);
+  if (event.key === "ArrowRight") showSlide(currentSlide + 1);
+});
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!visible) return;
+    currentSlide = slides.indexOf(visible.target);
+    previousButton.disabled = currentSlide === 0;
+    nextButton.disabled = currentSlide === slides.length - 1;
+    navCount.textContent = `${currentSlide + 1} / ${slides.length}`;
+  },
+  { root: document.querySelector(".deck"), threshold: [0.55] }
+);
+
+slides.forEach((slide) => observer.observe(slide));
+
+    </script>
+  </body>
+</html>
+
+

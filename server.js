@@ -7,7 +7,7 @@ const root = __dirname;
 const port = Number(process.env.PORT || 3000);
 loadEnv();
 
-const passcode = process.env.PASS || "hr@beforest";
+const passcode = normalizePasscode(process.env.PASS || "hr@beforest");
 const sessionToken = crypto.createHash("sha256").update(passcode).digest("hex");
 
 const types = {
@@ -50,6 +50,10 @@ function loadEnv() {
       process.env[key] = value;
     }
   }
+}
+
+function normalizePasscode(value) {
+  return String(value).trim().replace(/^["']|["']$/g, "");
 }
 
 function parseBody(req) {
@@ -112,7 +116,7 @@ const server = http.createServer((req, res) => {
 
   if (req.url === "/login" && req.method === "POST") {
     parseBody(req).then((body) => {
-      if (body.get("pass") === passcode) {
+      if (normalizePasscode(body.get("pass") || "") === passcode) {
         res.writeHead(302, {
           Location: "/",
           "Set-Cookie": `hr_pages=${sessionToken}; Path=/; HttpOnly; SameSite=Lax`

@@ -33,7 +33,7 @@
 
     document.getElementById("loginForm").addEventListener("submit", function (event) {
       event.preventDefault();
-      var value = document.getElementById("passcode").value;
+      var value = document.getElementById("passcode").value.trim();
 
       if (value === configuredPass) {
         sessionStorage.setItem(sessionKey, "ok");

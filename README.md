@@ -22,6 +22,16 @@ If `.env` is missing, the server uses `hr@beforest`.
 
 GitHub Pages is static, so it uses the lightweight browser gate in `auth.js`.
 
+## Coolify
+
+Use the Git repository deployment flow.
+
+- Build pack: Nixpacks or Dockerfile
+- Start command for Nixpacks: `npm start`
+- Port: `3000`
+- Health check path: `/healthz`
+- Environment variable: `PASS=your-passcode`
+
 ## Add A Page
 
 1. Add the HTML file inside `pages/`.

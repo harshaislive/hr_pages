@@ -78,14 +78,17 @@ function sendLogin(res, message = "") {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>HR Pages Login</title>
     <style>
-      body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f7f3ea;color:#231f20;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-      form{width:min(360px,calc(100% - 32px));display:grid;gap:14px}
-      h1{margin:0;font-size:2rem;line-height:1}
-      p{margin:0;color:#6d665f;line-height:1.5}
+      @font-face{font-family:"ABC Arizona Flare";src:url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Light.e9c1597c.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap}
+      @font-face{font-family:"ABC Arizona Flare";src:url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Regular.cbcc518c.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+      @font-face{font-family:"ABC Arizona Flare";src:url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Medium.7ce0f1db.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+      body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdfbf7;color:#000000;font-family:"ABC Arizona Flare",Georgia,serif}
+      form{width:min(390px,calc(100% - 32px));display:grid;gap:16px}
+      h1{margin:0;color:#86312b;font-size:clamp(2.4rem,7vw,4.2rem);font-weight:500;line-height:.95}
+      p{margin:0;color:#344736;font-size:1.08rem;line-height:1.45}
       input,button{height:46px;border-radius:8px;font:inherit}
-      input{border:1px solid #d8d0c2;background:#fffdfa;padding:0 12px}
-      button{border:0;background:#2f6f57;color:white;font-weight:700;cursor:pointer}
-      .error{color:#9f2f24;font-weight:700}
+      input{border:1px solid rgba(52,71,54,.28);background:#fffdfa;padding:0 12px;color:#000000}
+      button{border:0;background:#344736;color:#fdfbf7;font-weight:500;cursor:pointer}
+      .error{color:#86312b;font-weight:500}
     </style>
   </head>
   <body>
@@ -101,6 +104,12 @@ function sendLogin(res, message = "") {
 }
 
 const server = http.createServer((req, res) => {
+  if (req.url === "/healthz") {
+    res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
+    res.end("ok");
+    return;
+  }
+
   if (req.url === "/login" && req.method === "POST") {
     parseBody(req).then((body) => {
       if (body.get("pass") === passcode) {

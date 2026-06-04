@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "description": "Static quick pages for HR and internal links.",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
+    "healthcheck": "node -e \"require('http').get('http://127.0.0.1:' + (process.env.PORT || 3000) + '/healthz', r => process.exit(r.statusCode === 200 ? 0 : 1)).on('error', () => process.exit(1))\"",
     "start": "node server.js"
   }
 }

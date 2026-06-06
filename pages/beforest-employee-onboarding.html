@@ -468,6 +468,152 @@ h1 {
   content: "";
 }
 
+.collectives-visual {
+  justify-self: center;
+  display: grid;
+  gap: clamp(0.9rem, 1.8vh, 1.25rem);
+  width: min(100%, 46rem);
+}
+
+.collectives-map {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+
+.collectives-map::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 9%;
+  background: var(--off-white);
+  content: "";
+  pointer-events: none;
+}
+
+.collectives-map img {
+  display: block;
+  width: 100%;
+  max-height: 58vh;
+  clip-path: inset(0 9% 0 0);
+  object-fit: contain;
+  object-position: center;
+}
+
+.collectives-names {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  justify-content: center;
+  gap: 0.55rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.collectives-names li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #000000;
+  font-size: clamp(0.82rem, 1.05vw, 1rem);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.collectives-names li::before {
+  width: 0.36rem;
+  height: 0.36rem;
+  border-radius: 50%;
+  background: var(--forest-green);
+  content: "";
+}
+
+.slide-beecoverse {
+  display: grid;
+  grid-template-columns: 34% 1fr;
+  column-gap: 6vw;
+  align-items: center;
+  padding: 6.4% 7.2%;
+  background: var(--off-white);
+}
+
+.beecoverse-title h2 {
+  margin: 0;
+  color: var(--rich-red);
+  font-size: clamp(3rem, 5.1vw, 5.4rem);
+  font-weight: 300;
+  line-height: 0.94;
+  letter-spacing: 0;
+}
+
+.beecoverse-title h2 span {
+  display: block;
+}
+
+.beecoverse-title p {
+  max-width: 24rem;
+  margin: 1.35rem 0 0;
+  color: var(--forest-green);
+  font-size: clamp(1rem, 1.28vw, 1.18rem);
+  font-weight: 300;
+  line-height: 1.28;
+}
+
+.beecoverse-content {
+  display: grid;
+  gap: clamp(1rem, 2vh, 1.4rem);
+}
+
+.beecoverse-intro {
+  margin: 0;
+  color: #000000;
+  font-size: clamp(1rem, 1.35vw, 1.28rem);
+  font-weight: 300;
+  line-height: 1.32;
+}
+
+.beecoverse-grid {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(52, 46, 41, 0.18);
+}
+
+.beecoverse-grid li {
+  display: grid;
+  grid-template-columns: 9rem 12rem 1fr;
+  gap: clamp(0.8rem, 1.8vw, 1.25rem);
+  align-items: start;
+  padding: clamp(0.72rem, 1.35vh, 1rem) 0;
+  border-bottom: 1px solid rgba(52, 46, 41, 0.18);
+}
+
+.beecoverse-grid h3 {
+  margin: 0;
+  color: var(--forest-green);
+  font-size: clamp(1.08rem, 1.45vw, 1.36rem);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.beecoverse-grid strong,
+.beecoverse-grid p {
+  margin: 0;
+  color: #000000;
+  font-size: clamp(0.82rem, 1.06vw, 1rem);
+  font-weight: 300;
+  line-height: 1.22;
+}
+
+.beecoverse-grid strong {
+  color: var(--rich-red);
+  font-weight: 400;
+}
+
 .slide-founders {
   display: grid;
   grid-template-rows: auto 1fr;
@@ -513,6 +659,11 @@ h1 {
   border: 1px solid rgba(52, 46, 41, 0.16);
   border-radius: 50%;
   background: #e7e4df;
+}
+
+.founder-card img.founder-shruti-photo {
+  object-fit: contain;
+  object-position: center bottom;
 }
 
 .founder-card h3 {
@@ -698,44 +849,79 @@ h1 {
 
 .slide-returns {
   display: grid;
-  grid-template-columns: 35% 1fr;
-  column-gap: 6vw;
+  grid-template-columns: 28% 28% 1fr;
+  grid-template-rows: auto auto;
+  column-gap: clamp(2.2rem, 4vw, 4.5rem);
   align-items: center;
-  padding: 7.2%;
+  padding: 6.2% 7.2% 7%;
   background: var(--off-white);
 }
 
+.returns-title {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  display: grid;
+  align-self: center;
+  justify-items: start;
+}
+
 .returns-title h2 {
-  max-width: 8ch;
   margin: 0;
+  max-width: 8.5ch;
   color: var(--rich-red);
-  font-size: clamp(3rem, 5.7vw, 5.9rem);
+  font-size: clamp(2.9rem, 4.85vw, 5.2rem);
   font-weight: 300;
-  line-height: 0.92;
+  line-height: 0.94;
   letter-spacing: 0;
 }
 
 .returns-title p {
-  margin: 1.2rem 0 0;
+  margin: clamp(0.55rem, 1.1vh, 0.8rem) 0 0;
   color: var(--forest-green);
-  font-size: clamp(1.3rem, 2vw, 2rem);
+  font-size: clamp(1.35rem, 1.9vw, 1.9rem);
   font-weight: 300;
   line-height: 1;
 }
 
+.returns-visual {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  justify-self: center;
+  width: min(100%, 24rem);
+  margin: 0;
+  overflow: hidden;
+  background: var(--off-white);
+  box-shadow: none;
+}
+
+.returns-visual img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.18;
+  object-fit: contain;
+  object-position: center;
+  filter: brightness(1.08) contrast(1.16) saturate(0.9);
+  mix-blend-mode: multiply;
+}
+
 .returns-grid {
+  grid-column: 3;
+  grid-row: 1 / span 2;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(1.4rem, 3vh, 2.2rem) clamp(1.8rem, 3vw, 2.8rem);
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-self: center;
+  border-top: 1px solid rgba(52, 46, 41, 0.18);
 }
 
 .returns-grid article {
   display: grid;
-  grid-template-columns: 2.4rem 1fr;
+  grid-template-columns: 2.2rem 1fr;
   column-gap: 1rem;
-  align-content: start;
-  min-height: clamp(9rem, 21vh, 12rem);
-  padding-bottom: 1.35rem;
+  align-items: start;
+  min-height: 0;
+  padding: clamp(0.72rem, 1.55vh, 1rem) 0;
   border-bottom: 1px solid rgba(52, 46, 41, 0.18);
 }
 
@@ -758,9 +944,9 @@ h1 {
 }
 
 .returns-grid h3 {
-  margin: 0 0 0.75rem;
+  margin: 0;
   color: var(--forest-green);
-  font-size: clamp(1.15rem, 1.65vw, 1.65rem);
+  font-size: clamp(1.05rem, 1.42vw, 1.42rem);
   font-weight: 400;
   line-height: 1.08;
 }
@@ -768,8 +954,9 @@ h1 {
 .returns-grid p {
   grid-column: 2;
   margin: 0;
+  margin-top: 0.35rem;
   color: #000000;
-  font-size: clamp(0.98rem, 1.35vw, 1.28rem);
+  font-size: clamp(0.9rem, 1.18vw, 1.12rem);
   font-weight: 300;
   line-height: 1.25;
 }
@@ -830,6 +1017,15 @@ h1 {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.policy-groups p {
+  max-width: 36rem;
+  margin: 0;
+  color: #000000;
+  font-size: clamp(1.02rem, 1.36vw, 1.24rem);
+  font-weight: 300;
+  line-height: 1.3;
 }
 
 .policy-groups li {
@@ -1021,13 +1217,31 @@ h1 {
 
 .slide-care {
   display: grid;
-  place-items: center;
+  align-items: center;
+  justify-items: start;
   padding: 7.2%;
-  background: var(--off-white);
+  background:
+    radial-gradient(
+      ellipse at 28% 87%,
+      rgba(253, 251, 247, 0.9) 0%,
+      rgba(253, 251, 247, 0.72) 34%,
+      rgba(253, 251, 247, 0.34) 55%,
+      rgba(253, 251, 247, 0) 76%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(253, 251, 247, 0.96) 0%,
+      rgba(253, 251, 247, 0.92) 29%,
+      rgba(253, 251, 247, 0.54) 48%,
+      rgba(253, 251, 247, 0.08) 68%
+    ),
+    url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/Conservation%201.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 .care-content {
-  width: min(100%, 72rem);
+  width: min(100%, 58rem);
 }
 
 .care-content > p:first-child {
@@ -1050,9 +1264,9 @@ h1 {
 }
 
 .care-content h2 {
-  max-width: 13ch;
+  max-width: 12ch;
   margin: 0;
-  color: var(--rich-red);
+  color: var(--forest-green);
   font-size: clamp(3.5rem, 7.4vw, 7.8rem);
   font-weight: 300;
   line-height: 0.95;
@@ -1283,6 +1497,65 @@ h1 {
     display: none;
   }
 
+  .collectives-visual {
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .collectives-map img {
+    max-height: 34vh;
+  }
+
+  .collectives-names {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    gap: 0.42rem 0.75rem;
+  }
+
+  .collectives-names li {
+    font-size: clamp(0.72rem, 2vw, 0.82rem);
+  }
+
+  .slide-beecoverse {
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 1.1rem;
+    padding: 7.2% 7.2% 7.2rem;
+  }
+
+  .beecoverse-title h2 {
+    font-size: clamp(2.28rem, 7vw, 3rem);
+  }
+
+  .beecoverse-title p,
+  .beecoverse-intro {
+    max-width: 100%;
+    margin-top: 0.7rem;
+    font-size: clamp(0.78rem, 2.2vw, 0.9rem);
+    line-height: 1.24;
+  }
+
+  .beecoverse-content {
+    gap: 0.7rem;
+  }
+
+  .beecoverse-grid li {
+    grid-template-columns: 5.8rem 1fr;
+    gap: 0.32rem 0.72rem;
+    padding: 0.48rem 0;
+  }
+
+  .beecoverse-grid h3 {
+    grid-row: span 2;
+    font-size: clamp(0.82rem, 2.35vw, 0.95rem);
+  }
+
+  .beecoverse-grid strong,
+  .beecoverse-grid p {
+    font-size: clamp(0.64rem, 1.8vw, 0.78rem);
+    line-height: 1.16;
+  }
+
   .slide-founders {
     grid-template-rows: auto auto;
     align-content: center;
@@ -1396,30 +1669,53 @@ h1 {
 
   .slide-returns {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     align-content: center;
-    gap: 1.35rem;
+    gap: 1rem;
     padding: 7.2% 7.2% 7.2rem;
+  }
+
+  .returns-title {
+    display: grid;
+    justify-items: start;
   }
 
   .returns-title h2 {
     max-width: 100%;
-    font-size: clamp(2.28rem, 7vw, 3rem);
+    justify-self: start;
+    font-size: clamp(2rem, 6.1vw, 2.55rem);
+    line-height: 0.96;
   }
 
   .returns-title p {
-    margin-top: 0.85rem;
+    justify-self: start;
+    margin-top: 0.38rem;
     font-size: clamp(1.05rem, 3.15vw, 1.28rem);
   }
 
+  .returns-visual {
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: start;
+    width: min(100%, 13rem);
+    margin: 0.65rem 0 0;
+  }
+
+  .returns-visual img {
+    aspect-ratio: 1.12;
+  }
+
   .returns-grid {
+    grid-column: auto;
+    grid-row: auto;
     grid-template-columns: 1fr;
     gap: 0;
     border-top: 1px solid rgba(52, 46, 41, 0.14);
   }
 
   .returns-grid article {
-    grid-template-columns: 1.35rem minmax(6rem, 9rem) 1fr;
-    column-gap: 0.62rem;
+    grid-template-columns: 1.2rem minmax(0, 1fr);
+    gap: 0.2rem 0.5rem;
     align-items: start;
     min-height: 0;
     padding: 0.8rem 0;
@@ -1439,14 +1735,16 @@ h1 {
 
   .returns-grid h3 {
     margin: 0;
-    font-size: clamp(0.82rem, 2.35vw, 0.98rem);
+    font-size: clamp(0.72rem, 2.05vw, 0.86rem);
     line-height: 1.08;
   }
 
   .returns-grid p {
-    grid-column: auto;
-    font-size: clamp(0.72rem, 2vw, 0.86rem);
-    line-height: 1.22;
+    grid-column: 2;
+    min-width: 0;
+    font-size: clamp(0.64rem, 1.78vw, 0.76rem);
+    line-height: 1.18;
+    overflow-wrap: anywhere;
   }
 
   .slide-policies {
@@ -1490,6 +1788,12 @@ h1 {
     padding-left: 0.78rem;
     font-size: clamp(0.72rem, 2vw, 0.86rem);
     line-height: 1.18;
+  }
+
+  .policy-groups p {
+    max-width: 100%;
+    font-size: clamp(0.72rem, 2vw, 0.86rem);
+    line-height: 1.22;
   }
 
   .policy-groups ul {
@@ -1576,6 +1880,32 @@ h1 {
   .care-content h2 {
     max-width: 100%;
     font-size: clamp(2.28rem, 7vw, 3rem);
+  }
+
+  .slide-care {
+    align-items: end;
+    padding: 7.2% 7.2% 7.2rem;
+    background:
+      radial-gradient(
+        ellipse at 50% 84%,
+        rgba(253, 251, 247, 0.98) 0%,
+        rgba(253, 251, 247, 0.82) 42%,
+        rgba(253, 251, 247, 0.28) 70%,
+        rgba(253, 251, 247, 0) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(253, 251, 247, 0.16) 0%,
+        rgba(253, 251, 247, 0.58) 38%,
+        rgba(253, 251, 247, 0.96) 72%
+      ),
+      url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/Conservation%201.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .care-content {
+    width: 100%;
   }
 
   .care-content > p:last-child {
@@ -1699,7 +2029,7 @@ h1 {
 }
 
     </style>
-    <script src="../auth.js"></script>
+      <script src="../auth.js"></script>
   </head>
   <body>
     <main class="deck" aria-label="Beforest employee onboarding HTML deck">
@@ -1870,35 +2200,65 @@ h1 {
           <h2><span>OUR</span><span>COLLECTIVES</span></h2>
         </div>
 
-        <ul class="collectives-list">
-          <li>
-            <span class="collective-marker"></span>
-            <span>Hyderabad Collective</span>
-          </li>
-          <li>
-            <span class="collective-marker"></span>
-            <span>Mumbai Collective</span>
-          </li>
-          <li>
-            <span class="collective-marker"></span>
-            <span>Bhopal Collective</span>
-          </li>
-          <li>
-            <span class="collective-marker"></span>
-            <span>Poomaale 1.0 Collective</span>
-          </li>
-          <li>
-            <span class="collective-marker"></span>
-            <span>Poomaale 2.0 Collective</span>
-          </li>
-          <li>
-            <span class="collective-marker"></span>
-            <span>Hammiyaala</span>
-          </li>
-        </ul>
+        <div class="collectives-visual">
+          <figure class="collectives-map">
+            <img
+              src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/Bewild%20B2B%20Product%20Portfolio.jpg%20(1).jpeg"
+              alt="Map of Beforest collectives across India"
+            />
+          </figure>
+
+          <ul class="collectives-names" aria-label="Beforest collectives">
+            <li>Hyderabad Collective</li>
+            <li>Mumbai Collective</li>
+            <li>Bhopal Collective</li>
+            <li>Poomaale 1.0 Collective</li>
+            <li>Poomaale 2.0 Collective</li>
+            <li>Hammiyala</li>
+          </ul>
+        </div>
       </section>
 
-      <section id="slide-7" class="slide slide-founders" aria-label="Slide 7: Founders">
+      <section id="slide-7" class="slide slide-beecoverse" aria-label="Slide 7: The Beecoverse">
+        <header class="beecoverse-title">
+          <h2><span>THE</span><span>BEECOVERSE</span></h2>
+          <p>Building Regenerative Ecosystems Through Hospitality, Produce, Design &amp; Community</p>
+        </header>
+
+        <div class="beecoverse-content">
+          <p class="beecoverse-intro">The Beecoverse is Beforest's interconnected ecosystem of brands and ventures working together to create meaningful experiences, restore landscapes, and build sustainable communities.</p>
+
+          <ul class="beecoverse-grid" aria-label="Beecoverse entities">
+            <li>
+              <h3>Beforest</h3>
+              <strong>Parent Organization</strong>
+              <p>Creates and nurtures regenerative ecosystems where people and nature thrive together</p>
+            </li>
+            <li>
+              <h3>Belong</h3>
+              <strong>Hospitality &amp; Experiences</strong>
+              <p>Nature stays, Earthhomes, Glamping, Wellness, Birding, Nature Walks, Organic Dining</p>
+            </li>
+            <li>
+              <h3>BeWild</h3>
+              <strong>Forest-Friendly Produce</strong>
+              <p>Coffee, Honey, Rice, Spices, Fruits &amp; Vegetables sourced through regenerative farming practices</p>
+            </li>
+            <li>
+              <h3>Regolith</h3>
+              <strong>Architecture, Design &amp; Construction</strong>
+              <p>Sustainable design, ecological architecture, construction, and infrastructure development for Beforest Collectives</p>
+            </li>
+            <li>
+              <h3>Collectives</h3>
+              <strong>Living Ecosystems</strong>
+              <p>Destinations where hospitality, farming, conservation, architecture, and community come together</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="slide-8" class="slide slide-founders" aria-label="Slide 8: Founders">
         <div class="founders-title">
           <h2>FOUNDERS</h2>
         </div>
@@ -1923,7 +2283,7 @@ h1 {
           </article>
 
           <article class="founder-card">
-            <img src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/founder-shruti.png" alt="Shruti Ajmera Reddy" />
+            <img class="founder-shruti-photo" src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/founder-shruti.png" alt="Shruti Ajmera Reddy" />
             <div>
               <h3>Shruti Ajmera Reddy</h3>
               <p>CEO - Founder Bewild</p>
@@ -1932,7 +2292,7 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-8" class="slide slide-vision" aria-label="Slide 8: Our vision and mission">
+      <section id="slide-9" class="slide slide-vision" aria-label="Slide 9: Our vision and mission">
         <header class="vision-title">
           <h2>OUR VISION AND MISSION</h2>
         </header>
@@ -1950,7 +2310,7 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-9" class="slide slide-values" aria-label="Slide 9: Company culture and values">
+      <section id="slide-10" class="slide slide-values" aria-label="Slide 10: Company culture and values">
         <header class="values-title">
           <h2>COMPANY CULTURE &amp; VALUES</h2>
         </header>
@@ -1970,7 +2330,7 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-10" class="slide slide-values" aria-label="Slide 10: Company culture and values continued">
+      <section id="slide-11" class="slide slide-values" aria-label="Slide 11: Company culture and values continued">
         <header class="values-title">
           <h2>COMPANY CULTURE &amp; VALUES</h2>
         </header>
@@ -1990,7 +2350,7 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-11" class="slide slide-value-focus" aria-label="Slide 11: Commitment to impact">
+      <section id="slide-12" class="slide slide-value-focus" aria-label="Slide 12: Commitment to impact">
         <header class="value-focus-title">
           <h2>COMPANY CULTURE &amp; VALUES</h2>
         </header>
@@ -2002,11 +2362,18 @@ h1 {
         </article>
       </section>
 
-      <section id="slide-12" class="slide slide-returns" aria-label="Slide 12: Company culture and values four returns">
+      <section id="slide-13" class="slide slide-returns" aria-label="Slide 13: Company culture and values four returns">
         <header class="returns-title">
           <h2>COMPANY CULTURE &amp; VALUES</h2>
           <p>4 Returns</p>
         </header>
+
+        <figure class="returns-visual">
+          <img
+            src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/ChatGPT%20Image%20Jun%206,%202026,%2006_57_57%20PM.png"
+            alt="Regenerative landscape illustration"
+          />
+        </figure>
 
         <div class="returns-grid">
           <article>
@@ -2043,29 +2410,22 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-13" class="slide slide-policies" aria-label="Slide 13: Policies and procedures">
+      <section id="slide-14" class="slide slide-policies" aria-label="Slide 14: Policies and procedures">
         <header class="policies-title">
           <h2>POLICIES AND PROCEDURES</h2>
-          <p>Upholding respect, integrity, and professionalism is at the core of our Code of Conduct, ensuring a safe and inclusive workplace.</p>
         </header>
 
         <div class="policy-groups">
           <article>
             <h3>Code of Conduct</h3>
-            <ul>
-              <li>Hiring Policy</li>
-              <li>Referral Policy</li>
-              <li>Disciplinary</li>
-              <li>DEI&amp;B</li>
-              <li>POSH</li>
-              <li>Exit/ separation policy</li>
-            </ul>
+            <p>Upholding respect, integrity, and professionalism is at the core of our Code of Conduct, ensuring a safe and inclusive workplace.</p>
           </article>
 
           <article>
             <h3>Attendance Policy</h3>
             <ul>
-              <li>Work Timings - 5 Working days (HO) &amp; Farm 6 WRD</li>
+              <li>Work days - 5 Working days (HO) &amp; Farm 6 WRD</li>
+              <li>Work Timings: 09:30 AM to 06:30 PM</li>
               <li>Lunch break - 1 hr</li>
               <li>Half Day Leave - 4hrs</li>
               <li>Compensatory request</li>
@@ -2075,7 +2435,7 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-14" class="slide slide-policies" aria-label="Slide 14: More policies and procedures">
+      <section id="slide-15" class="slide slide-policies" aria-label="Slide 15: More policies and procedures">
         <header class="policies-title">
           <h2>POLICIES AND PROCEDURES</h2>
         </header>
@@ -2100,15 +2460,15 @@ h1 {
               <li>Hiring Policy</li>
               <li>Referral Policy</li>
               <li>Disciplinary</li>
-              <li>DEI&amp;B</li>
-              <li>POSH</li>
+              <li>DEI&amp;B (Diversity Equity Inclusion and Belonging)</li>
+              <li>POSH (Prevention of Sexual Harassment)</li>
               <li>Exit/ separation policy</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <section id="slide-15" class="slide slide-organization" aria-label="Slide 15: Organization structures">
+      <section id="slide-16" class="slide slide-organization" aria-label="Slide 16: Organization structures">
         <header class="organization-title">
           <h2>ORGANIZATION STRUCTURES</h2>
         </header>
@@ -2126,7 +2486,7 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-16" class="slide slide-benefits" aria-label="Slide 16: Benefits and perks">
+      <section id="slide-17" class="slide slide-benefits" aria-label="Slide 17: Benefits and perks">
         <header class="benefits-title">
           <h2>BENEFITS AND PERKS</h2>
         </header>
@@ -2142,7 +2502,7 @@ h1 {
         </ul>
       </section>
 
-      <section id="slide-17" class="slide slide-training" aria-label="Slide 17: Training and development">
+      <section id="slide-18" class="slide slide-training" aria-label="Slide 18: Training and development">
         <header class="training-title">
           <h2>TRAINING AND DEVELOPMENT</h2>
         </header>
@@ -2154,13 +2514,13 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-18" class="slide slide-questions" aria-label="Slide 18: Any questions">
+      <section id="slide-19" class="slide slide-questions" aria-label="Slide 19: Any questions">
         <div class="questions-content">
           <h2>ANY QUESTIONS?</h2>
         </div>
       </section>
 
-      <section id="slide-19" class="slide slide-care" aria-label="Slide 19: A call to care">
+      <section id="slide-20" class="slide slide-care" aria-label="Slide 20: A call to care">
         <div class="care-content">
           <p>A Call to Care</p>
           <h2>We are not separate from nature&mdash;we are part of it.</h2>
@@ -2168,7 +2528,7 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-20" class="slide slide-thanks" aria-label="Slide 20: Thank you">
+      <section id="slide-21" class="slide slide-thanks" aria-label="Slide 21: Thank you">
         <div class="thanks-content">
           <h2>Thank you</h2>
         </div>
@@ -2180,7 +2540,7 @@ h1 {
             <path d="M15 18l-6-6 6-6" />
           </svg>
         </button>
-        <span class="nav-count" aria-live="polite">1 / 2</span>
+        <span class="nav-count" aria-live="polite">1 / 21</span>
         <button class="nav-arrow nav-next" type="button" aria-label="Next slide">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M9 6l6 6-6 6" />
@@ -2233,5 +2593,4 @@ slides.forEach((slide) => observer.observe(slide));
     </script>
   </body>
 </html>
-
 

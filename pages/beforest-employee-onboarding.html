@@ -1671,49 +1671,59 @@ h1 {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     align-content: center;
+    justify-items: center;
     gap: 1rem;
-    padding: 7.2% 7.2% 7.2rem;
+    padding: 11.5% 7.2% 7.2rem;
   }
 
   .returns-title {
     display: grid;
-    justify-items: start;
+    width: min(100%, 24rem);
+    justify-items: center;
+    text-align: center;
   }
 
   .returns-title h2 {
-    max-width: 100%;
-    justify-self: start;
-    font-size: clamp(2rem, 6.1vw, 2.55rem);
+    max-width: 10.8ch;
+    justify-self: center;
+    font-size: clamp(1.85rem, 5.6vw, 2.28rem);
     line-height: 0.96;
   }
 
   .returns-title p {
-    justify-self: start;
+    justify-self: center;
     margin-top: 0.38rem;
-    font-size: clamp(1.05rem, 3.15vw, 1.28rem);
+    font-size: clamp(0.98rem, 2.9vw, 1.18rem);
   }
 
   .returns-visual {
     grid-column: auto;
     grid-row: auto;
-    justify-self: start;
-    width: min(100%, 13rem);
-    margin: 0.65rem 0 0;
+    justify-self: center;
+    width: min(68%, 13rem);
+    margin: 0.45rem auto 0;
+    background: transparent;
+    box-shadow: none;
   }
 
   .returns-visual img {
     aspect-ratio: 1.12;
+    filter: brightness(1.1) contrast(1.18) saturate(0.9);
+    mix-blend-mode: multiply;
   }
 
   .returns-grid {
     grid-column: auto;
     grid-row: auto;
+    width: 100%;
+    max-width: 24rem;
     grid-template-columns: 1fr;
     gap: 0;
     border-top: 1px solid rgba(52, 46, 41, 0.14);
   }
 
   .returns-grid article {
+    width: 100%;
     grid-template-columns: 1.2rem minmax(0, 1fr);
     gap: 0.2rem 0.5rem;
     align-items: start;
@@ -1742,6 +1752,7 @@ h1 {
   .returns-grid p {
     grid-column: 2;
     min-width: 0;
+    max-width: 100%;
     font-size: clamp(0.64rem, 1.78vw, 0.76rem);
     line-height: 1.18;
     overflow-wrap: anywhere;
@@ -1879,7 +1890,7 @@ h1 {
 
   .care-content h2 {
     max-width: 100%;
-    font-size: clamp(2.28rem, 7vw, 3rem);
+    font-size: clamp(2.05rem, 6.2vw, 2.65rem);
   }
 
   .slide-care {
@@ -1900,16 +1911,21 @@ h1 {
         rgba(253, 251, 247, 0.96) 72%
       ),
       url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/Conservation%201.jpg");
-    background-position: center;
-    background-size: cover;
+    background-color: var(--off-white);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: auto 82%;
   }
 
   .care-content {
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .care-content > p:last-child {
-    font-size: clamp(0.92rem, 2.65vw, 1.05rem);
+    max-width: 100%;
+    font-size: clamp(0.86rem, 2.5vw, 1rem);
     line-height: 1.32;
   }
 

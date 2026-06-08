@@ -409,8 +409,8 @@ h1 {
 
 .slide-collectives {
   display: grid;
-  grid-template-columns: 38% 1fr;
-  column-gap: 7vw;
+  grid-template-columns: 32% 1fr;
+  column-gap: 3vw;
   align-items: center;
   padding: 7.2%;
   background: var(--off-white);
@@ -427,6 +427,17 @@ h1 {
 
 .collectives-title h2 span {
   display: block;
+}
+
+.collectives-title .collectives-names {
+  justify-content: start;
+  grid-template-columns: repeat(2, max-content);
+  gap: 0.58rem 1.15rem;
+  margin-top: 1.45rem;
+}
+
+.collectives-title .collectives-names li {
+  font-size: clamp(0.95rem, 1.1vw, 1.12rem);
 }
 
 .collectives-list {
@@ -472,7 +483,7 @@ h1 {
   justify-self: center;
   display: grid;
   gap: clamp(0.9rem, 1.8vh, 1.25rem);
-  width: min(100%, 46rem);
+  width: min(100%, 68rem);
 }
 
 .collectives-map {
@@ -496,10 +507,14 @@ h1 {
 .collectives-map img {
   display: block;
   width: 100%;
-  max-height: 58vh;
+  max-height: 78vh;
   clip-path: inset(0 9% 0 0);
   object-fit: contain;
   object-position: center;
+}
+
+.collectives-visual > .collectives-names {
+  display: none;
 }
 
 .collectives-names {
@@ -1498,6 +1513,10 @@ h1 {
     font-size: clamp(2.28rem, 7vw, 3rem);
   }
 
+  .collectives-title .collectives-names {
+    display: none;
+  }
+
   .collectives-list li {
     grid-template-columns: 1.9rem 1fr;
     min-height: 3.05rem;
@@ -1519,6 +1538,7 @@ h1 {
   }
 
   .collectives-names {
+    display: grid;
     grid-template-columns: repeat(2, max-content);
     justify-content: center;
     gap: 0.42rem 0.75rem;
@@ -2238,6 +2258,14 @@ h1 {
       <section id="slide-6" class="slide slide-collectives" aria-label="Slide 6: Our collectives">
         <div class="collectives-title">
           <h2><span>OUR</span><span>COLLECTIVES</span></h2>
+          <ul class="collectives-names" aria-label="Beforest collectives">
+            <li>Hyderabad Collective</li>
+            <li>Mumbai Collective</li>
+            <li>Bhopal Collective</li>
+            <li>Poomaale 1.0 Collective</li>
+            <li>Poomaale 2.0 Collective</li>
+            <li>Hammiyala</li>
+          </ul>
         </div>
 
         <div class="collectives-visual">

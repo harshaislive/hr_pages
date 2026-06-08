@@ -905,6 +905,18 @@ h1 {
   mix-blend-mode: multiply;
 }
 
+.returns-full-visual {
+  grid-column: 2 / 4;
+  grid-row: 1 / span 2;
+  width: min(100%, 58rem);
+}
+
+.returns-full-visual img {
+  aspect-ratio: auto;
+  max-height: 64vh;
+  object-fit: contain;
+}
+
 .returns-grid {
   grid-column: 3;
   grid-row: 1 / span 2;
@@ -1712,6 +1724,18 @@ h1 {
     mix-blend-mode: multiply;
   }
 
+  .returns-full-visual {
+    grid-column: auto;
+    grid-row: auto;
+    width: min(100%, 24rem);
+    margin-top: 0.4rem;
+  }
+
+  .returns-full-visual img {
+    aspect-ratio: auto;
+    max-height: none;
+  }
+
   .returns-grid {
     grid-column: auto;
     grid-row: auto;
@@ -2384,46 +2408,12 @@ h1 {
           <p>4 Returns</p>
         </header>
 
-        <figure class="returns-visual">
+        <figure class="returns-visual returns-full-visual">
           <img
-            src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/ChatGPT%20Image%20Jun%206,%202026,%2006_57_57%20PM.png"
-            alt="Regenerative landscape illustration"
+            src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/4%20Returns.png"
+            alt="Four returns framework"
           />
         </figure>
-
-        <div class="returns-grid">
-          <article>
-            <span class="return-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 21V9" /><path d="M8 13c-3 0-5-2-5-5 3 0 5 2 5 5z" /><path d="M16 11c3 0 5-2 5-5-3 0-5 2-5 5z" /></svg>
-            </span>
-            <h3>Return of Inspiration</h3>
-            <p>Create purpose, inspire people, and nurture a deeper connection with nature and culture.</p>
-          </article>
-
-          <article>
-            <span class="return-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3" /><circle cx="17" cy="9" r="2.5" /><path d="M3 20c.7-4 3-6 5-6s4.3 2 5 6" /><path d="M13 20c.5-3 2.2-4.7 4-4.7 1.6 0 3.2 1.4 4 4.7" /></svg>
-            </span>
-            <h3>Return of Social Capital</h3>
-            <p>Build stronger communities through collaboration, shared learning, and collective growth.</p>
-          </article>
-
-          <article>
-            <span class="return-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 13c4-7 11-8 17-4-3 1-4 4-5 7-3-3-7-3-12-3z" /><path d="M5 19c5-2 9-6 12-10" /></svg>
-            </span>
-            <h3>Return of Natural Capital</h3>
-            <p>Restore ecosystems, enrich soil, conserve water, and increase biodiversity.</p>
-          </article>
-
-          <article>
-            <span class="return-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 19h16" /><path d="M7 16V9" /><path d="M12 16V5" /><path d="M17 16v-4" /><path d="m9 7 3-3 3 3" /></svg>
-            </span>
-            <h3>Return of Financial Capital</h3>
-            <p>Drive sustainable growth through impactful and long-term value creation.</p>
-          </article>
-        </div>
       </section>
 
       <section id="slide-14" class="slide slide-policies" aria-label="Slide 14: Policies and procedures">

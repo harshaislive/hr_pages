@@ -493,22 +493,16 @@ h1 {
 }
 
 .collectives-map::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  width: 9%;
-  background: var(--off-white);
-  content: "";
-  pointer-events: none;
+  display: none;
+  content: none;
 }
 
 .collectives-map img {
   display: block;
   width: 100%;
   max-height: 78vh;
-  clip-path: inset(0 9% 0 0);
+  clip-path: none;
+  mix-blend-mode: multiply;
   object-fit: contain;
   object-position: center;
 }
@@ -2298,14 +2292,6 @@ h1 {
       <section id="slide-6" class="slide slide-collectives" aria-label="Slide 6: Our collectives">
         <div class="collectives-title">
           <h2><span>OUR</span><span>COLLECTIVES</span></h2>
-          <ul class="collectives-names" aria-label="Beforest collectives">
-            <li>Hyderabad Collective</li>
-            <li>Mumbai Collective</li>
-            <li>Bhopal Collective</li>
-            <li>Poomaale 1.0 Collective</li>
-            <li>Poomaale 2.0 Collective</li>
-            <li>Hammiyala</li>
-          </ul>
         </div>
 
         <div class="collectives-visual">
@@ -2315,15 +2301,6 @@ h1 {
               alt="Map of Beforest collectives across India"
             />
           </figure>
-
-          <ul class="collectives-names" aria-label="Beforest collectives">
-            <li>Hyderabad Collective</li>
-            <li>Mumbai Collective</li>
-            <li>Bhopal Collective</li>
-            <li>Poomaale 1.0 Collective</li>
-            <li>Poomaale 2.0 Collective</li>
-            <li>Hammiyala</li>
-          </ul>
         </div>
       </section>
 

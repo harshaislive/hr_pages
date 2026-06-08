@@ -186,7 +186,17 @@ h1 {
   display: grid;
   grid-template-columns: 1fr;
   align-items: stretch;
-  background: var(--off-white);
+  background:
+    linear-gradient(
+      90deg,
+      rgba(253, 251, 247, 0.94) 0%,
+      rgba(253, 251, 247, 0.78) 38%,
+      rgba(253, 251, 247, 0.32) 68%,
+      rgba(253, 251, 247, 0.08) 100%
+    ),
+    url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/PBR_5961.JPG");
+  background-position: center;
+  background-size: cover;
   color: var(--dark-earth);
 }
 

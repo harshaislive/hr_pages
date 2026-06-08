@@ -1431,8 +1431,15 @@ h1 {
   .slide-process {
     grid-template-rows: auto auto auto;
     align-content: center;
+    justify-items: center;
     gap: 0.78rem;
     padding: 3rem 8.2% 7.2rem;
+  }
+
+  .process-header,
+  .process-list {
+    width: min(100%, 24rem);
+    justify-self: center;
   }
 
   .process-header h2 {
@@ -1495,10 +1502,11 @@ h1 {
   }
 
   .process-note {
-    justify-self: start;
+    width: min(100%, 24rem);
+    justify-self: center;
     margin-top: 0;
     font-size: clamp(0.82rem, 2.35vw, 0.96rem);
-    text-align: left;
+    text-align: center;
   }
 
   .slide-collectives {
@@ -1555,8 +1563,15 @@ h1 {
   .slide-beecoverse {
     grid-template-columns: 1fr;
     align-content: center;
+    justify-items: center;
     gap: 1.1rem;
     padding: 7.2% 7.2% 7.2rem;
+  }
+
+  .beecoverse-title,
+  .beecoverse-content {
+    width: min(100%, 24rem);
+    justify-self: center;
   }
 
   .beecoverse-title h2 {
@@ -1595,8 +1610,15 @@ h1 {
   .slide-founders {
     grid-template-rows: auto auto;
     align-content: center;
+    justify-items: center;
     row-gap: 1.8rem;
     padding: 7.2%;
+  }
+
+  .founders-title,
+  .founder-roster {
+    width: min(100%, 24rem);
+    justify-self: center;
   }
 
   .founders-title h2 {
@@ -1809,8 +1831,15 @@ h1 {
   .slide-policies {
     grid-template-rows: auto auto;
     align-content: center;
+    justify-items: center;
     gap: 1.05rem;
     padding: 7.2% 7.2% 7.2rem;
+  }
+
+  .policies-title,
+  .policy-groups {
+    width: min(100%, 24rem);
+    justify-self: center;
   }
 
   .policies-title h2 {
@@ -1913,8 +1942,15 @@ h1 {
   .slide-training {
     grid-template-rows: auto auto;
     align-content: center;
+    justify-items: center;
     gap: 2.2rem;
     padding: 7.2%;
+  }
+
+  .training-title,
+  .training-copy {
+    width: min(100%, 24rem);
+    justify-self: center;
   }
 
   .training-title h2 {

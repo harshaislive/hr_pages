@@ -542,13 +542,21 @@ h1 {
 .slide-beecoverse {
   display: grid;
   grid-template-columns: 34% 1fr;
-  column-gap: 6vw;
+  grid-template-rows: auto auto;
+  gap: clamp(1rem, 2.4vh, 1.6rem) 6vw;
   align-items: center;
   padding: 6.4% 7.2%;
   background: var(--off-white);
 }
 
+.beecoverse-title {
+  display: contents;
+}
+
 .beecoverse-title h2 {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: center;
   margin: 0;
   color: var(--rich-red);
   font-size: clamp(3rem, 5.1vw, 5.4rem);
@@ -562,8 +570,11 @@ h1 {
 }
 
 .beecoverse-title p {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
   max-width: 24rem;
-  margin: 1.35rem 0 0;
+  margin: 0;
   color: var(--forest-green);
   font-size: clamp(1rem, 1.28vw, 1.18rem);
   font-weight: 300;
@@ -571,6 +582,8 @@ h1 {
 }
 
 .beecoverse-content {
+  grid-column: 2;
+  grid-row: 2;
   display: grid;
   gap: clamp(1rem, 2vh, 1.4rem);
 }
@@ -859,7 +872,7 @@ h1 {
 .slide-returns {
   display: grid;
   grid-template-columns: 28% 28% 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto 1fr;
   column-gap: clamp(2.2rem, 4vw, 4.5rem);
   align-items: center;
   padding: 6.2% 7.2% 7%;
@@ -867,14 +880,13 @@ h1 {
 }
 
 .returns-title {
-  grid-column: 1;
-  grid-row: 1 / span 2;
-  display: grid;
-  align-self: center;
-  justify-items: start;
+  display: contents;
 }
 
 .returns-title h2 {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: center;
   margin: 0;
   max-width: 8.5ch;
   color: var(--rich-red);
@@ -885,7 +897,10 @@ h1 {
 }
 
 .returns-title p {
-  margin: clamp(0.55rem, 1.1vh, 0.8rem) 0 0;
+  grid-column: 2 / 4;
+  grid-row: 1;
+  align-self: end;
+  margin: 0 0 clamp(0.6rem, 1.2vh, 0.9rem);
   color: var(--forest-green);
   font-size: clamp(1.35rem, 1.9vw, 1.9rem);
   font-weight: 300;
@@ -916,7 +931,7 @@ h1 {
 
 .returns-full-visual {
   grid-column: 2 / 4;
-  grid-row: 1 / span 2;
+  grid-row: 2;
   width: min(100%, 58rem);
 }
 
@@ -1569,6 +1584,10 @@ h1 {
     justify-self: center;
   }
 
+  .beecoverse-title {
+    display: block;
+  }
+
   .beecoverse-title h2 {
     font-size: clamp(2.28rem, 7vw, 3rem);
   }
@@ -1737,6 +1756,8 @@ h1 {
   }
 
   .returns-title h2 {
+    grid-column: auto;
+    grid-row: auto;
     max-width: 10.8ch;
     justify-self: center;
     font-size: clamp(1.85rem, 5.6vw, 2.28rem);
@@ -1744,6 +1765,8 @@ h1 {
   }
 
   .returns-title p {
+    grid-column: auto;
+    grid-row: auto;
     justify-self: center;
     margin-top: 0.38rem;
     font-size: clamp(0.98rem, 2.9vw, 1.18rem);

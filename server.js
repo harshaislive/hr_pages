@@ -119,7 +119,10 @@ const server = http.createServer((req, res) => {
       if (normalizePasscode(body.get("pass") || "") === passcode) {
         res.writeHead(302, {
           Location: "/",
-          "Set-Cookie": `hr_pages=${sessionToken}; Path=/; HttpOnly; SameSite=Lax`
+          "Set-Cookie": [
+            `hr_pages=${sessionToken}; Path=/; HttpOnly; SameSite=Lax`,
+            "hr_pages_client=ok; Path=/; SameSite=Lax"
+          ]
         });
         res.end();
         return;
@@ -133,7 +136,10 @@ const server = http.createServer((req, res) => {
   if (req.url === "/logout") {
     res.writeHead(302, {
       Location: "/",
-      "Set-Cookie": "hr_pages=; Path=/; Max-Age=0; HttpOnly; SameSite=Lax"
+      "Set-Cookie": [
+        "hr_pages=; Path=/; Max-Age=0; HttpOnly; SameSite=Lax",
+        "hr_pages_client=; Path=/; Max-Age=0; SameSite=Lax"
+      ]
     });
     res.end();
     return;

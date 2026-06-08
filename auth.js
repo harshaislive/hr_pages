@@ -2,6 +2,12 @@
   var configuredPass = "hr@beforest";
   var sessionKey = "hr_pages_auth";
 
+  function hasServerSession() {
+    return document.cookie.split(";").some(function (cookie) {
+      return cookie.trim() === "hr_pages_client=ok";
+    });
+  }
+
   function showLogin() {
     document.body.innerHTML = [
       '<main class="login-shell">',
@@ -45,7 +51,7 @@
     });
   }
 
-  if (sessionStorage.getItem(sessionKey) !== "ok") {
+  if (!hasServerSession() && sessionStorage.getItem(sessionKey) !== "ok") {
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", showLogin);
     } else {

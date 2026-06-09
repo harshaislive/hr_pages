@@ -1349,10 +1349,10 @@ h1 {
 
 .slide-thanks {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(24rem, 0.92fr);
-  gap: clamp(2rem, 4vw, 5rem);
+  grid-template-columns: minmax(0, 52vw) minmax(0, 48vw);
+  gap: 0;
   align-items: stretch;
-  padding: 5.2% 6%;
+  padding: 0;
   background: var(--off-white);
 }
 
@@ -1370,16 +1370,18 @@ h1 {
   align-content: center;
   justify-items: start;
   gap: clamp(1rem, 2vh, 1.45rem);
+  padding: 7vh clamp(3rem, 5vw, 5.5rem);
   text-align: left;
 }
 
 .thanks-content h2 {
   margin: 0;
   color: var(--rich-red);
-  font-size: clamp(4.2rem, 9vw, 9.5rem);
+  font-size: clamp(4.2rem, 8vw, 8.4rem);
   font-weight: 300;
   line-height: 0.92;
   letter-spacing: 0;
+  white-space: nowrap;
 }
 
 .questions-content p {
@@ -2130,8 +2132,8 @@ h1 {
   .slide-thanks {
     grid-template-columns: 1fr;
     align-content: start;
-    gap: 1.4rem;
-    padding: 8% 8.5%;
+    gap: 0;
+    padding: 0;
   }
 
   .thanks-image {
@@ -2141,6 +2143,7 @@ h1 {
 
   .thanks-content {
     justify-items: center;
+    padding: 1.6rem 8.5% 4rem;
     text-align: center;
   }
 

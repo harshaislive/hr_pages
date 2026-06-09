@@ -1263,6 +1263,9 @@ h1 {
 }
 
 .questions-content {
+  display: grid;
+  justify-items: center;
+  gap: clamp(1rem, 2vh, 1.4rem);
   text-align: center;
 }
 
@@ -1373,6 +1376,15 @@ h1 {
   font-weight: 300;
   line-height: 0.92;
   letter-spacing: 0;
+}
+
+.questions-content p {
+  max-width: 48rem;
+  margin: 0;
+  color: #000000;
+  font-size: clamp(1.1rem, 1.55vw, 1.42rem);
+  font-weight: 300;
+  line-height: 1.32;
 }
 
 .thanks-contact {
@@ -2059,6 +2071,12 @@ h1 {
     font-size: clamp(2.28rem, 7vw, 3rem);
   }
 
+  .questions-content p {
+    max-width: 19rem;
+    font-size: clamp(0.86rem, 2.5vw, 1rem);
+    line-height: 1.34;
+  }
+
   .care-content h2 {
     max-width: 100%;
     font-size: clamp(2.05rem, 6.2vw, 2.65rem);
@@ -2665,7 +2683,8 @@ h1 {
 
       <section id="slide-19" class="slide slide-questions" aria-label="Slide 19: Any questions">
         <div class="questions-content">
-          <h2>ANY QUESTIONS?</h2>
+          <h2>LET'S GROW TOGETHER</h2>
+          <p>We're excited to learn, build, and grow alongside you. Questions are always welcome.</p>
         </div>
       </section>
 

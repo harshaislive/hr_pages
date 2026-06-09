@@ -431,10 +431,10 @@ h1 {
 
 .slide-collectives {
   display: grid;
-  grid-template-columns: 32% 1fr;
-  column-gap: 3vw;
+  grid-template-columns: 25% minmax(0, 1fr);
+  column-gap: 1.8vw;
   align-items: center;
-  padding: 7.2%;
+  padding: 4.8% 4%;
   background: var(--off-white);
 }
 
@@ -502,10 +502,10 @@ h1 {
 }
 
 .collectives-visual {
-  justify-self: center;
+  justify-self: stretch;
   display: grid;
   gap: clamp(0.9rem, 1.8vh, 1.25rem);
-  width: min(118%, 86rem);
+  width: 100%;
 }
 
 .collectives-map {
@@ -522,7 +522,7 @@ h1 {
 .collectives-map img {
   display: block;
   width: 100%;
-  max-height: 86vh;
+  max-height: 90vh;
   clip-path: none;
   mix-blend-mode: multiply;
   object-fit: contain;

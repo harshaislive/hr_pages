@@ -1349,7 +1349,7 @@ h1 {
 
 .slide-thanks {
   display: grid;
-  grid-template-columns: minmax(0, 52vw) minmax(0, 48vw);
+  grid-template-columns: minmax(0, 51vw) minmax(0, 49vw);
   gap: 0;
   align-items: stretch;
   padding: 0;
@@ -1357,12 +1357,18 @@ h1 {
 }
 
 .thanks-image {
-  min-height: 100%;
-  border-radius: 0;
-  background-image: url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/1000099562.jpg.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.thanks-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .thanks-content {
@@ -1377,7 +1383,7 @@ h1 {
 .thanks-content h2 {
   margin: 0;
   color: var(--rich-red);
-  font-size: clamp(4.2rem, 8vw, 8.4rem);
+  font-size: clamp(3.8rem, 6.6vw, 6.9rem);
   font-weight: 300;
   line-height: 0.92;
   letter-spacing: 0;
@@ -2137,8 +2143,8 @@ h1 {
   }
 
   .thanks-image {
-    min-height: 44vh;
-    background-size: cover;
+    height: 52vh;
+    min-height: 52vh;
   }
 
   .thanks-content {
@@ -2722,9 +2728,14 @@ h1 {
       </section>
 
       <section id="slide-21" class="slide slide-thanks" aria-label="Slide 21: Thank you">
-        <div class="thanks-image" aria-hidden="true"></div>
+        <div class="thanks-image" aria-hidden="true">
+          <img
+            src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/1000099562.jpg.jpeg"
+            alt=""
+          />
+        </div>
         <div class="thanks-content">
-          <h2>Thank you</h2>
+          <h2>Thank&nbsp;you</h2>
           <div class="thanks-contact">
             <p>
               For any questions or additional information, please reach out to us at

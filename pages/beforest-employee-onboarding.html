@@ -1347,26 +1347,28 @@ h1 {
 
 .slide-thanks {
   display: grid;
-  place-items: center;
-  padding: 7.2%;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(253, 251, 247, 0.9) 0%,
-      rgba(253, 251, 247, 0.72) 48%,
-      rgba(253, 251, 247, 0.9) 100%
-    ),
-    url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/1000099562.jpg.jpeg");
+  grid-template-columns: minmax(0, 1.08fr) minmax(24rem, 0.92fr);
+  gap: clamp(2rem, 4vw, 5rem);
+  align-items: stretch;
+  padding: 5.2% 6%;
+  background: var(--off-white);
+}
+
+.thanks-image {
+  min-height: 100%;
+  border-radius: 0;
+  background-image: url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/1000099562.jpg.jpeg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: auto 92%;
+  background-size: cover;
 }
 
 .thanks-content {
   display: grid;
-  justify-items: center;
+  align-content: center;
+  justify-items: start;
   gap: clamp(1rem, 2vh, 1.45rem);
-  text-align: center;
+  text-align: left;
 }
 
 .thanks-content h2 {
@@ -1390,7 +1392,7 @@ h1 {
 .thanks-contact {
   display: grid;
   gap: 0.72rem;
-  max-width: 46rem;
+  max-width: 34rem;
   margin: 0;
   color: #000000;
   font-size: clamp(1.05rem, 1.45vw, 1.34rem);
@@ -2122,6 +2124,23 @@ h1 {
     font-size: clamp(2.28rem, 7vw, 3rem);
   }
 
+  .slide-thanks {
+    grid-template-columns: 1fr;
+    align-content: start;
+    gap: 1.4rem;
+    padding: 8% 8.5%;
+  }
+
+  .thanks-image {
+    min-height: 44vh;
+    background-size: cover;
+  }
+
+  .thanks-content {
+    justify-items: center;
+    text-align: center;
+  }
+
   .thanks-contact {
     max-width: 19rem;
     font-size: clamp(0.86rem, 2.5vw, 1rem);
@@ -2697,6 +2716,7 @@ h1 {
       </section>
 
       <section id="slide-21" class="slide slide-thanks" aria-label="Slide 21: Thank you">
+        <div class="thanks-image" aria-hidden="true"></div>
         <div class="thanks-content">
           <h2>Thank you</h2>
           <div class="thanks-contact">

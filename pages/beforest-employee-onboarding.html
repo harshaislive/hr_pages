@@ -565,15 +565,15 @@ h1 {
 
 .slide-collective-gallery {
   display: grid;
-  grid-template-columns: 25% minmax(0, 1fr);
-  column-gap: 4vw;
+  grid-template-columns: minmax(28rem, 30rem) minmax(0, 1fr);
+  column-gap: clamp(2rem, 3vw, 3.5rem);
   align-items: center;
   padding: 5.4% 6.2%;
   background: var(--off-white);
 }
 
 .collective-gallery-title h2 {
-  max-width: 9ch;
+  max-width: 100%;
   margin: 0;
   color: var(--rich-red);
   font-size: 60px;

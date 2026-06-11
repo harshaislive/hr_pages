@@ -629,6 +629,17 @@ h1 {
   content: "Image placeholder";
 }
 
+.collective-placeholder.has-image::before {
+  content: none;
+}
+
+.collective-placeholder img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .collective-gallery-card h3 {
   margin: 0;
   color: var(--forest-green);
@@ -2606,27 +2617,57 @@ h1 {
 
         <ul class="collective-gallery-grid" aria-label="Beforest collective image placeholders">
           <li class="collective-gallery-card">
-            <div class="collective-placeholder" data-placeholder="hyderabad"></div>
+            <div class="collective-placeholder has-image" data-placeholder="hyderabad">
+              <img
+                src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/Hyderabad%20Collective.png"
+                alt="Hyderabad Collective"
+              />
+            </div>
             <h3>Hyderabad Collective</h3>
           </li>
           <li class="collective-gallery-card">
-            <div class="collective-placeholder" data-placeholder="mumbai"></div>
+            <div class="collective-placeholder has-image" data-placeholder="mumbai">
+              <img
+                src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/mumbai%2001.jpg"
+                alt="Mumbai Collective"
+              />
+            </div>
             <h3>Mumbai Collective</h3>
           </li>
           <li class="collective-gallery-card">
-            <div class="collective-placeholder" data-placeholder="bhopal"></div>
+            <div class="collective-placeholder has-image" data-placeholder="bhopal">
+              <img
+                src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/Bhopal%20Collective.jpg"
+                alt="Bhopal Collective"
+              />
+            </div>
             <h3>Bhopal Collective</h3>
           </li>
           <li class="collective-gallery-card">
-            <div class="collective-placeholder" data-placeholder="poomaale-1"></div>
+            <div class="collective-placeholder has-image" data-placeholder="poomaale-1">
+              <img
+                src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/Poomaale%20Collective.png"
+                alt="Poomaale 1.0 Collective"
+              />
+            </div>
             <h3>Poomaale 1.0 Collective</h3>
           </li>
           <li class="collective-gallery-card">
-            <div class="collective-placeholder" data-placeholder="poomaale-2"></div>
+            <div class="collective-placeholder has-image" data-placeholder="poomaale-2">
+              <img
+                src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/Poomaale%202.0%20Collective.png"
+                alt="Poomaale 2.0 Collective"
+              />
+            </div>
             <h3>Poomaale 2.0 Collective</h3>
           </li>
           <li class="collective-gallery-card">
-            <div class="collective-placeholder" data-placeholder="hammiyala"></div>
+            <div class="collective-placeholder has-image" data-placeholder="hammiyala">
+              <img
+                src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/Hammiyala%20Collective.png"
+                alt="Hammiyala Collective"
+              />
+            </div>
             <h3>Hammiyala</h3>
           </li>
         </ul>

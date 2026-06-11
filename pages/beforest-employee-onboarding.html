@@ -563,6 +563,80 @@ h1 {
   content: "";
 }
 
+.slide-collective-gallery {
+  display: grid;
+  grid-template-columns: 25% minmax(0, 1fr);
+  column-gap: 4vw;
+  align-items: center;
+  padding: 5.4% 6.2%;
+  background: var(--off-white);
+}
+
+.collective-gallery-title h2 {
+  max-width: 9ch;
+  margin: 0;
+  color: var(--rich-red);
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.collective-gallery-title h2 span {
+  display: block;
+}
+
+.collective-gallery-title p {
+  max-width: 17rem;
+  margin: 1rem 0 0;
+  color: var(--forest-green);
+  font-size: clamp(0.95rem, 1.18vw, 1.12rem);
+  font-weight: 300;
+  line-height: 1.28;
+}
+
+.collective-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 1.7vw, 1.55rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.collective-gallery-card {
+  display: grid;
+  gap: 0.58rem;
+  min-width: 0;
+}
+
+.collective-placeholder {
+  display: grid;
+  aspect-ratio: 1.35;
+  place-items: center;
+  border: 1px solid rgba(52, 46, 41, 0.18);
+  background:
+    linear-gradient(135deg, rgba(52, 71, 54, 0.08), rgba(134, 49, 43, 0.05)),
+    rgba(253, 251, 247, 0.82);
+}
+
+.collective-placeholder::before {
+  color: rgba(52, 71, 54, 0.62);
+  font-size: clamp(0.78rem, 0.95vw, 0.9rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  content: "Image placeholder";
+}
+
+.collective-gallery-card h3 {
+  margin: 0;
+  color: var(--forest-green);
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
 .slide-beecoverse {
   display: grid;
   grid-template-columns: 34% 1fr;
@@ -1688,6 +1762,51 @@ h1 {
     font-size: clamp(0.72rem, 2vw, 0.82rem);
   }
 
+  .slide-collective-gallery {
+    grid-template-columns: 1fr;
+    align-content: center;
+    justify-items: center;
+    gap: 1rem;
+    padding: 7.2%;
+  }
+
+  .collective-gallery-title,
+  .collective-gallery-grid {
+    width: min(100%, 24rem);
+    justify-self: center;
+  }
+
+  .collective-gallery-title h2 {
+    max-width: 100%;
+    font-size: clamp(2.28rem, 7vw, 3rem);
+  }
+
+  .collective-gallery-title p {
+    max-width: 100%;
+    margin-top: 0.55rem;
+    font-size: clamp(0.78rem, 2.2vw, 0.9rem);
+  }
+
+  .collective-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 0.72rem;
+    max-height: 55vh;
+    overflow-y: auto;
+    padding-right: 0.25rem;
+  }
+
+  .collective-gallery-card {
+    gap: 0.38rem;
+  }
+
+  .collective-placeholder {
+    aspect-ratio: 1.7;
+  }
+
+  .collective-gallery-card h3 {
+    font-size: clamp(0.86rem, 2.5vw, 1rem);
+  }
+
   .slide-beecoverse {
     grid-template-columns: 1fr;
     align-content: center;
@@ -2479,7 +2598,41 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-7" class="slide slide-beecoverse" aria-label="Slide 7: The Beecoverse">
+      <section id="slide-7" class="slide slide-collective-gallery" aria-label="Slide 7: Collective gallery">
+        <header class="collective-gallery-title">
+          <h2><span>COLLECTIVE</span><span>LANDSCAPES</span></h2>
+          <p>Six living landscapes across the Beforest ecosystem.</p>
+        </header>
+
+        <ul class="collective-gallery-grid" aria-label="Beforest collective image placeholders">
+          <li class="collective-gallery-card">
+            <div class="collective-placeholder" data-placeholder="hyderabad"></div>
+            <h3>Hyderabad Collective</h3>
+          </li>
+          <li class="collective-gallery-card">
+            <div class="collective-placeholder" data-placeholder="mumbai"></div>
+            <h3>Mumbai Collective</h3>
+          </li>
+          <li class="collective-gallery-card">
+            <div class="collective-placeholder" data-placeholder="bhopal"></div>
+            <h3>Bhopal Collective</h3>
+          </li>
+          <li class="collective-gallery-card">
+            <div class="collective-placeholder" data-placeholder="poomaale-1"></div>
+            <h3>Poomaale 1.0 Collective</h3>
+          </li>
+          <li class="collective-gallery-card">
+            <div class="collective-placeholder" data-placeholder="poomaale-2"></div>
+            <h3>Poomaale 2.0 Collective</h3>
+          </li>
+          <li class="collective-gallery-card">
+            <div class="collective-placeholder" data-placeholder="hammiyala"></div>
+            <h3>Hammiyala</h3>
+          </li>
+        </ul>
+      </section>
+
+      <section id="slide-8" class="slide slide-beecoverse" aria-label="Slide 8: The Beecoverse">
         <header class="beecoverse-title">
           <h2><span>THE</span><span>BeECOVERSE</span></h2>
         </header>
@@ -2517,7 +2670,7 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-8" class="slide slide-founders" aria-label="Slide 8: Founders">
+      <section id="slide-9" class="slide slide-founders" aria-label="Slide 9: Founders">
         <div class="founders-title">
           <h2>FOUNDERS</h2>
         </div>
@@ -2551,7 +2704,7 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-9" class="slide slide-vision" aria-label="Slide 9: Our vision and mission">
+      <section id="slide-10" class="slide slide-vision" aria-label="Slide 10: Our vision and mission">
         <header class="vision-title">
           <h2>OUR VISION AND MISSION</h2>
         </header>
@@ -2569,7 +2722,7 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-10" class="slide slide-values" aria-label="Slide 10: Company culture and values">
+      <section id="slide-11" class="slide slide-values" aria-label="Slide 11: Company culture and values">
         <header class="values-title">
           <h2>COMPANY CULTURE &amp; VALUES</h2>
         </header>
@@ -2589,7 +2742,7 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-11" class="slide slide-values" aria-label="Slide 11: Company culture and values continued">
+      <section id="slide-12" class="slide slide-values" aria-label="Slide 12: Company culture and values continued">
         <header class="values-title">
           <h2>COMPANY CULTURE &amp; VALUES</h2>
         </header>
@@ -2609,7 +2762,7 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-12" class="slide slide-value-focus" aria-label="Slide 12: Commitment to impact">
+      <section id="slide-13" class="slide slide-value-focus" aria-label="Slide 13: Commitment to impact">
         <header class="value-focus-title">
           <h2>COMPANY CULTURE &amp; VALUES</h2>
         </header>
@@ -2621,7 +2774,7 @@ h1 {
         </article>
       </section>
 
-      <section id="slide-13" class="slide slide-returns" aria-label="Slide 13: Company culture and values four returns">
+      <section id="slide-14" class="slide slide-returns" aria-label="Slide 14: Company culture and values four returns">
         <header class="returns-title">
           <h2>COMPANY CULTURE &amp; VALUES</h2>
           <p>4 Returns</p>
@@ -2635,7 +2788,7 @@ h1 {
         </figure>
       </section>
 
-      <section id="slide-14" class="slide slide-policies" aria-label="Slide 14: Policies and procedures">
+      <section id="slide-15" class="slide slide-policies" aria-label="Slide 15: Policies and procedures">
         <header class="policies-title">
           <h2>POLICIES AND PROCEDURES</h2>
         </header>
@@ -2660,7 +2813,7 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-15" class="slide slide-policies" aria-label="Slide 15: More policies and procedures">
+      <section id="slide-16" class="slide slide-policies" aria-label="Slide 16: More policies and procedures">
         <header class="policies-title">
           <h2>POLICIES AND PROCEDURES</h2>
         </header>
@@ -2693,7 +2846,7 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-16" class="slide slide-organization" aria-label="Slide 16: Organization structures">
+      <section id="slide-17" class="slide slide-organization" aria-label="Slide 17: Organization structures">
         <header class="organization-title">
           <h2>ORGANIZATION STRUCTURES</h2>
         </header>
@@ -2711,7 +2864,7 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-17" class="slide slide-benefits" aria-label="Slide 17: Benefits and perks">
+      <section id="slide-18" class="slide slide-benefits" aria-label="Slide 18: Benefits and perks">
         <header class="benefits-title">
           <h2>BENEFITS AND PERKS</h2>
         </header>
@@ -2727,7 +2880,7 @@ h1 {
         </ul>
       </section>
 
-      <section id="slide-18" class="slide slide-training" aria-label="Slide 18: Training and development">
+      <section id="slide-19" class="slide slide-training" aria-label="Slide 19: Training and development">
         <header class="training-title">
           <h2>TRAINING AND DEVELOPMENT</h2>
         </header>
@@ -2739,14 +2892,14 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-19" class="slide slide-questions" aria-label="Slide 19: Any questions">
+      <section id="slide-20" class="slide slide-questions" aria-label="Slide 20: Let's grow together">
         <div class="questions-content">
           <h2>LET'S GROW TOGETHER</h2>
           <p>We're excited to learn, build, and grow alongside you.<br />Questions are always welcome.</p>
         </div>
       </section>
 
-      <section id="slide-20" class="slide slide-care" aria-label="Slide 20: A call to care">
+      <section id="slide-21" class="slide slide-care" aria-label="Slide 21: A call to care">
         <div class="care-content">
           <p>A Call to Care</p>
           <h2>We are not separate from nature&mdash;we are part of it.</h2>
@@ -2754,7 +2907,7 @@ h1 {
         </div>
       </section>
 
-      <section id="slide-21" class="slide slide-thanks" aria-label="Slide 21: Thank you">
+      <section id="slide-22" class="slide slide-thanks" aria-label="Slide 22: Thank you">
         <div class="thanks-image" aria-hidden="true">
           <img
             src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/1000099562.jpg.jpeg"
@@ -2782,7 +2935,7 @@ h1 {
             <path d="M15 18l-6-6 6-6" />
           </svg>
         </button>
-        <span class="nav-count" aria-live="polite">1 / 21</span>
+        <span class="nav-count" aria-live="polite">1 / 22</span>
         <button class="nav-arrow nav-next" type="button" aria-label="Next slide">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M9 6l6 6-6 6" />

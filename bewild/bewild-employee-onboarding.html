@@ -1,0 +1,3335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bewild New Employee Onboarding</title>
+    <link rel="icon" href="data:," />
+    <link
+      rel="preload"
+      href="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Light.e9c1597c.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Regular.cbcc518c.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <style>
+      @font-face {
+        font-family: "ABC Arizona Flare";
+        src: url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Light.e9c1597c.woff2") format("woff2");
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "ABC Arizona Flare";
+        src: url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Regular.cbcc518c.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        --dark-earth: #342e29;
+        --rich-red: #86312b;
+        --forest-green: #344736;
+        --off-white: #fdfbf7;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        overflow: hidden;
+        background: var(--off-white);
+        color: var(--dark-earth);
+        font-family: "ABC Arizona Flare", Georgia, serif;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .deck {
+        display: flex;
+        width: max-content;
+        min-width: 100vw;
+        height: 100dvh;
+        overflow: hidden;
+        background: var(--off-white);
+        transition: transform 720ms cubic-bezier(0.19, 1, 0.22, 1);
+        will-change: transform;
+      }
+
+      .slide {
+        position: relative;
+        flex: 0 0 100vw;
+        width: 100vw;
+        height: 100dvh;
+        overflow: hidden;
+        isolation: isolate;
+        background: var(--off-white);
+      }
+
+      .slide-cover {
+        background-image: url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/bewild-cover-v1.png");
+        background-position: center;
+        background-size: cover;
+      }
+
+      .slide-cover::after {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(253, 251, 247, 0.2) 0%,
+          rgba(253, 251, 247, 0.06) 43%,
+          rgba(253, 251, 247, 0) 67%
+        );
+        content: "";
+        pointer-events: none;
+      }
+
+      .cover-copy {
+        position: absolute;
+        top: 50%;
+        left: 7.2%;
+        width: min(42rem, 43vw);
+        transform: translateY(-50%);
+        animation: cover-enter 800ms cubic-bezier(0.19, 1, 0.22, 1) both;
+      }
+
+      .bewild-logo {
+        display: block;
+        width: clamp(9rem, 13vw, 13rem);
+        height: auto;
+        margin: 0 0 1.35rem;
+        object-fit: contain;
+      }
+
+      .cover-copy h1 {
+        max-width: 10.5ch;
+        margin: 0;
+        color: var(--rich-red);
+        font-size: 65px;
+        font-weight: 300;
+        line-height: 0.98;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        text-wrap: balance;
+      }
+
+      .slide-welcome {
+        display: grid;
+        grid-template-columns: 56% 44%;
+        background: var(--off-white);
+      }
+
+      .welcome-copy {
+        align-self: center;
+        max-width: 52rem;
+        padding: 6.5vw 6vw 6.5vw 7.2vw;
+      }
+
+      .welcome-copy h2 {
+        margin: 0 0 1.65rem;
+        color: var(--rich-red);
+        font-size: 60px;
+        font-weight: 300;
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      .welcome-lead,
+      .welcome-text {
+        margin: 0;
+        font-weight: 300;
+      }
+
+      .welcome-lead {
+        max-width: 33ch;
+        margin-bottom: 1.25rem;
+        color: var(--forest-green);
+        font-size: clamp(1.55rem, 2vw, 2rem);
+        line-height: 1.24;
+      }
+
+      .welcome-text {
+        max-width: 48rem;
+        color: #000000;
+        font-size: clamp(1.15rem, 1.55vw, 1.55rem);
+        line-height: 1.48;
+      }
+
+      .welcome-text + .welcome-text {
+        margin-top: 0.9rem;
+      }
+
+      .welcome-image {
+        position: relative;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      .welcome-image::before {
+        position: absolute;
+        z-index: 1;
+        inset: 0 auto 0 0;
+        width: 12%;
+        background: linear-gradient(90deg, var(--off-white), transparent);
+        content: "";
+        pointer-events: none;
+      }
+
+      .welcome-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 63% center;
+      }
+
+      .slide-agenda {
+        display: grid;
+        grid-template-columns: 42% 1fr;
+        column-gap: 4vw;
+        align-content: center;
+        align-items: center;
+        padding: clamp(2.5rem, 6vh, 5rem) 7.2vw;
+        background: var(--off-white);
+      }
+
+      .agenda-heading {
+        align-self: center;
+      }
+
+      .agenda-heading h2 {
+        max-width: 6.2ch;
+        margin: 0;
+        color: var(--rich-red);
+        font-size: 60px;
+        font-weight: 300;
+        line-height: 0.9;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        text-wrap: balance;
+      }
+
+      .agenda-list {
+        display: grid;
+        gap: 0;
+        width: min(100%, 700px);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-top: 1px solid rgba(52, 46, 41, 0.18);
+      }
+
+      .agenda-item {
+        display: grid;
+        grid-template-columns: 4.2rem 1fr;
+        align-items: center;
+        min-height: clamp(3.7rem, 8vh, 5rem);
+        border-bottom: 1px solid rgba(52, 46, 41, 0.18);
+        color: #000000;
+        font-size: clamp(1.2rem, 1.8vw, 1.85rem);
+        font-weight: 300;
+        line-height: 1.12;
+      }
+
+      .agenda-index {
+        color: var(--forest-green);
+        font-size: clamp(0.95rem, 1.25vw, 1.2rem);
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      @media (min-width: 701px) and (max-height: 700px) {
+        .slide-agenda {
+          padding-block: 2rem;
+        }
+
+        .agenda-item {
+          grid-template-columns: 3.8rem 1fr;
+          min-height: 3.45rem;
+          font-size: clamp(1.1rem, 1.55vw, 1.5rem);
+        }
+
+        .agenda-index {
+          font-size: 0.95rem;
+        }
+      }
+
+      .slide-about {
+        display: grid;
+        grid-template-columns: 38% 1fr;
+        column-gap: 7vw;
+        align-content: center;
+        align-items: center;
+        padding: clamp(2.5rem, 6vh, 5rem) 7.2vw;
+        background: var(--off-white);
+      }
+
+      .about-heading h2 {
+        max-width: 7ch;
+        margin: 0;
+        color: var(--forest-green);
+        font-size: 60px;
+        font-weight: 300;
+        line-height: 0.92;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        text-wrap: balance;
+      }
+
+      .about-copy {
+        max-width: 52rem;
+      }
+
+      .about-copy p {
+        margin: 0;
+        color: #000000;
+        font-size: clamp(1.08rem, 1.42vw, 1.42rem);
+        font-weight: 300;
+        line-height: 1.42;
+      }
+
+      .about-copy p:first-child {
+        color: var(--dark-earth);
+        font-size: clamp(1.2rem, 1.6vw, 1.58rem);
+        line-height: 1.36;
+      }
+
+      .about-copy p + p {
+        margin-top: clamp(0.85rem, 2vh, 1.35rem);
+      }
+
+      .slide-produce-story {
+        display: grid;
+        grid-template-columns: minmax(18rem, 34%) minmax(0, 1fr);
+        column-gap: clamp(3rem, 6vw, 7rem);
+        align-content: center;
+        align-items: stretch;
+        padding: clamp(2.4rem, 5vh, 4.25rem) 6.5vw clamp(4.5rem, 8vh, 6rem);
+        background: var(--off-white);
+      }
+
+      .produce-story-header {
+        display: flex;
+        min-width: 0;
+        padding-right: clamp(2rem, 4vw, 4.5rem);
+        flex-direction: column;
+        justify-content: center;
+        border-right: 1px solid rgba(52, 71, 54, 0.2);
+      }
+
+      .produce-story-kicker {
+        display: block;
+        margin-bottom: 0.65rem;
+        color: var(--forest-green);
+        font-size: 0.78rem;
+        font-weight: 300;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .produce-story-header h2 {
+        max-width: 9ch;
+        margin: 0;
+        color: var(--rich-red);
+        font-size: 60px;
+        font-weight: 300;
+        line-height: 0.92;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        text-wrap: balance;
+      }
+
+      .produce-story-header p {
+        max-width: 27rem;
+        margin: clamp(1.4rem, 3vh, 2.2rem) 0 0;
+        color: var(--forest-green);
+        font-size: clamp(1.05rem, 1.3vw, 1.35rem);
+        font-weight: 300;
+        line-height: 1.38;
+      }
+
+      .produce-story-range {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-top: clamp(2rem, 5vh, 4rem);
+        color: var(--rich-red);
+        font-size: 0.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+
+      .produce-story-range::before {
+        width: 2.8rem;
+        height: 1px;
+        background: currentColor;
+        content: "";
+      }
+
+      .produce-steps {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: max-content;
+        column-gap: clamp(2rem, 4vw, 4rem);
+        row-gap: clamp(2rem, 5vh, 3.6rem);
+        align-content: center;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .produce-step {
+        position: relative;
+        min-width: 0;
+        padding: clamp(0.9rem, 1.7vh, 1.15rem) 0 0 3.1rem;
+        border-top: 1px solid rgba(52, 71, 54, 0.22);
+      }
+
+      .produce-step-heading {
+        display: block;
+      }
+
+      .produce-step-number {
+        position: absolute;
+        top: clamp(0.95rem, 1.8vh, 1.2rem);
+        left: 0;
+        color: var(--rich-red);
+        font-size: 0.82rem;
+        font-weight: 300;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .produce-step h3 {
+        margin: 0;
+        color: var(--forest-green);
+        font-size: clamp(1.12rem, 1.42vw, 1.42rem);
+        font-weight: 300;
+        line-height: 1.14;
+      }
+
+      .produce-step p {
+        margin: 0.55rem 0 0;
+        color: #000000;
+        font-size: clamp(0.82rem, 0.94vw, 1rem);
+        font-weight: 300;
+        line-height: 1.33;
+      }
+
+      .slide-founder {
+        display: grid;
+        grid-template-columns: 52% 48%;
+        align-items: stretch;
+        padding: 0;
+        background: var(--off-white);
+      }
+
+      .founder-copy {
+        display: flex;
+        padding: clamp(3rem, 7vh, 6rem) 7vw clamp(5rem, 10vh, 7rem);
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .founder-kicker {
+        display: block;
+        margin-bottom: 1.2rem;
+        color: var(--forest-green);
+        font-size: 0.82rem;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+
+      .founder-copy h2 {
+        margin: 0;
+        color: var(--rich-red);
+        font-size: 60px;
+        font-weight: 300;
+        line-height: 0.92;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .founder-identity {
+        max-width: 31rem;
+        margin-top: clamp(3rem, 7vh, 5.5rem);
+        padding-top: clamp(1.2rem, 2.5vh, 1.8rem);
+        border-top: 1px solid rgba(52, 71, 54, 0.22);
+      }
+
+      .founder-name {
+        margin: 0;
+        color: var(--forest-green);
+        font-size: clamp(2rem, 3.1vw, 3.25rem);
+        font-weight: 300;
+        line-height: 1.05;
+      }
+
+      .founder-role {
+        margin: 0.8rem 0 0;
+        color: var(--rich-red);
+        font-size: clamp(1rem, 1.35vw, 1.3rem);
+        font-weight: 300;
+      }
+
+      .founder-portrait {
+        position: relative;
+        min-width: 0;
+        min-height: 0;
+        margin: 0;
+        overflow: hidden;
+        background: #ded8d0;
+      }
+
+      .founder-portrait::before {
+        position: absolute;
+        z-index: 1;
+        inset: 0 auto 0 0;
+        width: 18%;
+        background: linear-gradient(90deg, var(--off-white), transparent);
+        content: "";
+        pointer-events: none;
+      }
+
+      .founder-portrait img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 48%;
+      }
+
+      .slide-who-we-are {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        row-gap: clamp(1.8rem, 4vh, 3.25rem);
+        align-content: center;
+        padding: clamp(2.5rem, 6vh, 5rem) 6.5vw clamp(5rem, 9vh, 6.5rem);
+        background: var(--off-white);
+      }
+
+      .who-heading {
+        display: grid;
+        grid-template-columns: 38% minmax(0, 1fr);
+        column-gap: clamp(3rem, 7vw, 7rem);
+        align-items: end;
+      }
+
+      .who-heading h2 {
+        max-width: 7ch;
+        margin: 0;
+        color: var(--rich-red);
+        font-size: 60px;
+        font-weight: 300;
+        line-height: 0.92;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .who-heading p {
+        margin: 0.9rem 0 0;
+        color: var(--forest-green);
+        font-size: clamp(1.35rem, 2vw, 2rem);
+        font-weight: 300;
+        line-height: 1.05;
+      }
+
+      .who-content {
+        width: 100%;
+      }
+
+      .who-intro {
+        max-width: 50rem;
+        margin: 0;
+        color: #000000;
+        font-size: clamp(1.28rem, 1.9vw, 1.9rem);
+        font-weight: 300;
+        line-height: 1.34;
+      }
+
+      .belief-label {
+        display: block;
+        margin: 0 0 0.75rem;
+        color: var(--rich-red);
+        font-size: 0.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+
+      .belief-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        column-gap: clamp(1.5rem, 3vw, 3.5rem);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .belief-grid li {
+        display: block;
+        min-height: clamp(7rem, 15vh, 9.5rem);
+        padding: clamp(1rem, 2.2vh, 1.5rem) 0 0;
+        border-top: 1px solid rgba(52, 71, 54, 0.22);
+      }
+
+      .belief-index {
+        display: block;
+        color: var(--rich-red);
+        font-size: 0.78rem;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .belief-text {
+        display: block;
+        max-width: 11ch;
+        margin-top: clamp(1rem, 2.4vh, 1.7rem);
+        color: var(--forest-green);
+        font-size: clamp(1.45rem, 2.1vw, 2.15rem);
+        font-weight: 300;
+        line-height: 1.08;
+      }
+
+      .who-goal {
+        display: grid;
+        grid-template-columns: 18% minmax(0, 1fr);
+        column-gap: 2rem;
+        align-items: baseline;
+        margin: 0;
+        padding-top: clamp(1rem, 2vh, 1.4rem);
+        border-top: 1px solid rgba(134, 49, 43, 0.42);
+      }
+
+      .who-goal span {
+        color: var(--rich-red);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+      }
+
+      .who-goal strong {
+        color: var(--rich-red);
+        font-size: clamp(1.2rem, 1.65vw, 1.65rem);
+        font-weight: 300;
+        line-height: 1.38;
+      }
+
+      .slide-who-we-are.who-ecosystem {
+        display: grid;
+        grid-template-rows: none;
+        grid-template-columns: 37% minmax(0, 1fr);
+        column-gap: clamp(3rem, 7vw, 7rem);
+        align-content: center;
+        align-items: center;
+        padding: clamp(2.5rem, 6vh, 5rem) 6.5vw clamp(5rem, 9vh, 6.5rem);
+      }
+
+      .ecosystem-copy h2 {
+        max-width: 7ch;
+        margin: 0;
+        color: var(--rich-red);
+        font-size: 60px;
+        font-weight: 300;
+        line-height: 0.92;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .ecosystem-copy > span {
+        display: block;
+        margin-top: 1rem;
+        color: var(--forest-green);
+        font-size: clamp(1.35rem, 2vw, 2rem);
+        font-weight: 300;
+      }
+
+      .ecosystem-intro {
+        max-width: 30rem;
+        margin: clamp(1.8rem, 4vh, 3rem) 0 0;
+        color: #000000;
+        font-size: clamp(1.05rem, 1.4vw, 1.4rem);
+        font-weight: 300;
+        line-height: 1.42;
+      }
+
+      .ecosystem-goal {
+        max-width: 31rem;
+        margin: clamp(1.8rem, 4vh, 3rem) 0 0;
+        padding-top: clamp(1rem, 2vh, 1.4rem);
+        border-top: 1px solid rgba(134, 49, 43, 0.42);
+      }
+
+      .ecosystem-goal span,
+      .ecosystem-goal strong {
+        display: block;
+      }
+
+      .ecosystem-goal span {
+        color: var(--rich-red);
+        font-size: 0.76rem;
+        text-transform: uppercase;
+      }
+
+      .ecosystem-goal strong {
+        margin-top: 0.55rem;
+        color: var(--forest-green);
+        font-size: clamp(1.05rem, 1.4vw, 1.4rem);
+        font-weight: 300;
+        line-height: 1.34;
+      }
+
+      .ecosystem-visual {
+        position: relative;
+        width: min(42vw, 40rem);
+        height: min(68vh, 38rem);
+        justify-self: center;
+      }
+
+      .ecosystem-label {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        color: var(--rich-red);
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        transform: translateX(-50%);
+      }
+
+      .ecosystem-cross {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 64%;
+        height: 64%;
+        transform: translate(-50%, -50%);
+      }
+
+      .ecosystem-cross::before,
+      .ecosystem-cross::after {
+        position: absolute;
+        background: rgba(52, 71, 54, 0.24);
+        content: "";
+      }
+
+      .ecosystem-cross::before {
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+      }
+
+      .ecosystem-cross::after {
+        top: 0;
+        left: 50%;
+        width: 1px;
+        height: 100%;
+      }
+
+      .ecosystem-core {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        display: grid;
+        width: clamp(10rem, 13vw, 13rem);
+        aspect-ratio: 1;
+        padding: 1.4rem;
+        place-content: center;
+        border: 1px solid rgba(52, 71, 54, 0.52);
+        border-radius: 50%;
+        background: var(--off-white);
+        text-align: center;
+        transform: translate(-50%, -50%);
+      }
+
+      .ecosystem-core strong {
+        color: var(--rich-red);
+        font-size: clamp(2rem, 3vw, 3rem);
+        font-weight: 300;
+        line-height: 1;
+      }
+
+      .ecosystem-core small {
+        margin-top: 0.65rem;
+        color: var(--forest-green);
+        font-size: 0.72rem;
+        font-weight: 300;
+        line-height: 1.3;
+      }
+
+      .ecosystem-nodes {
+        position: absolute;
+        inset: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .ecosystem-node {
+        position: absolute;
+        z-index: 3;
+        width: 13rem;
+        padding: 0.65rem;
+        background: var(--off-white);
+        text-align: center;
+      }
+
+      .ecosystem-node:nth-child(1) {
+        top: 7%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .ecosystem-node:nth-child(2) {
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
+
+      .ecosystem-node:nth-child(3) {
+        bottom: 4%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .ecosystem-node:nth-child(4) {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+
+      .ecosystem-node span {
+        display: block;
+        color: var(--rich-red);
+        font-size: 0.72rem;
+      }
+
+      .ecosystem-node strong {
+        display: block;
+        margin-top: 0.45rem;
+        color: var(--forest-green);
+        font-size: clamp(1.2rem, 1.65vw, 1.65rem);
+        font-weight: 300;
+        line-height: 1.12;
+      }
+
+      .slide-purpose {
+        display: grid;
+        grid-template-columns: 34% minmax(0, 1fr);
+        column-gap: clamp(3rem, 7vw, 7rem);
+        align-content: center;
+        align-items: stretch;
+        padding: clamp(2.5rem, 6vh, 5rem) 6.5vw clamp(5rem, 9vh, 6.5rem);
+        background: var(--off-white);
+      }
+
+      .purpose-heading {
+        display: flex;
+        padding-right: clamp(2rem, 4vw, 4rem);
+        flex-direction: column;
+        justify-content: center;
+        border-right: 1px solid rgba(52, 71, 54, 0.2);
+      }
+
+      .purpose-heading h2 {
+        max-width: 7ch;
+        margin: 0;
+        color: var(--rich-red);
+        font-size: 60px;
+        font-weight: 300;
+        line-height: 0.92;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .purpose-heading p {
+        max-width: 10ch;
+        margin: 1rem 0 0;
+        color: var(--forest-green);
+        font-size: clamp(1.45rem, 2.2vw, 2.2rem);
+        font-weight: 300;
+        line-height: 1.08;
+      }
+
+      .purpose-audience {
+        display: block;
+        max-width: 22rem;
+        margin-top: clamp(3rem, 7vh, 5rem);
+        color: var(--rich-red);
+        font-size: 0.78rem;
+        font-weight: 300;
+        line-height: 1.7;
+        text-transform: uppercase;
+      }
+
+      .purpose-statements {
+        display: grid;
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        align-content: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .purpose-statement {
+        display: grid;
+        grid-template-columns: 4.2rem minmax(0, 1fr);
+        column-gap: clamp(1.5rem, 3vw, 3rem);
+        align-content: center;
+        padding: clamp(1.7rem, 4vh, 3rem) 0;
+        border-top: 1px solid rgba(52, 71, 54, 0.22);
+      }
+
+      .purpose-statement:last-child {
+        border-bottom: 1px solid rgba(52, 71, 54, 0.22);
+      }
+
+      .purpose-index {
+        color: var(--rich-red);
+        font-size: 0.78rem;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .purpose-statement p {
+        max-width: 25ch;
+        margin: 0;
+        color: #000000;
+        font-size: clamp(1.7rem, 2.7vw, 2.8rem);
+        font-weight: 300;
+        line-height: 1.16;
+      }
+
+      .purpose-statement strong {
+        color: var(--forest-green);
+        font-weight: 300;
+      }
+
+      .slide-values {
+        background: var(--off-white);
+      }
+
+      .values-layout {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 38% 1fr;
+        column-gap: 7vw;
+        align-items: center;
+        padding: 7.2%;
+      }
+
+      .values-title h2 {
+        max-width: 8ch;
+        margin: 0;
+        color: var(--forest-green);
+        font-size: 68px;
+        font-weight: 300;
+        line-height: 0.92;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .values-title p {
+        margin: 1.15rem 0 0;
+        color: var(--rich-red);
+        font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+        font-weight: 300;
+        line-height: 1.2;
+      }
+
+      .values-list {
+        display: grid;
+        gap: clamp(2.3rem, 5vh, 3.6rem);
+        width: min(100%, 62rem);
+      }
+
+      .values-list article {
+        padding-bottom: clamp(1.7rem, 3vh, 2.3rem);
+        border-bottom: 1px solid rgba(52, 46, 41, 0.18);
+      }
+
+      .value-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin: 0 0 0.95rem;
+        color: var(--rich-red);
+        font-size: clamp(0.92rem, 1.12vw, 1.05rem);
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .value-kicker::before {
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 50%;
+        background: var(--forest-green);
+        content: "";
+      }
+
+      .values-list blockquote {
+        margin: 0 0 0.9rem;
+        color: #000000;
+        font-size: clamp(1.55rem, 2.32vw, 2.35rem);
+        font-weight: 300;
+        line-height: 1.08;
+      }
+
+      .values-list article > p:last-child {
+        max-width: 42rem;
+        margin: 0;
+        color: #000000;
+        font-size: clamp(1.05rem, 1.55vw, 1.42rem);
+        font-weight: 300;
+        line-height: 1.28;
+      }
+
+      .slide-seasonal {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: clamp(3rem, 7vh, 5rem) 7vw clamp(5.5rem, 9vh, 7rem);
+        overflow: hidden;
+        background: var(--off-white);
+      }
+
+      .seasonal-image {
+        position: absolute;
+        z-index: 0;
+        inset: 0;
+      }
+
+      .seasonal-image::after {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(253, 251, 247, 1) 0%,
+          rgba(253, 251, 247, 0.98) 26%,
+          rgba(253, 251, 247, 0.78) 42%,
+          rgba(253, 251, 247, 0.16) 67%,
+          rgba(253, 251, 247, 0) 100%
+        );
+        content: "";
+      }
+
+      .seasonal-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 62%;
+      }
+
+      .seasonal-copy {
+        position: relative;
+        z-index: 1;
+        width: min(42vw, 39rem);
+      }
+
+      .seasonal-copy h2 {
+        max-width: 8.5ch;
+        margin: 0;
+        color: var(--rich-red);
+        font-size: 60px;
+        font-weight: 300;
+        line-height: 0.94;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .seasonal-copy a {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: clamp(1.5rem, 3.6vh, 2.6rem) 0 0;
+        color: var(--forest-green);
+        font-size: clamp(1.6rem, 2.55vw, 2.55rem);
+        font-weight: 300;
+        line-height: 1.1;
+        text-decoration: none;
+      }
+
+      .seasonal-copy a::before {
+        width: clamp(2.8rem, 5vw, 5rem);
+        height: 1px;
+        flex: 0 0 auto;
+        background: rgba(134, 49, 43, 0.58);
+        content: "";
+      }
+
+      .seasonal-copy a::after {
+        color: var(--rich-red);
+        content: "\2197";
+        font-size: 0.72em;
+        transition: transform 180ms ease;
+      }
+
+      .seasonal-copy a:hover::after,
+      .seasonal-copy a:focus-visible::after {
+        transform: translate(0.18rem, -0.18rem);
+      }
+
+      .seasonal-copy a:focus-visible {
+        outline: 1px solid var(--rich-red);
+        outline-offset: 0.35rem;
+      }
+
+      .slide-organization {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: clamp(2rem, 4.5vh, 3.5rem);
+        align-content: center;
+        align-items: start;
+        padding: clamp(3rem, 7vh, 5rem) 7vw clamp(5.5rem, 9vh, 7rem);
+        background:
+          linear-gradient(
+            90deg,
+            rgba(253, 251, 247, 0.99) 0%,
+            rgba(253, 251, 247, 0.97) 38%,
+            rgba(253, 251, 247, 0.76) 60%,
+            rgba(253, 251, 247, 0.12) 82%,
+            rgba(253, 251, 247, 0.04) 100%
+          ),
+          url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/bewild-cover-v1.png");
+        background-position: center;
+        background-size: cover;
+      }
+
+      .organization-heading h2 {
+        max-width: 11ch;
+        margin: 0;
+        color: var(--forest-green);
+        font-size: 60px;
+        font-weight: 300;
+        line-height: 0.94;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .organization-content {
+        width: min(50vw, 48rem);
+        padding: clamp(1.8rem, 4vh, 3rem) 0;
+        border-top: 1px solid rgba(52, 46, 41, 0.2);
+        border-bottom: 1px solid rgba(52, 46, 41, 0.2);
+      }
+
+      .organization-content p {
+        margin: 0 0 1.25rem;
+        color: var(--rich-red);
+        font-size: clamp(2.3rem, 4vw, 4rem);
+        font-weight: 300;
+        line-height: 1;
+      }
+
+      .organization-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: #000000;
+        font-size: clamp(1rem, 1.35vw, 1.3rem);
+        font-weight: 300;
+        line-height: 1.25;
+        text-decoration: none;
+      }
+
+      .organization-link::before {
+        width: 0.55rem;
+        height: 0.55rem;
+        flex: 0 0 auto;
+        border-radius: 50%;
+        background: var(--forest-green);
+        content: "";
+      }
+
+      .organization-link::after {
+        color: var(--rich-red);
+        content: "\2197";
+        transition: transform 180ms ease;
+      }
+
+      .organization-link:hover::after,
+      .organization-link:focus-visible::after {
+        transform: translate(0.18rem, -0.18rem);
+      }
+
+      .organization-link:focus-visible {
+        outline: 1px solid var(--rich-red);
+        outline-offset: 0.4rem;
+      }
+
+      .slide-policies {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        gap: clamp(1.8rem, 4vh, 2.8rem);
+        padding: clamp(6.5rem, 12vh, 8rem) 7.2vw 8vh;
+        background: var(--off-white);
+      }
+
+      .policies-heading h2 {
+        margin: 0;
+        color: var(--rich-red);
+        font-size: 60px;
+        font-weight: 300;
+        line-height: 0.95;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .policy-groups {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-self: start;
+        gap: clamp(2rem, 4vh, 3rem) clamp(2.6rem, 5vw, 4rem);
+      }
+
+      .policy-groups article {
+        min-height: clamp(18rem, 44vh, 24rem);
+        padding: clamp(1.2rem, 2.4vh, 1.8rem) 0 1.4rem;
+        border-top: 1px solid rgba(52, 46, 41, 0.18);
+        border-bottom: 1px solid rgba(52, 46, 41, 0.18);
+      }
+
+      .policy-groups h3 {
+        margin: 0 0 0.75rem;
+        color: var(--forest-green);
+        font-size: clamp(1.45rem, 2vw, 2rem);
+        font-weight: 400;
+        line-height: 1.08;
+      }
+
+      .policy-groups ul {
+        display: grid;
+        gap: 0.52rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .policy-groups p {
+        max-width: 36rem;
+        margin: 0;
+        color: #000000;
+        font-size: clamp(1.02rem, 1.36vw, 1.24rem);
+        font-weight: 300;
+        line-height: 1.3;
+      }
+
+      .policy-groups li {
+        position: relative;
+        padding-left: 0.95rem;
+        color: #000000;
+        font-size: clamp(1.02rem, 1.36vw, 1.24rem);
+        font-weight: 300;
+        line-height: 1.25;
+      }
+
+      .policy-groups li::before {
+        position: absolute;
+        top: 0.58em;
+        left: 0;
+        width: 0.3rem;
+        height: 0.3rem;
+        border-radius: 50%;
+        background: var(--rich-red);
+        content: "";
+      }
+
+      .slide-benefits {
+        display: grid;
+        grid-template-columns: 38% minmax(0, 1fr);
+        column-gap: 7vw;
+        align-items: center;
+        padding: 7.2vh 7.2vw;
+        background: var(--off-white);
+      }
+
+      .benefits-heading h2 {
+        max-width: 8ch;
+        margin: 0;
+        color: var(--rich-red);
+        font-size: 60px;
+        font-weight: 300;
+        line-height: 0.92;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .benefits-list {
+        display: grid;
+        gap: 0;
+        width: min(100%, 58rem);
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid rgba(52, 46, 41, 0.18);
+        list-style: none;
+      }
+
+      .benefits-list li {
+        position: relative;
+        min-height: clamp(3.8rem, 8vh, 5rem);
+        padding: clamp(1rem, 2vh, 1.35rem) 0 clamp(1rem, 2vh, 1.35rem) 2.1rem;
+        border-bottom: 1px solid rgba(52, 46, 41, 0.18);
+        color: #000000;
+        font-size: clamp(1.25rem, 1.9vw, 1.95rem);
+        font-weight: 300;
+        line-height: 1.12;
+      }
+
+      .benefits-list li::before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 0.62rem;
+        height: 0.62rem;
+        border-radius: 50%;
+        background: var(--forest-green);
+        content: "";
+        transform: translateY(-50%);
+      }
+
+      .slide-grow-together {
+        display: grid;
+        place-items: center;
+        padding: 7.2vh 7.2vw;
+        background: var(--off-white);
+      }
+
+      .grow-together-content {
+        display: grid;
+        justify-items: center;
+        gap: clamp(1rem, 2vh, 1.4rem);
+        text-align: center;
+      }
+
+      .grow-together-content h2 {
+        margin: 0;
+        color: var(--rich-red);
+        font-size: 60px;
+        font-weight: 300;
+        line-height: 0.92;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .grow-together-content p {
+        max-width: 48rem;
+        margin: 0;
+        color: #000000;
+        font-size: clamp(1.1rem, 1.55vw, 1.42rem);
+        font-weight: 300;
+        line-height: 1.32;
+      }
+
+      .slide-thank-you {
+        display: grid;
+        grid-template-columns: minmax(0, 46vw) minmax(0, 54vw);
+        align-items: stretch;
+        padding: 0;
+        background: var(--off-white);
+      }
+
+      .thank-you-portrait {
+        position: relative;
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        overflow: hidden;
+        background:
+          linear-gradient(90deg, rgba(253, 251, 247, 0) 72%, var(--off-white) 100%),
+          radial-gradient(circle at 45% 46%, rgba(134, 49, 43, 0.09), transparent 52%);
+      }
+
+      .thank-you-portrait::before,
+      .thank-you-portrait::after {
+        position: absolute;
+        left: 12%;
+        right: 12%;
+        height: 1px;
+        background: rgba(52, 46, 41, 0.16);
+        content: "";
+      }
+
+      .thank-you-portrait::before {
+        top: 17%;
+      }
+
+      .thank-you-portrait::after {
+        bottom: 17%;
+      }
+
+      .thank-you-portrait img {
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: min(58vh, 72%);
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        object-position: center 42%;
+        border: 1px solid rgba(52, 46, 41, 0.14);
+        box-shadow: 0 1.8rem 4.5rem rgba(52, 46, 41, 0.14);
+      }
+
+      .thank-you-content {
+        display: grid;
+        align-content: center;
+        justify-items: start;
+        gap: clamp(1.1rem, 2.4vh, 1.75rem);
+        padding: 8vh clamp(4rem, 7vw, 8rem) 8vh clamp(3rem, 5vw, 5rem);
+      }
+
+      .thank-you-content h2 {
+        margin: 0;
+        color: var(--rich-red);
+        font-size: 60px;
+        font-weight: 300;
+        line-height: 0.92;
+        letter-spacing: 0;
+      }
+
+      .thank-you-contact {
+        display: grid;
+        gap: 1.25rem;
+        max-width: 37rem;
+        margin: 0;
+        color: #000000;
+        font-size: clamp(1.08rem, 1.52vw, 1.36rem);
+        font-weight: 300;
+        line-height: 1.34;
+      }
+
+      .thank-you-contact p {
+        margin: 0;
+      }
+
+      .thank-you-contact a {
+        color: var(--forest-green);
+        text-decoration: none;
+      }
+
+      .thank-you-contact .thank-you-label {
+        color: var(--rich-red);
+      }
+
+      .thank-you-contact .thank-you-link {
+        color: var(--forest-green);
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      /* Beforest typography parity */
+      .cover-copy h1 {
+        font-size: 65px;
+      }
+
+      .welcome-copy h2,
+      .agenda-heading h2,
+      .about-heading h2,
+      .produce-story-header h2,
+      .founder-copy h2,
+      .who-heading h2,
+      .ecosystem-copy h2,
+      .purpose-heading h2,
+      .values-title h2,
+      .seasonal-copy h2,
+      .organization-heading h2,
+      .policies-heading h2,
+      .benefits-heading h2,
+      .grow-together-content h2,
+      .thank-you-content h2 {
+        font-size: 60px;
+      }
+
+      .welcome-lead {
+        font-size: clamp(1.24rem, 1.8vw, 1.85rem);
+        line-height: 1.28;
+      }
+
+      .who-intro,
+      .training-copy p {
+        font-size: clamp(1.45rem, 2.35vw, 2.35rem);
+        line-height: 1.34;
+      }
+
+      .welcome-text {
+        font-size: clamp(1.08rem, 1.48vw, 1.48rem);
+        line-height: 1.4;
+      }
+
+      .agenda-item {
+        font-size: clamp(1.24rem, 1.95vw, 2rem);
+      }
+
+      .about-copy p,
+      .about-copy p:first-child {
+        font-size: clamp(1.15rem, 1.78vw, 1.78rem);
+        line-height: 1.38;
+      }
+
+      .produce-story-header p,
+      .organization-link {
+        font-size: clamp(1rem, 1.35vw, 1.25rem);
+      }
+
+      .produce-step h3 {
+        font-size: clamp(1.05rem, 1.55vw, 1.55rem);
+      }
+
+      .produce-step p {
+        font-size: clamp(0.92rem, 1.28vw, 1.2rem);
+        line-height: 1.25;
+      }
+
+      .founder-name {
+        font-size: clamp(1.25rem, 1.85vw, 1.9rem);
+      }
+
+      .founder-role {
+        font-size: clamp(0.95rem, 1.2vw, 1.14rem);
+      }
+
+      .who-heading p,
+      .ecosystem-copy > span,
+      .purpose-heading p,
+      .seasonal-copy a,
+      .organization-content p {
+        font-size: clamp(2.4rem, 4.2vw, 4.3rem);
+      }
+
+      .belief-text,
+      .ecosystem-node strong {
+        font-size: clamp(1.45rem, 2.1vw, 2.15rem);
+      }
+
+      .ecosystem-intro,
+      .ecosystem-goal strong,
+      .beecoverse-intro {
+        font-size: clamp(1rem, 1.35vw, 1.28rem);
+      }
+
+      .purpose-statement p {
+        font-size: clamp(1.8rem, 3.25vw, 3.35rem);
+      }
+
+      .policy-groups h3 {
+        font-size: clamp(1.45rem, 2vw, 2rem);
+      }
+
+      .policy-groups p,
+      .policy-groups li {
+        font-size: clamp(1.02rem, 1.36vw, 1.24rem);
+      }
+
+      .benefits-list li {
+        font-size: clamp(1.25rem, 1.9vw, 1.95rem);
+      }
+
+      .grow-together-content p {
+        font-size: clamp(1.1rem, 1.55vw, 1.42rem);
+      }
+
+      .thank-you-contact {
+        font-size: clamp(1.05rem, 1.45vw, 1.34rem);
+        line-height: 1.32;
+      }
+
+      /* Presentation readability bump */
+      .cover-copy h1 {
+        font-size: 72px;
+      }
+
+      .welcome-copy h2,
+      .agenda-heading h2,
+      .about-heading h2,
+      .produce-story-header h2,
+      .founder-copy h2,
+      .who-heading h2,
+      .ecosystem-copy h2,
+      .purpose-heading h2,
+      .seasonal-copy h2,
+      .organization-heading h2,
+      .policies-heading h2,
+      .benefits-heading h2,
+      .grow-together-content h2,
+      .thank-you-content h2 {
+        font-size: 68px;
+      }
+
+      .welcome-lead {
+        font-size: clamp(1.3rem, 1.9vw, 1.95rem);
+      }
+
+      .welcome-text {
+        font-size: clamp(1.12rem, 1.56vw, 1.56rem);
+        line-height: 1.38;
+      }
+
+      .who-intro,
+      .training-copy p {
+        font-size: clamp(1.58rem, 2.55vw, 2.55rem);
+        line-height: 1.3;
+      }
+
+      .agenda-item {
+        font-size: clamp(1.35rem, 2.1vw, 2.12rem);
+      }
+
+      .about-copy p,
+      .about-copy p:first-child {
+        font-size: clamp(1.32rem, 2vw, 2rem);
+        line-height: 1.32;
+      }
+
+      .produce-story-header p,
+      .organization-link {
+        font-size: clamp(1.08rem, 1.45vw, 1.36rem);
+      }
+
+      .produce-step h3 {
+        font-size: clamp(1.24rem, 1.82vw, 1.82rem);
+      }
+
+      .produce-step p {
+        font-size: clamp(1.05rem, 1.48vw, 1.38rem);
+        line-height: 1.22;
+      }
+
+      .founder-name {
+        font-size: clamp(1.35rem, 2vw, 2.05rem);
+      }
+
+      .founder-role {
+        font-size: clamp(1.02rem, 1.3vw, 1.24rem);
+      }
+
+      .belief-text,
+      .values-list blockquote,
+      .ecosystem-node strong {
+        font-size: clamp(1.55rem, 2.25vw, 2.3rem);
+      }
+
+      .ecosystem-intro,
+      .ecosystem-goal strong,
+      .values-list article > p:last-child,
+      .beecoverse-intro {
+        font-size: clamp(1.08rem, 1.45vw, 1.38rem);
+      }
+
+      .purpose-statement p {
+        font-size: clamp(1.95rem, 3.42vw, 3.5rem);
+        text-align: center;
+      }
+
+      @media (min-width: 701px) {
+        .values-layout {
+          grid-template-columns: 38% 1fr;
+          column-gap: 7vw;
+          align-items: center;
+          padding: 7.2%;
+        }
+
+        .values-title h2 {
+          max-width: 8ch;
+          color: var(--forest-green);
+          font-size: 68px;
+          line-height: 0.95;
+        }
+
+        .values-list {
+          gap: clamp(1.9rem, 4vh, 3rem);
+          width: min(100%, 62rem);
+        }
+
+        .values-list blockquote {
+          font-size: clamp(1.55rem, 2.32vw, 2.35rem);
+          line-height: 1.1;
+        }
+
+        .values-list article > p:last-child {
+          font-size: clamp(1.05rem, 1.55vw, 1.42rem);
+          line-height: 1.28;
+        }
+
+        .slide-purpose {
+          grid-template-columns: 36% minmax(0, 1fr);
+          column-gap: clamp(3.5rem, 7vw, 7rem);
+          align-items: center;
+          padding: clamp(3.5rem, 8vh, 6rem) 7vw clamp(5rem, 9vh, 6.5rem);
+        }
+
+        .purpose-heading {
+          justify-content: center;
+        }
+
+        .purpose-statements {
+          width: min(100%, 58rem);
+          align-self: center;
+          grid-template-rows: none;
+          border-top: 1px solid rgba(52, 71, 54, 0.22);
+        }
+
+        .purpose-statement {
+          display: grid;
+          grid-template-columns: 1fr;
+          row-gap: clamp(1rem, 2vh, 1.5rem);
+          align-content: center;
+          padding: clamp(2rem, 4.2vh, 3.2rem) 0;
+          border-top: 0;
+          border-bottom: 1px solid rgba(52, 71, 54, 0.22);
+        }
+
+        .purpose-index {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.85rem;
+          color: var(--rich-red);
+          font-size: clamp(1rem, 1.22vw, 1.18rem);
+          line-height: 1;
+        }
+
+        .purpose-index::before {
+          width: 0.55rem;
+          height: 0.55rem;
+          flex: 0 0 auto;
+          border-radius: 50%;
+          background: var(--forest-green);
+          content: "";
+        }
+
+        .purpose-statement p {
+          max-width: 25ch;
+          color: #000000;
+          font-size: clamp(2rem, 3vw, 3rem);
+          line-height: 1.14;
+          text-align: left;
+        }
+      }
+
+      .policy-groups h3 {
+        font-size: clamp(1.72rem, 2.32vw, 2.3rem);
+      }
+
+      .policy-groups p,
+      .policy-groups li {
+        font-size: clamp(1.18rem, 1.62vw, 1.48rem);
+        line-height: 1.3;
+      }
+
+      .benefits-list li {
+        font-size: clamp(1.35rem, 2.08vw, 2.08rem);
+      }
+
+      .grow-together-content p {
+        font-size: clamp(1.18rem, 1.68vw, 1.52rem);
+      }
+
+      .thank-you-contact {
+        font-size: clamp(1.12rem, 1.56vw, 1.44rem);
+      }
+
+      @media (min-width: 701px) and (max-height: 700px) {
+        .slide-about {
+          padding-block: 2rem;
+        }
+
+        .about-copy p,
+        .about-copy p:first-child {
+          font-size: clamp(0.98rem, 1.28vw, 1.15rem);
+          line-height: 1.32;
+        }
+
+        .about-copy p + p {
+          margin-top: 0.65rem;
+        }
+
+        .slide-produce-story {
+          grid-template-columns: minmax(14rem, 31%) minmax(0, 1fr);
+          column-gap: 3rem;
+          padding-block: 1.8rem 4.3rem;
+        }
+
+        .produce-story-header h2 {
+          font-size: 52px;
+        }
+
+        .produce-story-kicker {
+          margin-bottom: 0.42rem;
+          font-size: 0.66rem;
+        }
+
+        .produce-story-header p {
+          margin-top: 0.85rem;
+          font-size: 0.88rem;
+          line-height: 1.3;
+        }
+
+        .produce-story-range {
+          margin-top: 1.15rem;
+          font-size: 0.66rem;
+        }
+
+        .produce-steps {
+          column-gap: 2rem;
+          row-gap: 1.25rem;
+        }
+
+        .produce-step {
+          padding: 0.55rem 0 0 2.2rem;
+        }
+
+        .produce-step-number {
+          top: 0.58rem;
+        }
+
+        .produce-step h3 {
+          font-size: 1rem;
+        }
+
+        .produce-step p {
+          margin: 0.3rem 0 0;
+          font-size: 0.72rem;
+          line-height: 1.26;
+        }
+
+        .founder-copy {
+          padding-block: 2rem 4.3rem;
+        }
+
+        .founder-copy h2 {
+          font-size: 52px;
+        }
+
+        .founder-identity {
+          margin-top: 1.5rem;
+          padding-top: 0.85rem;
+        }
+
+        .slide-who-we-are {
+          row-gap: 1rem;
+          padding-block: 2rem 4.3rem;
+        }
+
+        .who-heading h2 {
+          font-size: 52px;
+        }
+
+        .who-heading p {
+          margin-top: 0.45rem;
+          font-size: 1.4rem;
+        }
+
+        .who-intro {
+          font-size: 0.95rem;
+          line-height: 1.32;
+        }
+
+        .belief-label {
+          margin-bottom: 0.45rem;
+          font-size: 0.66rem;
+        }
+
+        .belief-grid li {
+          min-height: 4.2rem;
+          padding-top: 0.6rem;
+        }
+
+        .belief-text {
+          margin-top: 0.55rem;
+          font-size: 1.1rem;
+        }
+
+        .who-goal {
+          padding-top: 0.65rem;
+        }
+
+        .who-goal span {
+          font-size: 0.66rem;
+        }
+
+        .who-goal strong {
+          font-size: 0.95rem;
+          line-height: 1.28;
+        }
+
+        .slide-who-we-are.who-ecosystem {
+          grid-template-columns: 36% minmax(0, 1fr);
+          column-gap: 2.5rem;
+          padding-block: 2rem 4.3rem;
+        }
+
+        .ecosystem-copy h2 {
+          font-size: 52px;
+        }
+
+        .ecosystem-copy > span {
+          margin-top: 0.55rem;
+          font-size: 1.4rem;
+        }
+
+        .ecosystem-intro,
+        .ecosystem-goal {
+          margin-top: 1rem;
+        }
+
+        .ecosystem-intro,
+        .ecosystem-goal strong {
+          font-size: 0.88rem;
+          line-height: 1.28;
+        }
+
+        .ecosystem-visual {
+          width: min(53vw, 34rem);
+          height: min(72vh, 29rem);
+        }
+
+        .ecosystem-node {
+          width: 10rem;
+        }
+
+        .ecosystem-node strong {
+          font-size: 1.05rem;
+        }
+
+        .ecosystem-core {
+          width: 8.2rem;
+        }
+
+        .slide-purpose {
+          grid-template-columns: 31% minmax(0, 1fr);
+          column-gap: 3rem;
+          padding-block: 2rem 4.3rem;
+        }
+
+        .purpose-heading h2 {
+          font-size: 52px;
+        }
+
+        .purpose-heading p {
+          margin-top: 0.55rem;
+          font-size: 1.5rem;
+        }
+
+        .purpose-audience {
+          margin-top: 1.5rem;
+          font-size: 0.64rem;
+        }
+
+        .purpose-statement {
+          grid-template-columns: 2.4rem minmax(0, 1fr);
+          column-gap: 1rem;
+          padding-block: 1.1rem;
+        }
+
+        .purpose-statement p {
+          max-width: 31ch;
+          font-size: 1.45rem;
+        }
+
+        .seasonal-copy h2 {
+          font-size: 52px;
+        }
+
+        .seasonal-copy a {
+          margin-top: 1rem;
+          font-size: 1.5rem;
+        }
+
+        .organization-heading h2 {
+          font-size: 52px;
+        }
+
+        .organization-content p {
+          font-size: 2.25rem;
+        }
+
+        .slide-policies {
+          gap: 1.3rem;
+          padding-block: clamp(4rem, 10vh, 5rem) 4.3rem;
+        }
+
+        .policies-heading h2 {
+          font-size: 52px;
+        }
+
+        .policy-groups article {
+          min-height: 15rem;
+          padding-top: 0.9rem;
+        }
+
+        .policy-groups h3 {
+          font-size: 1.3rem;
+        }
+
+        .policy-groups p,
+        .policy-groups li {
+          font-size: 0.92rem;
+        }
+
+        .slide-benefits {
+          padding-block: 4rem;
+        }
+
+        .benefits-heading h2 {
+          font-size: 52px;
+        }
+
+        .benefits-list li {
+          min-height: 2.8rem;
+          padding-block: 0.65rem;
+          font-size: 1.05rem;
+        }
+
+        .grow-together-content h2 {
+          font-size: 52px;
+        }
+
+        .thank-you-content h2 {
+          font-size: 52px;
+        }
+      }
+
+      .deck-nav {
+        position: fixed;
+        z-index: 20;
+        right: 2rem;
+        bottom: 1.6rem;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        padding: 0.45rem;
+        border: 1px solid rgba(52, 46, 41, 0.12);
+        border-radius: 999px;
+        background: rgba(253, 251, 247, 0.82);
+        box-shadow: 0 14px 40px rgba(52, 46, 41, 0.12);
+        backdrop-filter: blur(12px);
+      }
+
+      .nav-button {
+        display: grid;
+        width: 2.45rem;
+        height: 2.45rem;
+        padding: 0;
+        place-items: center;
+        border: 0;
+        border-radius: 50%;
+        background: var(--dark-earth);
+        color: var(--off-white);
+        cursor: pointer;
+        transition: transform 180ms ease, opacity 180ms ease;
+      }
+
+      .nav-button:hover:not(:disabled) {
+        transform: translateY(-2px);
+      }
+
+      .nav-button:focus-visible {
+        outline: 2px solid var(--rich-red);
+        outline-offset: 3px;
+      }
+
+      .nav-button:disabled {
+        cursor: not-allowed;
+        opacity: 0.32;
+      }
+
+      .nav-button svg {
+        width: 1.28rem;
+        height: 1.28rem;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2;
+      }
+
+      .slide-count {
+        min-width: 3.1rem;
+        color: rgba(52, 46, 41, 0.74);
+        font-size: 0.86rem;
+        line-height: 1;
+        text-align: center;
+      }
+
+      @keyframes cover-enter {
+        from {
+          opacity: 0;
+          transform: translateY(calc(-50% + 28px));
+        }
+        to {
+          opacity: 1;
+          transform: translateY(-50%);
+        }
+      }
+
+      @media (max-width: 700px) {
+        .slide-cover {
+          background-position: 64% center;
+        }
+
+        .slide-cover::before {
+          position: absolute;
+          z-index: -1;
+          inset: 0;
+          background: linear-gradient(
+            180deg,
+            rgba(253, 251, 247, 0.96) 0%,
+            rgba(253, 251, 247, 0.88) 35%,
+            rgba(253, 251, 247, 0.22) 68%,
+            rgba(253, 251, 247, 0.04) 100%
+          );
+          content: "";
+        }
+
+        .slide-cover::after {
+          display: none;
+        }
+
+        .cover-copy {
+          top: 12.5%;
+          left: 7.5%;
+          width: 85%;
+          transform: none;
+        }
+
+        .bewild-logo {
+          width: 9.2rem;
+          margin-bottom: 1rem;
+        }
+
+        .cover-copy h1 {
+          max-width: 9ch;
+          font-size: clamp(2.28rem, 7vw, 3rem);
+          line-height: 0.98;
+        }
+
+        .slide-welcome {
+          grid-template-rows: 34% 66%;
+          grid-template-columns: 1fr;
+        }
+
+        .welcome-image {
+          grid-row: 1;
+        }
+
+        .welcome-image::before {
+          inset: auto 0 0;
+          width: 100%;
+          height: 22%;
+          background: linear-gradient(0deg, var(--off-white), transparent);
+        }
+
+        .welcome-image img {
+          object-position: 58% 44%;
+        }
+
+        .welcome-copy {
+          grid-row: 2;
+          align-self: stretch;
+          max-width: none;
+          padding: 1.65rem 7.5% 5.8rem;
+          overflow-y: auto;
+        }
+
+        .welcome-copy h2 {
+          margin-bottom: 0.85rem;
+          font-size: clamp(2.28rem, 7vw, 3rem);
+        }
+
+        .welcome-lead {
+          margin-bottom: 0.7rem;
+          font-size: 1.18rem;
+          line-height: 1.28;
+        }
+
+        .welcome-text {
+          font-size: 1rem;
+          line-height: 1.4;
+        }
+
+        .welcome-text + .welcome-text {
+          margin-top: 0.55rem;
+        }
+
+        .slide-agenda {
+          grid-template-columns: 1fr;
+          align-content: center;
+          row-gap: 2.4rem;
+          padding: 7.2vw 7.2vw 6.5rem;
+        }
+
+        .agenda-heading h2 {
+          max-width: 100%;
+          font-size: clamp(2.28rem, 7vw, 3rem);
+        }
+
+        .agenda-list {
+          width: 100%;
+        }
+
+        .agenda-item {
+          grid-template-columns: 3.5rem 1fr;
+          min-height: 3.45rem;
+          font-size: clamp(1.05rem, 3.4vw, 1.45rem);
+        }
+
+        .slide-about {
+          grid-template-columns: 1fr;
+          align-content: center;
+          align-items: stretch;
+          row-gap: 2rem;
+          padding: 3rem 8vw 6.4rem;
+        }
+
+        .about-heading h2 {
+          max-width: 8ch;
+          font-size: clamp(2.28rem, 7vw, 3rem);
+          line-height: 0.94;
+        }
+
+        .about-copy {
+          width: 100%;
+          max-height: none;
+          overflow: visible;
+        }
+
+        .about-copy p,
+        .about-copy p:first-child {
+          font-size: 1rem;
+          line-height: 1.38;
+        }
+
+        .about-copy p + p {
+          margin-top: 0.72rem;
+        }
+
+        .slide-produce-story {
+          display: block;
+          padding: 3rem 7.5vw 6.5rem;
+          overflow-y: auto;
+          scrollbar-width: none;
+        }
+
+        .slide-produce-story::-webkit-scrollbar {
+          display: none;
+        }
+
+        .produce-story-header {
+          display: block;
+          padding: 0 0 1.8rem;
+          border-right: 0;
+          border-bottom: 1px solid rgba(52, 71, 54, 0.2);
+        }
+
+        .produce-story-header h2 {
+          max-width: 8ch;
+          font-size: clamp(2.28rem, 7vw, 3rem);
+          line-height: 0.94;
+        }
+
+        .produce-story-kicker {
+          margin-bottom: 0.55rem;
+          font-size: 0.7rem;
+        }
+
+        .produce-story-header p {
+          margin-top: 1.2rem;
+          font-size: 1.05rem;
+          line-height: 1.36;
+        }
+
+        .produce-story-range {
+          margin-top: 1.35rem;
+        }
+
+        .produce-steps {
+          grid-template-columns: 1fr;
+          grid-auto-rows: auto;
+          gap: 1.2rem;
+          align-content: start;
+          margin-top: 1.65rem;
+        }
+
+        .produce-step {
+          padding: 0.8rem 0 0 2.55rem;
+        }
+
+        .produce-step-number {
+          top: 0.86rem;
+        }
+
+        .produce-step h3 {
+          font-size: 1.15rem;
+        }
+
+        .produce-step p {
+          margin-top: 0.45rem;
+          font-size: 0.92rem;
+          line-height: 1.36;
+        }
+
+        .slide-founder {
+          grid-template-rows: 42% 58%;
+          grid-template-columns: 1fr;
+        }
+
+        .founder-portrait {
+          grid-row: 1;
+        }
+
+        .founder-portrait::before {
+          inset: auto 0 0;
+          width: 100%;
+          height: 22%;
+          background: linear-gradient(0deg, var(--off-white), transparent);
+        }
+
+        .founder-portrait img {
+          object-position: center 42%;
+        }
+
+        .founder-copy {
+          grid-row: 2;
+          justify-content: flex-start;
+          padding: 1.5rem 7.5vw 6.2rem;
+        }
+
+        .founder-kicker {
+          margin-bottom: 0.65rem;
+          font-size: 0.7rem;
+        }
+
+        .founder-copy h2 {
+          font-size: clamp(2.28rem, 7vw, 3rem);
+        }
+
+        .founder-identity {
+          margin-top: 1.5rem;
+          padding-top: 0.85rem;
+        }
+
+        .founder-name {
+          font-size: 1.9rem;
+        }
+
+        .founder-role {
+          margin-top: 0.5rem;
+          font-size: 1rem;
+        }
+
+        .slide-who-we-are {
+          display: block;
+          padding: 3rem 7.5vw 6.5rem;
+          overflow-y: auto;
+          scrollbar-width: none;
+        }
+
+        .slide-who-we-are::-webkit-scrollbar {
+          display: none;
+        }
+
+        .who-heading {
+          display: block;
+        }
+
+        .who-heading h2 {
+          max-width: none;
+          font-size: clamp(2.28rem, 7vw, 3rem);
+        }
+
+        .who-heading p {
+          margin-top: 0.6rem;
+          font-size: 1.5rem;
+        }
+
+        .who-content {
+          margin-top: 1.8rem;
+        }
+
+        .who-intro {
+          font-size: 1rem;
+          line-height: 1.38;
+        }
+
+        .belief-label {
+          margin: 0 0 0.55rem;
+          font-size: 0.7rem;
+        }
+
+        .belief-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          column-gap: 1.2rem;
+          margin-top: 0;
+        }
+
+        .belief-grid li {
+          min-height: 5.6rem;
+          padding-top: 0.75rem;
+        }
+
+        .belief-index {
+          font-size: 0.68rem;
+        }
+
+        .belief-text {
+          margin-top: 0.7rem;
+          font-size: 1.1rem;
+          line-height: 1.15;
+        }
+
+        .who-goal {
+          display: block;
+          margin-top: 1rem;
+          padding-top: 0.9rem;
+        }
+
+        .who-goal span,
+        .who-goal strong {
+          display: block;
+        }
+
+        .who-goal strong {
+          margin-top: 0.55rem;
+          font-size: 1rem;
+        }
+
+        .slide-who-we-are.who-ecosystem {
+          display: block;
+          padding: 3rem 7.5vw 6.5rem;
+          overflow-y: auto;
+        }
+
+        .ecosystem-copy h2 {
+          max-width: none;
+          font-size: clamp(2.28rem, 7vw, 3rem);
+        }
+
+        .ecosystem-copy > span {
+          margin-top: 0.55rem;
+          font-size: 1.5rem;
+        }
+
+        .ecosystem-intro,
+        .ecosystem-goal {
+          margin-top: 1.4rem;
+        }
+
+        .ecosystem-intro,
+        .ecosystem-goal strong {
+          font-size: 1rem;
+          line-height: 1.36;
+        }
+
+        .ecosystem-visual {
+          display: grid;
+          width: 100%;
+          height: auto;
+          margin-top: 2rem;
+          justify-self: auto;
+        }
+
+        .ecosystem-label {
+          position: static;
+          grid-column: 1 / -1;
+          transform: none;
+        }
+
+        .ecosystem-cross {
+          display: none;
+        }
+
+        .ecosystem-core {
+          position: static;
+          grid-column: 1 / -1;
+          width: 8.5rem;
+          margin: 1.2rem auto 1.6rem;
+          transform: none;
+        }
+
+        .ecosystem-nodes {
+          position: static;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0 1.2rem;
+        }
+
+        .ecosystem-node,
+        .ecosystem-node:nth-child(n) {
+          position: static;
+          width: auto;
+          min-height: 5.5rem;
+          padding: 0.8rem 0;
+          border-top: 1px solid rgba(52, 71, 54, 0.22);
+          background: transparent;
+          text-align: left;
+          transform: none;
+        }
+
+        .ecosystem-node strong {
+          margin-top: 0.5rem;
+          font-size: 1.05rem;
+        }
+
+        .slide-purpose {
+          display: block;
+          padding: 3rem 7.5vw 6.5rem;
+          overflow-y: auto;
+          scrollbar-width: none;
+        }
+
+        .slide-purpose::-webkit-scrollbar {
+          display: none;
+        }
+
+        .purpose-heading {
+          display: block;
+          padding: 0 0 1.6rem;
+          border-right: 0;
+          border-bottom: 1px solid rgba(52, 71, 54, 0.2);
+        }
+
+        .purpose-heading h2 {
+          max-width: none;
+          font-size: clamp(2.28rem, 7vw, 3rem);
+        }
+
+        .purpose-heading p {
+          margin-top: 0.55rem;
+          font-size: 1.5rem;
+        }
+
+        .purpose-audience {
+          margin-top: 1.2rem;
+          font-size: 0.66rem;
+          line-height: 1.55;
+        }
+
+        .purpose-statements {
+          margin-top: 1.5rem;
+        }
+
+        .purpose-statement {
+          grid-template-columns: 2rem minmax(0, 1fr);
+          column-gap: 0.65rem;
+          padding-block: 1.2rem;
+        }
+
+        .purpose-statement p {
+          font-size: 1.35rem;
+          line-height: 1.22;
+        }
+
+        .slide-seasonal {
+          display: grid;
+          grid-template-rows: 57% 43%;
+          align-items: stretch;
+          padding: 0;
+          overflow: hidden;
+        }
+
+        .seasonal-image {
+          position: relative;
+          grid-row: 1;
+        }
+
+        .seasonal-image::after {
+          inset: auto 0 0;
+          height: 32%;
+          background: linear-gradient(0deg, var(--off-white), transparent);
+        }
+
+        .seasonal-image img {
+          object-position: 51% 66%;
+        }
+
+        .seasonal-copy {
+          grid-row: 2;
+          width: auto;
+          padding: 1.2rem 7.5vw 6.5rem;
+          align-self: start;
+        }
+
+        .seasonal-copy h2 {
+          max-width: 9ch;
+          font-size: clamp(2.28rem, 7vw, 3rem);
+        }
+
+        .seasonal-copy a {
+          gap: 0.75rem;
+          margin-top: 1rem;
+          font-size: 1.5rem;
+        }
+
+        .seasonal-copy a::before {
+          width: 2.5rem;
+        }
+
+        .slide-organization {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto;
+          gap: 2.2rem;
+          align-content: center;
+          padding: 3rem 7.5vw 6.5rem;
+          background:
+            linear-gradient(
+              180deg,
+              rgba(253, 251, 247, 0.92) 0%,
+              rgba(253, 251, 247, 0.86) 48%,
+              rgba(253, 251, 247, 0.68) 100%
+            ),
+            url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/bewild-cover-v1.png");
+          background-position: 68% center;
+          background-size: cover;
+        }
+
+        .organization-heading h2 {
+          max-width: 9ch;
+          font-size: clamp(2.28rem, 7vw, 3rem);
+        }
+
+        .organization-content {
+          width: 100%;
+          padding: 1.6rem 0;
+        }
+
+        .organization-content p {
+          margin-bottom: 1rem;
+          font-size: 2rem;
+        }
+
+        .organization-link {
+          font-size: 1rem;
+        }
+
+        .slide-policies {
+          grid-template-rows: auto auto;
+          align-content: center;
+          justify-items: center;
+          gap: 1.05rem;
+          padding: 3rem 7.5vw 6.5rem;
+          overflow-y: auto;
+          scrollbar-width: none;
+        }
+
+        .slide-policies::-webkit-scrollbar {
+          display: none;
+        }
+
+        .policies-heading,
+        .policy-groups {
+          width: min(100%, 24rem);
+          justify-self: center;
+        }
+
+        .policies-heading h2 {
+          max-width: 100%;
+          font-size: clamp(2.28rem, 7vw, 3rem);
+        }
+
+        .policy-groups {
+          grid-template-columns: 1fr;
+          gap: 0.85rem;
+        }
+
+        .policy-groups article {
+          min-height: 0;
+          padding: 0.75rem 0 0.8rem;
+          border-top: 0;
+        }
+
+        .policy-groups h3 {
+          margin-bottom: 0.5rem;
+          font-size: clamp(0.95rem, 4vw, 1.08rem);
+        }
+
+        .policy-groups li {
+          padding-left: 0.78rem;
+          font-size: clamp(0.72rem, 3vw, 0.86rem);
+          line-height: 1.18;
+        }
+
+        .policy-groups p {
+          max-width: 100%;
+          font-size: clamp(0.72rem, 3vw, 0.86rem);
+          line-height: 1.22;
+        }
+
+        .policy-groups ul {
+          gap: 0.34rem;
+        }
+
+        .policy-groups li::before {
+          top: 0.56em;
+          width: 0.24rem;
+          height: 0.24rem;
+        }
+
+        .slide-benefits {
+          grid-template-columns: 1fr;
+          align-content: center;
+          gap: 2rem;
+          padding: 3rem 7.5vw 6.5rem;
+        }
+
+        .benefits-heading h2 {
+          max-width: 100%;
+          font-size: clamp(2.28rem, 7vw, 3rem);
+        }
+
+        .benefits-list li {
+          min-height: 2.85rem;
+          padding: 0.65rem 0 0.65rem 1.35rem;
+          font-size: clamp(0.88rem, 3.5vw, 1.06rem);
+        }
+
+        .benefits-list li::before {
+          width: 0.48rem;
+          height: 0.48rem;
+        }
+
+        .slide-grow-together {
+          padding: 3rem 7.5vw 6.5rem;
+        }
+
+        .grow-together-content h2 {
+          font-size: clamp(2.28rem, 7vw, 3rem);
+        }
+
+        .grow-together-content p {
+          max-width: 19rem;
+          font-size: clamp(0.86rem, 2.5vw, 1rem);
+          line-height: 1.34;
+        }
+
+        .slide-thank-you {
+          grid-template-columns: 1fr;
+          align-content: center;
+          gap: 1.35rem;
+          padding: 3rem 7.5vw 6.5rem;
+          overflow-y: auto;
+          scrollbar-width: none;
+        }
+
+        .slide-thank-you::-webkit-scrollbar {
+          display: none;
+        }
+
+        .thank-you-portrait {
+          min-height: 0;
+          width: min(100%, 18rem);
+          margin: 0 auto;
+          background: transparent;
+        }
+
+        .thank-you-portrait::before,
+        .thank-you-portrait::after {
+          display: none;
+        }
+
+        .thank-you-portrait img {
+          width: min(100%, 15rem);
+          aspect-ratio: 4 / 5;
+          object-position: center 42%;
+          box-shadow: 0 1rem 2.4rem rgba(52, 46, 41, 0.12);
+        }
+
+        .thank-you-content {
+          justify-items: center;
+          gap: 0.95rem;
+          padding: 0;
+          text-align: center;
+        }
+
+        .thank-you-content h2 {
+          font-size: clamp(2.28rem, 7vw, 3rem);
+        }
+
+        .thank-you-contact {
+          max-width: 19.5rem;
+          gap: 0.9rem;
+          font-size: clamp(0.86rem, 2.5vw, 1rem);
+          line-height: 1.34;
+        }
+
+        .deck-nav {
+          right: auto;
+          bottom: max(1rem, env(safe-area-inset-bottom));
+          left: 50%;
+          gap: 0.82rem;
+          padding: 0.32rem 0.46rem;
+          border-color: rgba(52, 46, 41, 0.1);
+          background: rgba(253, 251, 247, 0.88);
+          box-shadow: 0 10px 28px rgba(52, 46, 41, 0.1);
+          transform: translateX(-50%);
+          backdrop-filter: blur(10px);
+        }
+
+        .nav-button {
+          width: 2.15rem;
+          height: 2.15rem;
+        }
+
+        .nav-button svg {
+          width: 1.05rem;
+          height: 1.05rem;
+        }
+
+        .slide-count {
+          min-width: 2.75rem;
+          font-size: 0.82rem;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .cover-copy h1,
+        .welcome-copy h2,
+        .agenda-heading h2,
+        .about-heading h2,
+        .produce-story-header h2,
+        .founder-copy h2,
+        .who-heading h2,
+        .ecosystem-copy h2,
+        .purpose-heading h2,
+        .seasonal-copy h2,
+        .organization-heading h2,
+        .policies-heading h2,
+        .benefits-heading h2,
+        .grow-together-content h2,
+        .thank-you-content h2 {
+          font-size: clamp(2.28rem, 7vw, 3rem);
+        }
+
+        .welcome-lead,
+        .welcome-text,
+        .about-copy p,
+        .about-copy p:first-child,
+        .who-heading p,
+        .who-intro,
+        .ecosystem-copy > span,
+        .ecosystem-intro,
+        .ecosystem-goal strong,
+        .purpose-heading p,
+        .seasonal-copy a,
+        .organization-link,
+        .grow-together-content p,
+        .thank-you-contact {
+          font-size: clamp(0.86rem, 2.5vw, 1rem);
+          line-height: 1.34;
+        }
+
+        .agenda-item {
+          font-size: clamp(1.05rem, 3.4vw, 1.45rem);
+        }
+
+        .produce-story-header p,
+        .training-copy p {
+          font-size: clamp(0.92rem, 2.65vw, 1.05rem);
+          line-height: 1.32;
+        }
+
+        .produce-step h3 {
+          font-size: clamp(0.78rem, 2.25vw, 0.95rem);
+        }
+
+        .produce-step p {
+          font-size: clamp(0.68rem, 1.95vw, 0.82rem);
+          line-height: 1.18;
+        }
+
+        .founder-name {
+          font-size: clamp(1.15rem, 3.4vw, 1.4rem);
+        }
+
+        .founder-role {
+          font-size: clamp(0.88rem, 2.55vw, 1rem);
+        }
+
+        .organization-content p {
+          font-size: clamp(1.7rem, 5.4vw, 2.25rem);
+        }
+
+        .policy-groups h3 {
+          font-size: clamp(0.95rem, 2.65vw, 1.08rem);
+        }
+
+        .policy-groups li,
+        .policy-groups p {
+          font-size: clamp(0.72rem, 2vw, 0.86rem);
+        }
+
+        .benefits-list li {
+          font-size: clamp(0.88rem, 2.6vw, 1.06rem);
+        }
+
+        .deck-nav {
+          right: auto;
+          bottom: 1rem;
+          left: 50%;
+          gap: 0.82rem;
+          padding: 0.32rem 0.46rem;
+          border-color: rgba(52, 46, 41, 0.1);
+          background: rgba(253, 251, 247, 0.88);
+          box-shadow: 0 10px 28px rgba(52, 46, 41, 0.1);
+          transform: translateX(-50%);
+          backdrop-filter: blur(10px);
+        }
+
+        .nav-button {
+          width: 2.15rem;
+          height: 2.15rem;
+        }
+
+        .nav-button svg {
+          width: 1.05rem;
+          height: 1.05rem;
+        }
+
+        .slide-count {
+          min-width: 2.75rem;
+          font-size: 0.82rem;
+        }
+      }
+
+      @media (min-width: 701px) {
+        .slide-produce-story .produce-step h3 {
+          font-size: clamp(1.2rem, 1.74vw, 1.74rem);
+          line-height: 1.08;
+        }
+
+        .slide-produce-story .produce-step p {
+          font-size: clamp(1rem, 1.4vw, 1.3rem);
+          line-height: 1.24;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .cover-copy {
+          animation: none;
+        }
+
+        .nav-button {
+          transition: none;
+        }
+
+        .deck {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="deck" aria-label="Bewild new employee onboarding HTML deck">
+      <section id="slide-1" class="slide slide-cover" aria-label="Slide 1: Bewild new employee onboarding">
+        <div class="cover-copy">
+          <img
+            class="bewild-logo"
+            src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/25_Bewild_-_Black_with_Tagline_d68ac5a5-6d75-412d-a6be-2ff7b3a2c322_220x@2x%20(1).avif"
+            alt="Bewild"
+          />
+          <h1>New Employee Onboarding</h1>
+        </div>
+      </section>
+
+      <section id="slide-2" class="slide slide-welcome" aria-label="Slide 2: Welcome to Bewild">
+        <div class="welcome-copy">
+          <h2>Hello!</h2>
+          <p class="welcome-lead">We are thrilled to welcome you to the Bewild family!</p>
+          <p class="welcome-text">
+            We're excited to have you join our team and are confident that your unique talents, ideas, and enthusiasm will make a meaningful impact.
+          </p>
+          <p class="welcome-text">
+            Together, we'll learn, grow, and create something truly meaningful. Here's to an exciting journey ahead and many shared successes. Welcome aboard!
+          </p>
+        </div>
+        <figure class="welcome-image">
+          <img
+            src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/bewild-welcome-v1.png"
+            alt="A Bewild team working together with fresh local produce"
+          />
+        </figure>
+      </section>
+
+      <section id="slide-3" class="slide slide-agenda" aria-label="Slide 3: Agenda overview">
+        <header class="agenda-heading">
+          <h2>Agenda Overview</h2>
+        </header>
+        <ol class="agenda-list">
+          <li class="agenda-item"><span class="agenda-index">01</span><span>About Our Company</span></li>
+          <li class="agenda-item"><span class="agenda-index">02</span><span>Our Vision and Mission</span></li>
+          <li class="agenda-item"><span class="agenda-index">03</span><span>Company culture &amp; Value</span></li>
+          <li class="agenda-item"><span class="agenda-index">04</span><span>Policies &amp; Procedures</span></li>
+          <li class="agenda-item"><span class="agenda-index">05</span><span>Organization Structure</span></li>
+          <li class="agenda-item"><span class="agenda-index">06</span><span>Benefits and Perks</span></li>
+        </ol>
+      </section>
+
+      <section id="slide-4" class="slide slide-about" aria-label="Slide 4: About our company">
+        <header class="about-heading">
+          <h2>About Our Company</h2>
+        </header>
+        <div class="about-copy">
+          <p>
+            Founded in 2018, Bewild was created with a vision to redefine the way people experience food—by making it wholesome, sustainable, and deeply connected to nature.
+          </p>
+          <p>
+            As part of the Be-Ecoverse ecosystem, Bewild believes that food should not only nourish people but also regenerate the environment and strengthen local communities.
+          </p>
+          <p>
+            We work closely with farmers, producers, and local partners to promote responsible sourcing, sustainable practices, and mindful consumption. Every product and experience we create reflects our commitment to quality, transparency, and positive impact.
+          </p>
+          <p>
+            At Bewild, we are building more than a food brand—we are cultivating a movement that connects people with nature through food while creating lasting value for individuals, communities, and the planet.
+          </p>
+        </div>
+      </section>
+
+      <section id="slide-5" class="slide slide-produce-story" aria-label="Slide 5: The story of our produce">
+        <header class="produce-story-header">
+          <div>
+            <span class="produce-story-kicker">The Story of Our Produce / 01</span>
+            <h2>From Soil to Seed</h2>
+          </div>
+          <p>We, the Bewild produce, come to life through our community's efforts in enriching soil and supporting their economic well-being.</p>
+          <span class="produce-story-range">Stages 01-06</span>
+        </header>
+
+        <ol class="produce-steps" aria-label="The first six steps in the journey of Bewild produce">
+          <li class="produce-step">
+            <div class="produce-step-heading"><span class="produce-step-number">01</span><h3>Zoning &amp; Seed Selection</h3></div>
+            <p>After a biodiversity survey, our community identifies cultivation and wilderness areas on our 100+ acre landscape. They select suitable native varieties to grow.</p>
+          </li>
+          <li class="produce-step">
+            <div class="produce-step-heading"><span class="produce-step-number">02</span><h3>Green Manuring</h3></div>
+            <p>Forty-five days before sowing, the soil is enriched with green manuring, ensuring it's ready to support our growth.</p>
+          </li>
+          <li class="produce-step">
+            <div class="produce-step-heading"><span class="produce-step-number">03</span><h3>Seed Sourcing</h3></div>
+            <p>Our seeds are procured from a community of farmers and seed savers, ensuring non-GMO, native, heirloom varieties.</p>
+          </li>
+          <li class="produce-step">
+            <div class="produce-step-heading"><span class="produce-step-number">04</span><h3>Land Preparation</h3></div>
+            <p>1-3 days before sowing, the land is gently tilled and enriched with natural nutrients to create the perfect environment for us.</p>
+          </li>
+          <li class="produce-step">
+            <div class="produce-step-heading"><span class="produce-step-number">05</span><h3>Sowing &amp; Transplanting</h3></div>
+            <p>With hope, we are sown into the soil or transplanted from the nursery, ready to grow and flourish.</p>
+          </li>
+          <li class="produce-step">
+            <div class="produce-step-heading"><span class="produce-step-number">06</span><h3>Early Nourishment</h3></div>
+            <p>We receive extra care with cow dung, biomass, water, and mulch to protect us from harsh weather and ensure strong roots.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="slide-6" class="slide slide-produce-story" aria-label="Slide 6: The story of our produce continued">
+        <header class="produce-story-header">
+          <div>
+            <span class="produce-story-kicker">The Story of Our Produce / 02</span>
+            <h2>From Growth to You</h2>
+          </div>
+          <p>From careful maintenance to your honest feedback, every stage protects the freshness, quality, and integrity of what we grow.</p>
+          <span class="produce-story-range">Stages 07-12</span>
+        </header>
+
+        <ol class="produce-steps" aria-label="The final six steps in the journey of Bewild produce">
+          <li class="produce-step">
+            <div class="produce-step-heading"><span class="produce-step-number">07</span><h3>Maintenance</h3></div>
+            <p>Regular pruning, weeding, and natural pest control keep us healthy and resilient as we grow.</p>
+          </li>
+          <li class="produce-step">
+            <div class="produce-step-heading"><span class="produce-step-number">08</span><h3>Harvesting</h3></div>
+            <p>At peak ripeness, we are handpicked and checked for quality, maintaining our freshness and integrity.</p>
+          </li>
+          <li class="produce-step">
+            <div class="produce-step-heading"><span class="produce-step-number">09</span><h3>Seed Saving</h3></div>
+            <p>A portion of us is saved to build an in-house seed bank, preserving our lineage for future generations.</p>
+          </li>
+          <li class="produce-step">
+            <div class="produce-step-heading"><span class="produce-step-number">10</span><h3>Post Harvesting</h3></div>
+            <p>We are thoroughly sorted, cleaned, and processed to bring out our best qualities.</p>
+          </li>
+          <li class="produce-step">
+            <div class="produce-step-heading"><span class="produce-step-number">11</span><h3>Bewild Produce &amp; Products</h3></div>
+            <p>Forest-friendly wellness, delivered to you directly, reducing up to 50% of the food waste compared to the market standard.</p>
+          </li>
+          <li class="produce-step">
+            <div class="produce-step-heading"><span class="produce-step-number">12</span><h3>Feedback From You</h3></div>
+            <p>Share your honest thoughts about our produce and products on our social media channels, and we'll work on improving our processes to offer you only the best.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="slide-7" class="slide slide-founder" aria-label="Slide 7: Founder">
+        <div class="founder-copy">
+          <span class="founder-kicker">Bewild / Leadership</span>
+          <h2>Founder</h2>
+          <div class="founder-identity">
+            <p class="founder-name">Shruti Ajmera Reddy</p>
+            <p class="founder-role">CEO - Founder Bewild</p>
+          </div>
+        </div>
+
+        <figure class="founder-portrait">
+          <img
+            src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/WhatsApp%20Image%202026-06-10%20at%204.57.33%20PM.jpeg"
+            alt="Shruti Ajmera Reddy, CEO and Founder of Bewild"
+          />
+        </figure>
+      </section>
+
+      <section id="slide-8" class="slide slide-who-we-are who-ecosystem" aria-label="Slide 8: About Bewild and who we are">
+        <div class="ecosystem-copy">
+          <h2>About Bewild</h2>
+          <span>Who We Are</span>
+          <p class="ecosystem-intro">Bewild is a purpose-driven food venture committed to creating healthy, sustainable, and locally sourced food experiences.</p>
+          <p class="ecosystem-goal">
+            <span>Our goal</span>
+            <strong>Not simply selling food&mdash;creating a better food ecosystem.</strong>
+          </p>
+        </div>
+
+        <div class="ecosystem-visual" aria-label="Four beliefs at the heart of Bewild's food ecosystem">
+          <span class="ecosystem-label">We believe food should</span>
+          <div class="ecosystem-cross" aria-hidden="true"></div>
+          <div class="ecosystem-core">
+            <strong>Food</strong>
+            <small>People &middot; Community &middot; Nature &middot; Value</small>
+          </div>
+          <ol class="ecosystem-nodes">
+            <li class="ecosystem-node"><span>01</span><strong>Nourish people</strong></li>
+            <li class="ecosystem-node"><span>02</span><strong>Support local communities</strong></li>
+            <li class="ecosystem-node"><span>03</span><strong>Protect nature</strong></li>
+            <li class="ecosystem-node"><span>04</span><strong>Create long-term value</strong></li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="slide-9" class="slide slide-values" aria-label="Slide 9: Our purpose and why we exist">
+        <div class="values-layout">
+          <header class="values-title">
+            <h2>Our Purpose</h2>
+            <p>Why We Exist</p>
+          </header>
+
+          <div class="values-list">
+            <article>
+              <p class="value-kicker">People &middot; Farmers &middot; Communities &middot; Nature</p>
+              <blockquote>To build a regenerative food ecosystem that positively impacts people, farmers, communities, and nature.</blockquote>
+            </article>
+
+            <article>
+              <p class="value-kicker">Wholesome Food Experiences</p>
+              <blockquote>To deliver wholesome food experiences while supporting local producers and sustainable practices.</blockquote>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="slide-10" class="slide slide-seasonal" aria-label="Slide 10: Our seasonal produce and Bewild recipes">
+        <div class="seasonal-image" aria-hidden="true">
+          <img
+            src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/bewild-welcome-v1.png"
+            alt=""
+          />
+        </div>
+        <header class="seasonal-copy">
+          <h2>Our Seasonal Produce</h2>
+          <a href="https://www.bewild.life" target="_blank" rel="noopener noreferrer">Bewild Recipes</a>
+        </header>
+      </section>
+
+      <section id="slide-11" class="slide slide-organization" aria-label="Slide 11: Organization structure">
+        <header class="organization-heading">
+          <h2>Organization Structure</h2>
+        </header>
+        <div class="organization-content">
+          <p>Departmental Tree</p>
+          <a
+            class="organization-link"
+            href="https://people.zoho.in/60016186841/zp#home/organization/departmenttree-id:209952000000307980"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View organization department tree
+          </a>
+        </div>
+      </section>
+
+      <section id="slide-12" class="slide slide-policies" aria-label="Slide 12: Policies and procedures">
+        <header class="policies-heading">
+          <h2>Policies and Procedures</h2>
+        </header>
+        <div class="policy-groups">
+          <article>
+            <h3>Code of Conduct</h3>
+            <p>Upholding respect, integrity, and professionalism is at the core of our Code of Conduct, ensuring a safe and inclusive workplace.</p>
+          </article>
+          <article>
+            <h3>Attendance Policy</h3>
+            <ul>
+              <li>Work days - 5 Working days (HO) &amp; Farm 6 WRD</li>
+              <li>Work Timings: 09:30 AM to 06:30 PM</li>
+              <li>Lunch break - 1 hr</li>
+              <li>Half Day Leave - 4hrs</li>
+              <li>Compensatory request</li>
+              <li>Holiday (12, 4 National &amp; 8 Public)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="slide-13" class="slide slide-policies" aria-label="Slide 13: More policies and procedures">
+        <header class="policies-heading">
+          <h2>Policies and Procedures</h2>
+        </header>
+        <div class="policy-groups">
+          <article>
+            <h3>Leave Policy</h3>
+            <ul>
+              <li>Privileged Leave - 15/Y (HO) - 36 (CO)</li>
+              <li>Medical/Casual Leave - 12/Y</li>
+              <li>Bereavement Leave - 12/5/Y</li>
+              <li>Paternity Leave - 10/Y</li>
+              <li>Maternity Leave - 26 weeks</li>
+              <li>Marriage Leave - 10/Y</li>
+              <li>Compensatory Leave</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Other Policies</h3>
+            <ul>
+              <li>Hiring Policy</li>
+              <li>Referral Policy</li>
+              <li>Disciplinary</li>
+              <li>DEI&amp;B (Diversity Equity Inclusion and Belonging)</li>
+              <li>POSH (Prevention of Sexual Harassment)</li>
+              <li>Exit/ separation policy</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="slide-14" class="slide slide-benefits" aria-label="Slide 14: Benefits and perks">
+        <header class="benefits-heading">
+          <h2>Benefits and Perks</h2>
+        </header>
+        <ul class="benefits-list">
+          <li>Performance Linked Incentive</li>
+          <li>Provident Fund</li>
+          <li>Health Insurance Coverage up to &#8377;5 Lakhs</li>
+          <li>Retirement Benefit - Age of 60 Years</li>
+          <li>Gratuity - 5 Years of Service</li>
+          <li>Leave Encashment</li>
+          <li>Travel &amp; Reimbursement</li>
+        </ul>
+      </section>
+
+      <section id="slide-15" class="slide slide-grow-together" aria-label="Slide 15: Let's grow together">
+        <div class="grow-together-content">
+          <h2>Let's Grow Together</h2>
+          <p>We're excited to learn, build, and grow alongside you.<br />Questions are always welcome.</p>
+        </div>
+      </section>
+
+      <section id="slide-16" class="slide slide-thank-you" aria-label="Slide 16: Thank you">
+        <figure class="thank-you-portrait" aria-label="Bewild team member">
+          <img
+            src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/WhatsApp%20Image%202026-06-10%20at%204.57.33%20PM.jpeg"
+            alt="Bewild team member"
+          />
+        </figure>
+        <div class="thank-you-content">
+          <h2>Thank you</h2>
+          <div class="thank-you-contact">
+            <p>
+              For any questions or additional information, please reach out to us at
+              <a href="mailto:human.resources@beforest.co">human.resources@beforest.co</a>
+            </p>
+            <p>
+              <span class="thank-you-label">Explore more:</span><br />
+              <a class="thank-you-link" href="https://bewild.life/" target="_blank" rel="noopener noreferrer">https://bewild.life/</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="deck-nav" aria-label="Slide navigation">
+      <button class="nav-button" id="previous-slide" type="button" aria-label="Previous slide" disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+      </button>
+      <span class="slide-count" aria-live="polite">1 / 14</span>
+      <button class="nav-button" id="next-slide" type="button" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      </button>
+    </nav>
+
+    <script>
+      const deck = document.querySelector(".deck");
+      const slides = Array.from(document.querySelectorAll(".slide"));
+      const previousButton = document.querySelector("#previous-slide");
+      const nextButton = document.querySelector("#next-slide");
+      const slideCount = document.querySelector(".slide-count");
+      const plannedSlideTotal = 16;
+      let currentSlide = 0;
+      let touchStartX = null;
+
+      function showSlide(index) {
+        currentSlide = Math.max(0, Math.min(index, slides.length - 1));
+        deck.style.transform = `translateX(-${currentSlide * 100}vw)`;
+        previousButton.disabled = currentSlide === 0;
+        nextButton.disabled = currentSlide === slides.length - 1;
+        slideCount.textContent = `${currentSlide + 1} / ${plannedSlideTotal}`;
+
+        slides.forEach((slide, slideIndex) => {
+          slide.setAttribute("aria-hidden", slideIndex === currentSlide ? "false" : "true");
+        });
+      }
+
+      previousButton.addEventListener("click", () => showSlide(currentSlide - 1));
+      nextButton.addEventListener("click", () => showSlide(currentSlide + 1));
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") showSlide(currentSlide - 1);
+        if (event.key === "ArrowRight") showSlide(currentSlide + 1);
+      });
+
+      deck.addEventListener("touchstart", (event) => {
+        touchStartX = event.changedTouches[0].clientX;
+      }, { passive: true });
+
+      deck.addEventListener("touchend", (event) => {
+        if (touchStartX === null) return;
+        const distance = event.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(distance) > 50) showSlide(currentSlide + (distance < 0 ? 1 : -1));
+        touchStartX = null;
+      }, { passive: true });
+
+      showSlide(0);
+    </script>
+  </body>
+</html>

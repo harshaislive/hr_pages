@@ -1,0 +1,2389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beforest Employee Offboarding SOP</title>
+  <script src="../auth.js"></script>
+  <style>
+    @font-face {
+      font-family: "ABC Arizona Flare";
+      src: url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Light.e9c1597c.woff2") format("woff2");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "ABC Arizona Flare";
+      src: url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Regular.cbcc518c.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "ABC Arizona Flare";
+      src: url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Medium.7ce0f1db.woff2") format("woff2");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --brown-950: #27211d;
+      --brown-900: #342e29;
+      --cream: #fdfbf7;
+      --green-900: #344736;
+      --soft-green: #b8dc99;
+      --red-900: #86312b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      overflow: hidden;
+      background: var(--cream);
+      color: #000;
+      font-family: "ABC Arizona Flare", Georgia, serif;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .deck {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(5%);
+      transition: opacity 420ms ease, transform 420ms ease, visibility 420ms ease;
+      background: var(--cream);
+    }
+
+    .slide.is-active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      z-index: 2;
+    }
+
+    .slide-cover {
+      background:
+        linear-gradient(90deg, rgba(253, 251, 247, 0.94) 0%, rgba(253, 251, 247, 0.78) 34%, rgba(253, 251, 247, 0.32) 61%, rgba(253, 251, 247, 0.02) 100%),
+        url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/Brochure/Hammiyala%20Collective/slide-05-image-01.jpg") center / cover no-repeat,
+        var(--cream);
+    }
+
+    .slide-cover::before,
+    .slide-cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .slide-cover::before {
+      background:
+        linear-gradient(90deg, rgba(253, 251, 247, 0.72) 0%, rgba(253, 251, 247, 0.55) 35%, rgba(253, 251, 247, 0.14) 70%, rgba(253, 251, 247, 0) 100%),
+        radial-gradient(circle at 18% 52%, rgba(253, 251, 247, 0.62), transparent 37%);
+      z-index: 1;
+    }
+
+    .slide-cover::after {
+      background: linear-gradient(180deg, rgba(253, 251, 247, 0.02), rgba(253, 251, 247, 0.12));
+      z-index: 2;
+    }
+
+    .cover-image-wash {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: linear-gradient(180deg, rgba(253, 251, 247, 0), rgba(253, 251, 247, 0.2));
+    }
+
+    .brand {
+      position: absolute;
+      top: 7.8%;
+      left: 7%;
+      z-index: 4;
+      width: 12.4rem;
+      height: auto;
+      filter: invert(1);
+    }
+
+    .cover-inner {
+      position: relative;
+      z-index: 4;
+      display: flex;
+      min-height: 100%;
+      align-items: center;
+      padding: 8% 7% 7%;
+    }
+
+    .cover-copy {
+      max-width: 58rem;
+      padding-top: 6rem;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0 0 1.6rem;
+      color: var(--green-900);
+      font-size: clamp(1rem, 1.35vw, 1.25rem);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      background: var(--soft-green);
+      box-shadow: 0 0 0 0.5rem rgba(184, 220, 153, 0.18);
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      font-weight: 300;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .slide-cover h1 {
+      max-width: 10.5ch;
+      color: var(--red-900);
+      font-size: 65px;
+      line-height: 0.98;
+    }
+
+    .cover-copy > p:not(.eyebrow) {
+      max-width: 44rem;
+      margin: 2.1rem 0 0;
+      color: var(--green-900);
+      font-size: clamp(1.45rem, 2vw, 2.35rem);
+      font-weight: 300;
+      line-height: 1.26;
+    }
+
+    .content-slide-inner {
+      position: relative;
+      z-index: 4;
+      display: grid;
+      grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.12fr);
+      min-height: 100%;
+      align-items: center;
+      gap: clamp(84px, 8vw, 160px);
+      padding: clamp(82px, 7vw, 118px) clamp(82px, 7vw, 132px);
+    }
+
+    .section-kicker {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0 0 1.6rem;
+      color: var(--green-900);
+      font-size: clamp(1rem, 1.35vw, 1.25rem);
+      line-height: 1.25;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 999px;
+      background: var(--red-900);
+    }
+
+    .content-title {
+      color: var(--red-900);
+      font-size: 60px;
+      line-height: 0.98;
+    }
+
+    .purpose-list {
+      display: grid;
+      max-width: 880px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid rgba(52, 71, 54, 0.16);
+    }
+
+    .purpose-list li {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(52, 71, 54, 0.16);
+    }
+
+    .purpose-number {
+      color: var(--green-900);
+      font-size: clamp(0.95rem, 1.18vw, 1.12rem);
+      line-height: 1.35;
+    }
+
+    .purpose-text {
+      margin: 0;
+      color: #000;
+      font-size: clamp(1.18rem, 1.55vw, 1.62rem);
+      font-weight: 300;
+      line-height: 1.28;
+    }
+
+    .return-access-grid {
+      display: grid;
+      grid-template-columns: 34% 33% 33%;
+      min-height: 100%;
+      gap: 0;
+      padding: 0;
+      background: linear-gradient(90deg, #00385e 0 34%, #fdfbf7f5 34% 67%, #415c43 67% 100%);
+    }
+
+    .return-access-panel {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      padding: 7.2vw 3.7vw;
+    }
+
+    .return-access-panel h3 {
+      margin: 0 0 1.1rem;
+      color: var(--green-900);
+      font-size: clamp(1.45rem, 1.9vw, 2rem);
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .return-access-panel p,
+    .return-access-panel li {
+      color: #000;
+      font-size: clamp(1.04rem, 1.28vw, 1.28rem);
+      font-weight: 300;
+      line-height: 1.28;
+    }
+
+    .return-access-panel p {
+      margin: 0 0 1rem;
+    }
+
+    .return-access-panel ul {
+      display: grid;
+      gap: 0.55rem;
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    .return-access-panel ul ul {
+      margin-top: 0.45rem;
+    }
+
+    .return-access-title-panel {
+      background: #00385e;
+    }
+
+    .return-access-title-panel h2 {
+      max-width: 100%;
+      color: #b8dc99;
+      font-size: clamp(2.25rem, 3.05vw, 3.65rem);
+      font-weight: 300;
+      line-height: 0.94;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .return-access-title-panel .section-kicker {
+      margin-bottom: 1.6rem;
+      color: #ffcf83;
+      font-size: clamp(0.86rem, 1.1vw, 1rem);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      line-height: 1.18;
+      text-transform: uppercase;
+    }
+
+    .return-access-title-panel .section-kicker::before {
+      background: #ffcf83;
+    }
+
+    .return-access-panel--middle {
+      background: #fdfbf7;
+    }
+
+    .return-access-panel--right {
+      background: #415c43;
+    }
+
+    .return-access-panel--right h3 {
+      color: #ffcf83;
+    }
+
+    .return-access-panel--right p,
+    .return-access-panel--right li {
+      color: #b8dc99;
+    }
+
+    .settlement-list {
+      display: grid;
+      gap: 0;
+      width: min(100%, 920px);
+      border-top: 1px solid rgba(52, 71, 54, 0.18);
+      border-bottom: 1px solid rgba(52, 71, 54, 0.18);
+    }
+
+    .settlement-section {
+      padding: clamp(18px, 2vw, 28px) 0;
+    }
+
+    .settlement-section + .settlement-section {
+      border-top: 1px solid rgba(52, 71, 54, 0.18);
+    }
+
+    .settlement-section h3 {
+      margin: 0 0 1rem;
+      color: var(--green-900);
+      font-size: clamp(1.42rem, 1.85vw, 1.92rem);
+      font-weight: 400;
+      line-height: 1.18;
+    }
+
+    .settlement-section p,
+    .settlement-section li {
+      color: #000;
+      font-size: clamp(1rem, 1.22vw, 1.22rem);
+      font-weight: 300;
+      line-height: 1.24;
+    }
+
+    .settlement-section p {
+      margin: 0 0 1rem;
+    }
+
+    .settlement-section ul {
+      display: grid;
+      gap: 0.42rem;
+      margin: 0;
+      padding-left: 1.3rem;
+    }
+
+    .slide-settlement .content-slide-inner {
+      grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+      gap: clamp(74px, 7vw, 132px);
+      padding-top: clamp(68px, 6vw, 96px);
+      padding-bottom: clamp(116px, 8vw, 138px);
+    }
+
+    .slide-settlement .content-title {
+      max-width: 10.5ch;
+      font-size: clamp(3rem, 4.25vw, 4.65rem);
+      line-height: 0.94;
+    }
+
+    .interview-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.66fr) minmax(0, 1.34fr);
+      min-height: 100%;
+      align-items: center;
+      gap: clamp(74px, 7vw, 132px);
+      padding: clamp(78px, 7vw, 112px) clamp(78px, 6.6vw, 124px) clamp(112px, 8vw, 140px);
+    }
+
+    .interview-heading {
+      position: relative;
+      display: flex;
+      min-height: clamp(380px, 48vh, 520px);
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 0;
+    }
+
+    .interview-heading h2 {
+      max-width: 7.8ch;
+      color: var(--red-900);
+      font-size: clamp(3.45rem, 5.2vw, 6.35rem);
+      font-weight: 300;
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .interview-content {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: clamp(22px, 2vw, 34px);
+    }
+
+    .interview-checklist {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(20px, 2vw, 34px);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .interview-checklist li {
+      position: relative;
+      display: flex;
+      min-height: clamp(250px, 28vh, 330px);
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: clamp(24px, 2.5vw, 36px);
+      border-top: 2px solid rgba(134, 49, 43, 0.72);
+      background: rgba(253, 251, 247, 0.84);
+      box-shadow: inset 0 0 0 1px rgba(52, 71, 54, 0.12);
+    }
+
+    .interview-checklist li::before {
+      content: "0" counter(interview-step);
+      counter-increment: interview-step;
+      position: absolute;
+      top: clamp(22px, 2vw, 30px);
+      left: clamp(24px, 2.5vw, 36px);
+      display: grid;
+      width: 2.65rem;
+      height: 2.65rem;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green-900);
+      color: var(--cream);
+      font-size: clamp(0.75rem, 0.82vw, 0.88rem);
+      line-height: 1;
+    }
+
+    .interview-checklist {
+      counter-reset: interview-step;
+    }
+
+    .interview-lead,
+    .interview-checklist p,
+    .interview-note {
+      margin: 0;
+      color: #000;
+      font-size: clamp(1.02rem, 1.26vw, 1.28rem);
+      font-weight: 300;
+      line-height: 1.32;
+    }
+
+    .interview-checklist p {
+      padding-top: clamp(4.9rem, 5.4vw, 6rem);
+    }
+
+    .interview-lead {
+      color: var(--green-900);
+      font-size: clamp(1.45rem, 2vw, 2.35rem);
+    }
+
+    .interview-note {
+      max-width: 58rem;
+      padding: clamp(22px, 2.1vw, 30px) clamp(28px, 2.8vw, 42px);
+      border-left: 2px solid var(--red-900);
+      background: rgba(52, 71, 54, 0.06);
+      color: var(--green-900);
+    }
+
+    .documentation-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 34%) minmax(0, 66%);
+      min-height: 100%;
+      align-items: center;
+      gap: clamp(60px, 5.6vw, 108px);
+      padding: clamp(76px, 6.8vw, 112px) clamp(64px, 5.8vw, 108px) clamp(112px, 8vw, 142px);
+      background:
+        linear-gradient(90deg, rgba(253, 251, 247, 1) 0%, rgba(253, 251, 247, 0.98) 42%, rgba(52, 71, 54, 0.055) 100%),
+        var(--cream);
+    }
+
+    .documentation-heading h2 {
+      max-width: 6.2ch;
+      color: var(--red-900);
+      font-size: clamp(2.75rem, 3.75vw, 4.65rem);
+      font-weight: 300;
+      line-height: 0.92;
+      text-transform: uppercase;
+    }
+
+    .documentation-board {
+      position: relative;
+      display: grid;
+      gap: 0;
+      width: min(100%, 760px);
+      justify-self: end;
+      padding: clamp(28px, 3vw, 44px);
+      border-top: 2px solid rgba(134, 49, 43, 0.65);
+      background: rgba(253, 251, 247, 0.74);
+      box-shadow: inset 0 0 0 1px rgba(52, 71, 54, 0.12);
+    }
+
+    .documentation-board::before {
+      content: "HR prepares the following documents:";
+      display: block;
+      margin-bottom: clamp(22px, 2.2vw, 30px);
+      color: var(--green-900);
+      font-size: clamp(1.18rem, 1.45vw, 1.48rem);
+      font-weight: 300;
+      line-height: 1.25;
+    }
+
+    .document-list {
+      display: grid;
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .document-list li {
+      display: grid;
+      grid-template-columns: 3.4rem minmax(0, 1fr);
+      gap: clamp(16px, 1.5vw, 22px);
+      align-items: center;
+      padding: clamp(15px, 1.5vw, 20px) 0;
+      border-top: 1px solid rgba(52, 71, 54, 0.14);
+    }
+
+    .document-list li:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .document-list li:last-child {
+      padding-bottom: 0;
+    }
+
+    .document-number {
+      display: grid;
+      width: 2.35rem;
+      height: 2.35rem;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green-900);
+      color: var(--cream);
+      font-size: clamp(0.72rem, 0.8vw, 0.84rem);
+      line-height: 1;
+    }
+
+    .document-text {
+      margin: 0;
+      color: #000;
+      font-size: clamp(1.02rem, 1.22vw, 1.26rem);
+      font-weight: 300;
+      line-height: 1.28;
+    }
+
+    .completion-layout {
+      display: grid;
+      min-height: 100%;
+      grid-template-rows: auto 1fr;
+      gap: clamp(28px, 3vw, 44px);
+      padding: clamp(52px, 4.8vw, 78px) clamp(64px, 5.8vw, 108px) clamp(108px, 7vw, 126px);
+      background:
+        linear-gradient(180deg, rgba(253, 251, 247, 1) 0%, rgba(253, 251, 247, 0.96) 62%, rgba(52, 71, 54, 0.055) 100%),
+        var(--cream);
+    }
+
+    .completion-header {
+      display: grid;
+      grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+      gap: clamp(44px, 4.2vw, 78px);
+      align-items: center;
+      border-bottom: 1px solid rgba(52, 71, 54, 0.18);
+      padding-bottom: clamp(18px, 2vw, 28px);
+    }
+
+    .completion-header h2 {
+      max-width: 13.8ch;
+      margin: 0;
+      color: var(--red-900);
+      font-size: clamp(2.7rem, 3.75vw, 4.45rem);
+      font-weight: 300;
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .completion-intro {
+      max-width: 620px;
+      margin: 0;
+      color: var(--green-900);
+      font-size: clamp(1.04rem, 1.32vw, 1.34rem);
+      font-weight: 300;
+      line-height: 1.3;
+    }
+
+    .completion-checks {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(16px, 1.55vw, 26px);
+      align-self: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .completion-checks li {
+      position: relative;
+      display: flex;
+      min-height: clamp(210px, 25vh, 270px);
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(20px, 1.8vw, 28px);
+      border-top: 2px solid rgba(134, 49, 43, 0.72);
+      background: rgba(253, 251, 247, 0.8);
+      box-shadow: inset 0 0 0 1px rgba(52, 71, 54, 0.12);
+    }
+
+    .completion-number {
+      display: grid;
+      width: 2.35rem;
+      height: 2.35rem;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green-900);
+      color: var(--cream);
+      font-size: clamp(0.74rem, 0.82vw, 0.86rem);
+      line-height: 1;
+    }
+
+    .completion-text {
+      margin: clamp(24px, 2.4vw, 36px) 0 0;
+      color: #000;
+      font-size: clamp(0.98rem, 1.12vw, 1.16rem);
+      font-weight: 300;
+      line-height: 1.28;
+    }
+
+    .departure-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+      min-height: 100%;
+      align-items: center;
+      gap: clamp(80px, 7vw, 136px);
+      padding: clamp(76px, 6.8vw, 112px) clamp(82px, 7vw, 132px) clamp(112px, 8vw, 142px);
+      background:
+        radial-gradient(circle at 82% 24%, rgba(184, 220, 153, 0.18), transparent 30%),
+        linear-gradient(90deg, rgba(253, 251, 247, 1) 0%, rgba(253, 251, 247, 0.98) 48%, rgba(134, 49, 43, 0.045) 100%),
+        var(--cream);
+    }
+
+    .departure-heading {
+      display: grid;
+      gap: clamp(22px, 2vw, 32px);
+    }
+
+    .departure-heading h2 {
+      max-width: 8ch;
+      margin: 0;
+      color: var(--red-900);
+      font-size: clamp(3.35rem, 5vw, 6rem);
+      font-weight: 300;
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .departure-role {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 0.85rem;
+      margin: 0;
+      color: var(--green-900);
+      font-size: clamp(1.14rem, 1.42vw, 1.46rem);
+      font-weight: 300;
+      line-height: 1.2;
+    }
+
+    .departure-role::before {
+      content: "";
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      background: var(--red-900);
+    }
+
+    .departure-path {
+      position: relative;
+      display: grid;
+      gap: clamp(32px, 3.2vw, 52px);
+      max-width: 760px;
+      margin: 0;
+      padding: clamp(24px, 2.4vw, 36px) 0;
+      list-style: none;
+    }
+
+    .departure-path::before {
+      content: "";
+      position: absolute;
+      top: clamp(46px, 4vw, 62px);
+      bottom: clamp(46px, 4vw, 62px);
+      left: 1.28rem;
+      width: 1px;
+      background: rgba(52, 71, 54, 0.18);
+    }
+
+    .departure-path li {
+      position: relative;
+      display: grid;
+      grid-template-columns: 3.1rem minmax(0, 1fr);
+      gap: clamp(22px, 2vw, 34px);
+      align-items: start;
+    }
+
+    .departure-marker {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      width: 2.6rem;
+      height: 2.6rem;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green-900);
+      color: var(--cream);
+      font-size: clamp(0.76rem, 0.84vw, 0.88rem);
+      line-height: 1;
+    }
+
+    .departure-card {
+      padding: 0 0 clamp(28px, 2.6vw, 38px);
+      border-bottom: 1px solid rgba(52, 71, 54, 0.16);
+    }
+
+    .departure-path li:last-child .departure-card {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .departure-card p {
+      max-width: 660px;
+      margin: 0;
+      color: #000;
+      font-size: clamp(1.32rem, 1.72vw, 1.78rem);
+      font-weight: 300;
+      line-height: 1.28;
+    }
+
+    .action-layout {
+      display: grid;
+      grid-template-columns: 26% 74%;
+      min-height: 100%;
+      align-items: stretch;
+      gap: 0;
+      padding: 0;
+      background: var(--cream);
+    }
+
+    .action-title-panel {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(70px, 6.2vw, 106px) clamp(54px, 4.8vw, 86px) clamp(112px, 8vw, 142px);
+      background: #415c43;
+    }
+
+    .action-title-panel .section-kicker {
+      color: #ffcf83;
+    }
+
+    .action-title-panel .section-kicker::before {
+      background: #ffcf83;
+    }
+
+    .action-title-panel h2 {
+      max-width: 7.8ch;
+      margin: 0;
+      color: #b8dc99;
+      font-size: clamp(3.2rem, 5vw, 6rem);
+      font-weight: 300;
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .action-register {
+      display: grid;
+      align-content: center;
+      min-height: 100vh;
+      padding: clamp(70px, 6.2vw, 106px) clamp(68px, 6vw, 118px) clamp(112px, 8vw, 142px);
+    }
+
+    .action-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: clamp(42px, 4vw, 74px);
+      row-gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid rgba(52, 71, 54, 0.18);
+    }
+
+    .action-list li {
+      display: grid;
+      grid-template-columns: 3rem minmax(0, 1fr);
+      gap: clamp(14px, 1.3vw, 20px);
+      align-items: start;
+      min-height: clamp(82px, 9vh, 112px);
+      padding: clamp(18px, 1.7vw, 24px) 0;
+      border-bottom: 1px solid rgba(52, 71, 54, 0.18);
+    }
+
+    .action-number {
+      color: var(--red-900);
+      font-size: clamp(0.82rem, 0.94vw, 1rem);
+      line-height: 1.35;
+    }
+
+    .action-text {
+      margin: 0;
+      color: #000;
+      font-size: clamp(0.96rem, 1.12vw, 1.16rem);
+      font-weight: 300;
+      line-height: 1.28;
+    }
+
+    .funnel-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.52fr);
+      gap: clamp(34px, 3.8vw, 70px);
+      min-height: 100%;
+      padding: clamp(54px, 4.6vw, 82px) clamp(72px, 6vw, 116px) clamp(112px, 7vw, 132px);
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(253, 251, 247, 0.98) 0%, rgba(253, 251, 247, 0.9) 48%, rgba(52, 71, 54, 0.05) 100%),
+        var(--cream);
+    }
+
+    .funnel-heading {
+      display: grid;
+      gap: clamp(14px, 1.4vw, 22px);
+      align-content: center;
+    }
+
+    .funnel-heading h2 {
+      max-width: 7.4ch;
+      margin: 0;
+      color: var(--red-900);
+      font-size: 60px;
+      font-weight: 300;
+      line-height: 0.93;
+      text-transform: uppercase;
+    }
+
+    .funnel-heading p {
+      max-width: 28rem;
+      margin: 0;
+      color: var(--green-900);
+      font-size: clamp(1.02rem, 1.18vw, 1.22rem);
+      font-weight: 300;
+      line-height: 1.28;
+    }
+
+    .funnel-board {
+      display: grid;
+      grid-template-columns: minmax(270px, 0.82fr) minmax(0, 1.08fr);
+      gap: clamp(26px, 2.5vw, 44px);
+      align-items: center;
+    }
+
+    .funnel-stack {
+      display: grid;
+      justify-items: center;
+      gap: 4px;
+    }
+
+    .funnel-stage {
+      position: relative;
+      display: grid;
+      width: var(--stage-width);
+      min-height: var(--stage-height);
+      place-items: center;
+      padding: 0 clamp(16px, 1.5vw, 24px);
+      clip-path: polygon(var(--slant) 0, calc(100% - var(--slant)) 0, 100% 100%, 0 100%);
+      background: var(--stage-color);
+      color: var(--cream);
+      text-align: center;
+      font-family: "Inter", Arial, sans-serif;
+      font-size: clamp(0.92rem, 1.16vw, 1.22rem);
+      font-weight: 650;
+      line-height: 1.06;
+      box-shadow: 0 12px 24px rgba(39, 33, 29, 0.08);
+    }
+
+    .funnel-stage:nth-child(1) {
+      --stage-width: 100%;
+      --stage-height: clamp(62px, 6.4vh, 76px);
+      --slant: 4%;
+      --stage-color: #153f67;
+    }
+
+    .funnel-stage:nth-child(2) {
+      --stage-width: 88%;
+      --stage-height: clamp(58px, 5.8vh, 70px);
+      --slant: 4.5%;
+      --stage-color: #1f6fae;
+    }
+
+    .funnel-stage:nth-child(3) {
+      --stage-width: 76%;
+      --stage-height: clamp(56px, 5.5vh, 66px);
+      --slant: 5%;
+      --stage-color: #2baaa1;
+    }
+
+    .funnel-stage:nth-child(4) {
+      --stage-width: 64%;
+      --stage-height: clamp(54px, 5.2vh, 64px);
+      --slant: 5.6%;
+      --stage-color: #2eaa80;
+    }
+
+    .funnel-stage:nth-child(5) {
+      --stage-width: 52%;
+      --stage-height: clamp(52px, 5vh, 60px);
+      --slant: 6.6%;
+      --stage-color: #247b7c;
+      font-size: clamp(0.78rem, 0.92vw, 0.98rem);
+    }
+
+    .funnel-stage:nth-child(6) {
+      --stage-width: 36%;
+      --stage-height: clamp(48px, 4.6vh, 56px);
+      --slant: 10%;
+      --stage-color: #143b63;
+      font-size: clamp(0.74rem, 0.86vw, 0.92rem);
+    }
+
+    .funnel-details {
+      display: grid;
+      gap: 0;
+    }
+
+    .funnel-detail {
+      display: grid;
+      grid-template-columns: 2.4rem minmax(0, 1fr);
+      gap: clamp(12px, 1vw, 18px);
+      align-items: start;
+      padding: clamp(9px, 0.9vw, 13px) 0;
+      border-bottom: 1px solid rgba(52, 71, 54, 0.18);
+    }
+
+    .funnel-detail:first-child {
+      border-top: 1px solid rgba(52, 71, 54, 0.18);
+    }
+
+    .funnel-index {
+      display: grid;
+      width: 2rem;
+      height: 2rem;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green-900);
+      color: var(--cream);
+      font-family: "Inter", Arial, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 650;
+    }
+
+    .funnel-detail h3 {
+      margin: 0 0 0.32rem;
+      color: var(--green-900);
+      font-size: clamp(0.98rem, 1.06vw, 1.12rem);
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .funnel-detail ul {
+      display: grid;
+      gap: 0.22rem;
+      margin: 0;
+      padding-left: 1.05rem;
+      color: #000;
+      font-size: clamp(0.78rem, 0.88vw, 0.92rem);
+      font-weight: 300;
+      line-height: 1.18;
+    }
+
+    .review-layout {
+      position: relative;
+      display: grid;
+      min-height: 100%;
+      place-items: center;
+      padding: clamp(72px, 6vw, 104px) clamp(88px, 8vw, 150px) clamp(112px, 8vw, 142px);
+      background:
+        linear-gradient(90deg, rgba(52, 71, 54, 0.06) 1px, transparent 1px) 0 0 / 8.5vw 100%,
+        radial-gradient(circle at 50% 38%, rgba(184, 220, 153, 0.14), transparent 34%),
+        var(--cream);
+      overflow: hidden;
+    }
+
+    .review-card {
+      position: relative;
+      display: grid;
+      width: min(100%, 980px);
+      gap: clamp(26px, 2.8vw, 44px);
+      padding: clamp(54px, 5vw, 82px) clamp(62px, 6vw, 108px);
+      border-top: 2px solid rgba(134, 49, 43, 0.65);
+      border-bottom: 1px solid rgba(52, 71, 54, 0.22);
+      text-align: center;
+    }
+
+    .review-card h2 {
+      margin: 0;
+      color: var(--red-900);
+      font-size: 60px;
+      font-weight: 300;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .review-card p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--green-900);
+      font-size: clamp(1.55rem, 2vw, 2.12rem);
+      font-weight: 300;
+      line-height: 1.26;
+    }
+
+    .slide-responsibilities {
+      background: linear-gradient(90deg, #00385e 0 34%, #fdfbf7f5 34% 67%, #415c43 67% 100%);
+    }
+
+    .responsibility-layout {
+      position: relative;
+      z-index: 4;
+      display: grid;
+      grid-template-columns: 34% 33% 33%;
+      min-height: 100%;
+      align-items: stretch;
+      gap: 0;
+      padding: 0;
+      background: linear-gradient(90deg, #00385e 0 34%, #fdfbf7f5 34% 67%, #415c43 67% 100%);
+    }
+
+    .responsibility-title-panel {
+      position: relative;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      padding: 7.2vw 3.7vw;
+      background: #00385e;
+    }
+
+    .responsibility-title-panel .responsibility-kicker {
+      margin-bottom: 1.6rem;
+    }
+
+    .responsibility-title-panel h2 {
+      max-width: 100%;
+      color: #b8dc99;
+      font-size: clamp(2.25rem, 3.05vw, 3.65rem);
+      font-weight: 300;
+      line-height: 0.94;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .responsibility-group {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      padding: 7.2vw 3.7vw;
+    }
+
+    .responsibility-group--middle {
+      position: relative;
+      background: #fdfbf7;
+    }
+
+    .responsibility-group--right {
+      position: relative;
+      background: #415c43;
+    }
+
+    .responsibility-kicker {
+      margin: 0 0 1.35rem;
+      color: #ffcf83;
+      font-size: clamp(0.86rem, 1.1vw, 1rem);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      line-height: 1.18;
+      text-transform: uppercase;
+    }
+
+    .responsibility-role {
+      margin: 0 0 0.7rem;
+      color: var(--red-900);
+      font-size: clamp(1.1rem, 1.4vw, 1.32rem);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .responsibility-copy {
+      margin: 0;
+      color: #000;
+      font-size: clamp(0.9rem, 1.08vw, 1.04rem);
+      font-weight: 400;
+      line-height: 1.34;
+    }
+
+    .responsibility-item-list {
+      display: grid;
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid rgba(52, 71, 54, 0.16);
+    }
+
+    .responsibility-item-list li {
+      display: grid;
+      grid-template-columns: 3.2rem minmax(0, 1fr);
+      gap: 1.2rem;
+      padding: 1.55rem 0;
+      border-bottom: 1px solid rgba(52, 71, 54, 0.16);
+    }
+
+    .responsibility-group--right .responsibility-item-list {
+      border-color: rgba(184, 220, 153, 0.22);
+    }
+
+    .responsibility-group--right .responsibility-item-list li {
+      border-color: rgba(184, 220, 153, 0.22);
+    }
+
+    .responsibility-group--right .responsibility-role {
+      color: #ffcf83;
+    }
+
+    .responsibility-group--right .responsibility-copy {
+      color: #b8dc99;
+    }
+
+    .responsibility-number {
+      color: var(--green-900);
+      font-size: clamp(0.9rem, 1.1vw, 1rem);
+      line-height: 1.28;
+    }
+
+    .responsibility-group--right .responsibility-number {
+      color: rgba(255, 207, 131, 0.9);
+    }
+
+    .slide-procedure {
+      background: var(--cream);
+    }
+
+    .procedure-layout {
+      position: relative;
+      display: grid;
+      grid-template-rows: auto auto;
+      min-height: 100%;
+      align-content: center;
+      align-items: stretch;
+      gap: clamp(38px, 4.2vw, 66px);
+      padding: clamp(54px, 5vw, 82px) clamp(64px, 6vw, 108px) clamp(116px, 8vw, 140px);
+      color: #000;
+    }
+
+    .procedure-kicker {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0 0 clamp(1rem, 1.4vw, 1.4rem);
+      color: var(--green-900);
+      font-size: clamp(0.9rem, 1vw, 1.02rem);
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 1.25;
+      text-transform: none;
+    }
+
+    .procedure-kicker::before {
+      content: "";
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 999px;
+      background: var(--red-900);
+    }
+
+    .procedure-title-panel h2 {
+      max-width: none;
+      color: var(--red-900);
+      font-size: 60px;
+      font-weight: 300;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .procedure-head {
+      position: relative;
+      display: block;
+      padding-left: clamp(18px, 1.8vw, 30px);
+    }
+
+    .procedure-head::before {
+      content: "";
+      position: absolute;
+      top: 0.25rem;
+      bottom: 0;
+      left: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--red-900), rgba(134, 49, 43, 0.08));
+    }
+
+    .procedure-card-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(22px, 2.2vw, 42px);
+      margin: 0;
+    }
+
+    .procedure-card-grid::before {
+      content: "";
+      position: absolute;
+      top: 1.12rem;
+      right: 0;
+      left: 0;
+      height: 1px;
+      background: rgba(52, 71, 54, 0.2);
+    }
+
+    .procedure-card {
+      position: relative;
+      display: block;
+      padding-top: clamp(38px, 3.8vw, 58px);
+      padding-right: clamp(6px, 0.8vw, 14px);
+      border-top: 1px solid rgba(52, 71, 54, 0.18);
+    }
+
+    .procedure-card:last-child {
+      padding-bottom: 0;
+    }
+
+    .procedure-step-kicker {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      width: 2.25rem;
+      height: 2.25rem;
+      place-items: center;
+      margin: 0 0 clamp(1.4rem, 2.2vw, 2.3rem);
+      border-radius: 50%;
+      background: var(--green-900);
+      color: var(--cream);
+      font-size: clamp(0.72rem, 0.82vw, 0.86rem);
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 1.2;
+      text-transform: none;
+    }
+
+    .procedure-step-text {
+      margin: 0;
+      color: #000;
+      font-size: clamp(1.04rem, 1.18vw, 1.22rem);
+      font-weight: 300;
+      line-height: 1.3;
+    }
+
+    .deck-nav {
+      position: fixed;
+      right: 2rem;
+      bottom: 1.6rem;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.45rem;
+      border: 1px solid rgba(52, 46, 41, 0.12);
+      border-radius: 999px;
+      background: rgba(253, 251, 247, 0.82);
+      box-shadow: 0 14px 40px rgba(52, 46, 41, 0.12);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-arrow {
+      display: grid;
+      width: 2.45rem;
+      height: 2.45rem;
+      place-items: center;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: var(--brown-950);
+      color: var(--cream);
+      cursor: pointer;
+    }
+
+    .nav-arrow:disabled {
+      cursor: not-allowed;
+      opacity: 0.32;
+    }
+
+    .nav-arrow svg {
+      width: 1.28rem;
+      height: 1.28rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2;
+    }
+
+    .nav-count {
+      min-width: 3.1rem;
+      color: rgba(52, 46, 41, 0.74);
+      font-size: 0.86rem;
+      line-height: 1;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      html,
+      body {
+        overflow: auto;
+      }
+
+      .deck {
+        position: relative;
+        min-height: 100vh;
+      }
+
+      .slide,
+      .slide.is-active {
+        position: relative;
+        min-height: 100vh;
+        height: auto;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .brand {
+        top: 7.8%;
+        left: 9%;
+        width: 28%;
+        min-width: 108px;
+        max-width: 132px;
+      }
+
+      .cover-inner,
+      .content-slide-inner {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 28px;
+        padding: 112px 28px 108px;
+      }
+
+      .cover-copy {
+        max-width: none;
+        padding-top: 4rem;
+      }
+
+      .slide-cover h1,
+      .content-title {
+        max-width: 8.8ch;
+        font-size: clamp(2.28rem, 7vw, 3rem);
+        line-height: 0.98;
+      }
+
+      .eyebrow,
+      .section-kicker {
+        margin-bottom: 1.25rem;
+        font-size: clamp(1.05rem, 3.15vw, 1.28rem);
+      }
+
+      .cover-copy > p:not(.eyebrow) {
+        margin-top: 1.6rem;
+        font-size: clamp(1.05rem, 3.15vw, 1.28rem);
+      }
+
+      .purpose-list li {
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 14px;
+        padding: 20px 0;
+      }
+
+      .purpose-number {
+        font-size: clamp(0.78rem, 2.2vw, 0.9rem);
+      }
+
+      .purpose-text {
+        font-size: clamp(0.98rem, 2.9vw, 1.16rem);
+        line-height: 1.42;
+      }
+
+      .return-access-grid {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: 0;
+        width: 100%;
+        background: var(--cream);
+      }
+
+      .return-access-panel {
+        min-height: auto;
+        padding: 48px 28px;
+      }
+
+      .return-access-title-panel h2 {
+        white-space: normal;
+        font-size: clamp(2.28rem, 7vw, 3rem);
+        line-height: 0.98;
+      }
+
+      .return-access-panel h3 {
+        font-size: clamp(1.18rem, 4.5vw, 1.55rem);
+      }
+
+      .return-access-panel p,
+      .return-access-panel li {
+        font-size: clamp(0.96rem, 2.9vw, 1.12rem);
+        line-height: 1.38;
+      }
+
+      .interview-layout {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 34px;
+        padding: 76px 28px 108px;
+      }
+
+      .interview-heading {
+        min-height: auto;
+        padding-left: 0;
+      }
+
+      .interview-heading h2 {
+        max-width: 8.8ch;
+        font-size: clamp(2.28rem, 7vw, 3rem);
+        line-height: 0.98;
+      }
+
+      .interview-content {
+        gap: 24px;
+      }
+
+      .interview-checklist {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .interview-checklist li {
+        min-height: auto;
+        padding: 70px 22px 22px;
+      }
+
+      .interview-checklist p {
+        padding-top: 0;
+      }
+
+      .interview-lead,
+      .interview-checklist p,
+      .interview-note {
+        font-size: clamp(0.98rem, 2.9vw, 1.16rem);
+        line-height: 1.42;
+      }
+
+      .interview-note {
+        padding: 20px 22px;
+      }
+
+      .documentation-layout {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 34px;
+        padding: 76px 28px 108px;
+      }
+
+      .documentation-heading h2 {
+        max-width: 8.8ch;
+        font-size: clamp(2.28rem, 7vw, 3rem);
+        line-height: 0.98;
+      }
+
+      .documentation-board::before {
+        font-size: clamp(0.98rem, 2.9vw, 1.16rem);
+        line-height: 1.42;
+      }
+
+      .documentation-board {
+        width: 100%;
+        padding: 22px;
+      }
+
+      .document-list li {
+        grid-template-columns: 3.2rem minmax(0, 1fr);
+        gap: 14px;
+        padding: 18px 0;
+      }
+
+      .document-number {
+        width: 2.15rem;
+        height: 2.15rem;
+        font-size: 0.74rem;
+      }
+
+      .document-text {
+        font-size: clamp(0.98rem, 2.9vw, 1.16rem);
+        line-height: 1.42;
+      }
+
+      .completion-layout {
+        min-height: 100vh;
+        gap: 28px;
+        padding: 76px 28px 108px;
+      }
+
+      .completion-header {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding-bottom: 24px;
+      }
+
+      .completion-header h2 {
+        max-width: 9.2ch;
+        font-size: clamp(2.28rem, 7vw, 3rem);
+        line-height: 0.98;
+      }
+
+      .completion-intro {
+        font-size: clamp(0.98rem, 2.9vw, 1.16rem);
+        line-height: 1.42;
+      }
+
+      .completion-checks {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .completion-checks li {
+        min-height: auto;
+        padding: 22px;
+      }
+
+      .completion-number {
+        width: 2.15rem;
+        height: 2.15rem;
+        font-size: 0.74rem;
+      }
+
+      .completion-text {
+        margin-top: 28px;
+        font-size: clamp(0.98rem, 2.9vw, 1.16rem);
+        line-height: 1.42;
+      }
+
+      .departure-layout {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 34px;
+        padding: 76px 28px 108px;
+      }
+
+      .departure-heading h2 {
+        max-width: 8.8ch;
+        font-size: clamp(2.28rem, 7vw, 3rem);
+        line-height: 0.98;
+      }
+
+      .departure-role {
+        font-size: clamp(1.05rem, 3.15vw, 1.28rem);
+      }
+
+      .departure-path {
+        gap: 24px;
+        width: 100%;
+        padding: 0;
+      }
+
+      .departure-path::before {
+        top: 1.4rem;
+        bottom: 1.4rem;
+        left: 1.05rem;
+      }
+
+      .departure-path li {
+        grid-template-columns: 2.6rem minmax(0, 1fr);
+        gap: 16px;
+      }
+
+      .departure-marker {
+        width: 2.15rem;
+        height: 2.15rem;
+        font-size: 0.74rem;
+      }
+
+      .departure-card {
+        padding-bottom: 24px;
+      }
+
+      .departure-card p {
+        font-size: clamp(0.98rem, 2.9vw, 1.16rem);
+        line-height: 1.42;
+      }
+
+      .action-layout {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+
+      .action-title-panel {
+        min-height: auto;
+        padding: 76px 28px 48px;
+      }
+
+      .action-title-panel h2 {
+        max-width: 8.8ch;
+        font-size: clamp(2.28rem, 7vw, 3rem);
+        line-height: 0.98;
+      }
+
+      .action-register {
+        min-height: auto;
+        padding: 28px 28px 108px;
+      }
+
+      .action-list {
+        grid-template-columns: 1fr;
+      }
+
+      .action-list li {
+        grid-template-columns: 2.5rem minmax(0, 1fr);
+        min-height: auto;
+        padding: 16px 0;
+      }
+
+      .action-number {
+        font-size: clamp(0.78rem, 2.2vw, 0.9rem);
+      }
+
+      .action-text {
+        font-size: clamp(0.98rem, 2.9vw, 1.16rem);
+        line-height: 1.42;
+      }
+
+      .funnel-layout {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        gap: 30px;
+        padding: 76px 28px 116px;
+        align-items: stretch;
+        overflow-y: auto;
+      }
+
+      .funnel-heading {
+        gap: 14px;
+      }
+
+      .funnel-heading h2 {
+        max-width: 9ch;
+        font-size: clamp(2.65rem, 13vw, 3.75rem);
+        line-height: 0.92;
+      }
+
+      .funnel-heading p {
+        max-width: none;
+        font-size: 1.02rem;
+      }
+
+      .funnel-board {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .funnel-stage {
+        min-height: 54px;
+        font-size: 0.92rem;
+      }
+
+      .funnel-stage:nth-child(5),
+      .funnel-stage:nth-child(6) {
+        font-size: 0.8rem;
+      }
+
+      .funnel-detail {
+        grid-template-columns: 2.2rem minmax(0, 1fr);
+        gap: 14px;
+        padding: 16px 0;
+      }
+
+      .funnel-index {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.68rem;
+      }
+
+      .funnel-detail h3 {
+        font-size: 1rem;
+      }
+
+      .funnel-detail ul {
+        font-size: 0.92rem;
+      }
+
+      .review-layout {
+        min-height: 100vh;
+        padding: 76px 28px 116px;
+      }
+
+      .review-card {
+        width: 100%;
+        gap: 22px;
+        padding: 46px 0;
+      }
+
+      .review-card h2 {
+        font-size: clamp(2.6rem, 13vw, 3.65rem);
+      }
+
+      .review-card p {
+        font-size: clamp(1.14rem, 4.8vw, 1.42rem);
+        line-height: 1.34;
+      }
+
+      .responsibility-layout {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+      }
+
+      .responsibility-title-panel,
+      .responsibility-group {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        padding: 56px 28px;
+      }
+
+      .responsibility-title-panel h2 {
+        font-size: clamp(2.28rem, 7vw, 3rem);
+      }
+
+      .responsibility-role {
+        font-size: clamp(0.98rem, 2.9vw, 1.16rem);
+      }
+
+      .responsibility-copy {
+        font-size: clamp(0.86rem, 2.5vw, 1rem);
+      }
+
+      .responsibility-item-list li {
+        grid-template-columns: 2.5rem minmax(0, 1fr);
+        gap: 1rem;
+        padding: 1.25rem 0;
+      }
+
+      .procedure-layout {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        justify-content: flex-start;
+        padding: 76px 28px 108px;
+      }
+
+      .procedure-kicker {
+        margin-bottom: 1.25rem;
+        font-size: clamp(0.78rem, 2.2vw, 0.9rem);
+      }
+
+      .procedure-head {
+        display: block;
+      }
+
+      .procedure-title-panel h2 {
+        font-size: clamp(2.28rem, 7vw, 3rem);
+      }
+
+      .procedure-subtext {
+        margin-top: 1rem;
+        font-size: clamp(0.98rem, 2.9vw, 1.16rem);
+      }
+
+      .procedure-card-grid {
+        grid-template-columns: 1fr;
+        margin-top: 34px;
+        gap: 20px;
+      }
+
+      .procedure-card-grid::before {
+        top: 1rem;
+        bottom: 1rem;
+        left: 1rem;
+        width: 1px;
+        height: auto;
+      }
+
+      .procedure-card {
+        min-height: auto;
+        padding: 0 0 20px 3rem;
+        border-top: 0;
+      }
+
+      .procedure-step-kicker {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2.05rem;
+        height: 2.05rem;
+        margin-bottom: 0;
+      }
+
+      .procedure-step-text {
+        font-size: clamp(1.12rem, 4.5vw, 1.5rem);
+        line-height: 1.2;
+      }
+
+      .deck-nav {
+        right: auto;
+        bottom: 18px;
+        left: 50%;
+        gap: 0.82rem;
+        padding: 0.32rem 0.46rem;
+        background: rgba(253, 251, 247, 0.88);
+        box-shadow: 0 10px 28px rgba(52, 46, 41, 0.1);
+        transform: translateX(-50%);
+      }
+
+      .nav-arrow {
+        width: 2.15rem;
+        height: 2.15rem;
+      }
+
+      .nav-arrow svg {
+        width: 1.05rem;
+        height: 1.05rem;
+      }
+
+      .nav-count {
+        min-width: 2.75rem;
+        font-size: 0.82rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck" aria-live="polite">
+    <section class="slide slide-cover is-active" aria-label="Slide 1: Offboarding SOP">
+      <div class="cover-image-wash"></div>
+      <img
+        class="brand"
+        src="https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/hr_material/induction_ppt_images/beforest-logo-white.png"
+        alt="Beforest"
+      />
+      <div class="cover-inner">
+        <div class="cover-copy">
+          <p class="eyebrow">Employee Exit Process</p>
+          <h1>Offboarding SOP</h1>
+          <p>
+            Ensuring every departure is handled with proper communication, documentation, knowledge transfer,
+            access closure, asset recovery, and final settlement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide-purpose" aria-label="Slide 2: Purpose and Scope">
+      <div class="content-slide-inner">
+        <div class="content-heading-block">
+          <p class="section-kicker">Why this process exists</p>
+          <h2 class="content-title">Purpose &amp; Scope</h2>
+        </div>
+        <ol class="purpose-list">
+          <li>
+            <span class="purpose-number">01</span>
+            <p class="purpose-text">
+              The purpose of this SOP is to outline the steps to be followed when an employee exits the
+              organization, ensuring a structured, professional, and consistent offboarding process.
+            </p>
+          </li>
+          <li>
+            <span class="purpose-number">02</span>
+            <p class="purpose-text">
+              This helps mitigate risks, secures company property, and ensures that knowledge transfer and
+              compliance requirements are addressed.
+            </p>
+          </li>
+          <li>
+            <span class="purpose-number">03</span>
+            <p class="purpose-text">
+              This procedure applies to all employees (full-time, part-time, temporary, or contract) who are
+              leaving the company voluntarily or involuntarily.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="slide slide-responsibilities" aria-label="Slide 3: Responsibilities">
+      <div class="responsibility-layout">
+        <div class="responsibility-title-panel">
+          <p class="responsibility-kicker">Offboarding SOP</p>
+          <h2>Responsibilities</h2>
+        </div>
+        <div class="responsibility-group responsibility-group--middle">
+          <ol class="responsibility-item-list">
+            <li>
+              <span class="responsibility-number">01</span>
+              <div>
+                <p class="responsibility-role">HR Manager</p>
+                <p class="responsibility-copy">Oversees the entire offboarding process, conducts exit interview, and handles final documentation.</p>
+              </div>
+            </li>
+            <li>
+              <span class="responsibility-number">02</span>
+              <div>
+                <p class="responsibility-role">Hiring Manager/Supervisor</p>
+                <p class="responsibility-copy">Ensures knowledge transfer, final task completion, and transition of responsibilities.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="responsibility-group responsibility-group--right">
+          <ol class="responsibility-item-list">
+            <li>
+              <span class="responsibility-number">03</span>
+              <div>
+                <p class="responsibility-role">IT Department</p>
+                <p class="responsibility-copy">Removes access to systems/tools, retrieves company devices, and deactivates email/cloud/software access.</p>
+              </div>
+            </li>
+            <li>
+              <span class="responsibility-number">04</span>
+              <div>
+                <p class="responsibility-role">Admin/Facilities Team</p>
+                <p class="responsibility-copy">Collects company property (ID cards, office keys, etc.) and prepares workspace for next hire.</p>
+              </div>
+            </li>
+            <li>
+              <span class="responsibility-number">05</span>
+              <div>
+                <p class="responsibility-role">Employee</p>
+                <p class="responsibility-copy">Completes exit formalities, such as returning property and participating in knowledge transfer.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide-procedure" aria-label="Slide 4: Procedure">
+      <div class="content-slide-inner">
+        <div class="content-heading-block">
+          <p class="section-kicker">Employee Notification (Upon Resignation or Termination)</p>
+          <h2 class="content-title">Procedure</h2>
+        </div>
+        <ol class="purpose-list">
+          <li>
+            <span class="purpose-number">01</span>
+            <p class="purpose-text">
+              Employee gives notice of resignation or is notified of termination, in accordance with company policy.
+            </p>
+          </li>
+          <li>
+            <span class="purpose-number">02</span>
+            <p class="purpose-text">
+              HR acknowledges the resignation or termination and informs relevant departments (IT, Admin, Hiring
+              Manager).
+            </p>
+          </li>
+          <li>
+            <span class="purpose-number">03</span>
+            <p class="purpose-text">
+              Exit Date is agreed upon between HR and the employee, with consideration for the notice period.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="slide slide-return-access" aria-label="Slide 5: Company Property and IT Access">
+      <div class="return-access-grid">
+        <div class="return-access-panel return-access-title-panel">
+          <p class="section-kicker">Company Property Return &amp; IT Access Closure</p>
+          <h2>Return &amp; Access</h2>
+        </div>
+        <article class="return-access-panel return-access-panel--middle">
+          <h3>Admin/Facilities Team</h3>
+          <p>Admin/Facilities Team ensures that the employee returns all company-owned property, including:</p>
+          <ul>
+            <li>Laptop, phone, or any other devices</li>
+            <li>Office keys, ID badges, or access cards</li>
+            <li>Company documents (physical and digital files)</li>
+          </ul>
+        </article>
+        <article class="return-access-panel return-access-panel--right">
+          <h3>IT Department</h3>
+          <p>IT Department:</p>
+          <ul>
+            <li>
+              Deactivates access to company systems, including:
+              <ul>
+                <li>Email</li>
+                <li>File-sharing platforms (Google Drive, SharePoint, etc.)</li>
+                <li>Internal software tools (CRM, HRMS, etc.)</li>
+              </ul>
+            </li>
+            <li>Retrieves any company-owned hardware, such as laptops or mobile devices.</li>
+            <li>Resets passwords for systems where necessary.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="slide slide-settlement" aria-label="Slide 6: Final Payroll and Benefits Settlement">
+      <div class="content-slide-inner">
+        <div class="content-heading-block">
+          <p class="section-kicker">Last Week of Employment</p>
+          <h2 class="content-title">Final Payroll and Benefits Settlement</h2>
+        </div>
+        <div class="settlement-list">
+          <article class="settlement-section">
+            <h3>Final Pay</h3>
+            <p>HR processes final pay, ensuring:</p>
+            <ul>
+              <li>Calculation of final working days</li>
+              <li>Unused leave or vacation days (if applicable)</li>
+              <li>Any outstanding dues or bonuses</li>
+            </ul>
+          </article>
+          <article class="settlement-section">
+            <h3>Benefits Status</h3>
+            <p>HR informs the employee about the status of their benefits:</p>
+            <ul>
+              <li>Pension or retirement funds</li>
+              <li>Health insurance coverage</li>
+              <li>Any pending severance or compensation (for terminated employees)</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide-interview" aria-label="Slide 7: Exit Interview">
+      <div class="interview-layout">
+        <div class="interview-heading">
+          <p class="section-kicker">On the Last Working Day</p>
+          <h2>Exit Interview</h2>
+        </div>
+        <div class="interview-content">
+          <p class="interview-lead">HR conducts the exit interview:</p>
+          <ol class="interview-checklist">
+            <li>
+              <p>Gather feedback on work experience, team dynamics, and reasons for leaving.</p>
+            </li>
+            <li>
+              <p>Identify areas of improvement for the company’s HR practices and work environment.</p>
+            </li>
+            <li>
+              <p>Address any final questions the employee might have regarding their exit.</p>
+            </li>
+          </ol>
+          <p class="interview-note">
+            HR documents the key findings from the exit interview and shares it with relevant departments
+            (management, HR leadership).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide-documentation" aria-label="Slide 8: Final Documentation">
+      <div class="documentation-layout">
+        <div class="documentation-heading">
+          <p class="section-kicker">Last Day</p>
+          <h2>Final Documentation</h2>
+        </div>
+        <div class="documentation-board">
+          <ol class="document-list">
+            <li>
+              <span class="document-number">01</span>
+              <p class="document-text">Relieving letter or Experience certificate (if applicable)</p>
+            </li>
+            <li>
+              <span class="document-number">02</span>
+              <p class="document-text">Full &amp; Final settlement letter</p>
+            </li>
+            <li>
+              <span class="document-number">03</span>
+              <p class="document-text">Non-disclosure agreement (if applicable)</p>
+            </li>
+            <li>
+              <span class="document-number">04</span>
+              <p class="document-text">Tax-related documents (form 16, etc.)</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide-completion" aria-label="Slide 9: Off-boarding Checklist Completion">
+      <div class="completion-layout">
+        <div class="completion-header">
+          <div>
+            <p class="section-kicker">Last Day</p>
+            <h2>Off-boarding Checklist<br />Completion</h2>
+          </div>
+          <p class="completion-intro">HR ensures that all offboarding formalities are complete, including:</p>
+        </div>
+        <ol class="completion-checks">
+          <li>
+            <span class="completion-number">01</span>
+            <p class="completion-text">Verification of returned company property</p>
+          </li>
+          <li>
+            <span class="completion-number">02</span>
+            <p class="completion-text">Finalized payroll and benefits settlement</p>
+          </li>
+          <li>
+            <span class="completion-number">03</span>
+            <p class="completion-text">Exit interview completed and feedback recorded</p>
+          </li>
+          <li>
+            <span class="completion-number">04</span>
+            <p class="completion-text">Systems access revoked</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="slide slide-departure" aria-label="Slide 10: Employee's Departure">
+      <div class="departure-layout">
+        <div class="departure-heading">
+          <p class="departure-role">Employee</p>
+          <h2>Employee’s Departure</h2>
+        </div>
+        <ol class="departure-path">
+          <li>
+            <span class="departure-marker">01</span>
+            <div class="departure-card">
+              <p>Completes any final paperwork (HR-related forms, acknowledgment of return of property, Exit survey, etc.).</p>
+            </div>
+          </li>
+          <li>
+            <span class="departure-marker">02</span>
+            <div class="departure-card">
+              <p>Exits the company on good terms, with all formalities completed.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="slide slide-actions" aria-label="Slide 11: Action Items">
+      <div class="action-layout">
+        <div class="action-title-panel">
+          <p class="section-kicker">Offboarding SOP</p>
+          <h2>Action Items</h2>
+        </div>
+        <div class="action-register">
+          <ol class="action-list">
+            <li>
+              <span class="action-number">01</span>
+              <p class="action-text">Exit Interview survey (documented feedback and suggestions)</p>
+            </li>
+            <li>
+              <span class="action-number">02</span>
+              <p class="action-text">Final Payroll Calculation (including outstanding benefits, dues, PL encashment)</p>
+            </li>
+            <li>
+              <span class="action-number">03</span>
+              <p class="action-text">Return of Property Checklist (laptops, mobile, HRIS access, Remove from office group, Biometric access)</p>
+            </li>
+            <li>
+              <span class="action-number">04</span>
+              <p class="action-text">Mark exit from PF and Insurance portal.</p>
+            </li>
+            <li>
+              <span class="action-number">05</span>
+              <p class="action-text">Relieving/Experience Letter ( For interns - Internship certificate)</p>
+            </li>
+            <li>
+              <span class="action-number">06</span>
+              <p class="action-text">6 months salary slip</p>
+            </li>
+            <li>
+              <span class="action-number">07</span>
+              <p class="action-text">Full &amp; Final Settlement Letter</p>
+            </li>
+            <li>
+              <span class="action-number">08</span>
+              <p class="action-text">Non-Compete/Non-Disclosure Acknowledgment (if applicable)</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide-funnel" aria-label="Slide 12: Employee Offboarding Funnel">
+      <div class="funnel-layout">
+        <div class="funnel-heading">
+          <p class="section-kicker">Process View</p>
+          <h2>Employee Offboarding Funnel</h2>
+          <p>A complete view of how an employee exit moves from notification to alumni management.</p>
+        </div>
+        <div class="funnel-board">
+          <div class="funnel-stack" aria-label="Employee offboarding funnel stages">
+            <div class="funnel-stage">Notification &amp; Planning</div>
+            <div class="funnel-stage">Knowledge Transfer</div>
+            <div class="funnel-stage">Exit Administration</div>
+            <div class="funnel-stage">System &amp; Asset Recovery</div>
+            <div class="funnel-stage">Final Feedback &amp; Exit Interview</div>
+            <div class="funnel-stage">Alumni Management</div>
+          </div>
+          <div class="funnel-details">
+            <article class="funnel-detail">
+              <span class="funnel-index">01</span>
+              <div>
+                <h3>Notification &amp; Planning</h3>
+                <ul>
+                  <li>Resignation or termination</li>
+                  <li>Define offboarding timeline</li>
+                  <li>Assign responsible HR or manager</li>
+                </ul>
+              </div>
+            </article>
+            <article class="funnel-detail">
+              <span class="funnel-index">02</span>
+              <div>
+                <h3>Knowledge Transfer</h3>
+                <ul>
+                  <li>Handover documentation</li>
+                  <li>Shadowing period</li>
+                  <li>Train replacements</li>
+                </ul>
+              </div>
+            </article>
+            <article class="funnel-detail">
+              <span class="funnel-index">03</span>
+              <div>
+                <h3>Exit Administration</h3>
+                <ul>
+                  <li>Finalize paperwork</li>
+                  <li>Last day confirmation</li>
+                  <li>Review benefits and payroll</li>
+                </ul>
+              </div>
+            </article>
+            <article class="funnel-detail">
+              <span class="funnel-index">04</span>
+              <div>
+                <h3>Final Feedback &amp; Exit Interview</h3>
+                <ul>
+                  <li>Conduct exit interview</li>
+                  <li>Collect feedback for improvement</li>
+                  <li>Ensure confidentiality</li>
+                </ul>
+              </div>
+            </article>
+            <article class="funnel-detail">
+              <span class="funnel-index">05</span>
+              <div>
+                <h3>Alumni Management</h3>
+                <ul>
+                  <li>Add to alumni network</li>
+                  <li>Encourage referral/boomerang hiring</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide-review" aria-label="Slide 13: Review and Update">
+      <div class="review-layout">
+        <div class="review-card">
+          <p class="section-kicker">Continuous Improvement</p>
+          <h2>Review and Update</h2>
+          <p>This SOP shall be reviewed as needed to accommodate process improvements or organizational changes.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="deck-nav" aria-label="Slide navigation">
+    <button type="button" class="nav-arrow" id="prevSlide" aria-label="Previous slide" disabled>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M15 18 9 12l6-6" />
+      </svg>
+    </button>
+    <span class="nav-count" id="slideCount">1 / 13</span>
+    <button type="button" class="nav-arrow" id="nextSlide" aria-label="Next slide">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </button>
+  </nav>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const prevButton = document.getElementById("prevSlide");
+    const nextButton = document.getElementById("nextSlide");
+    const slideCount = document.getElementById("slideCount");
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      currentSlide = Math.max(0, Math.min(index, slides.length - 1));
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle("is-active", slideIndex === currentSlide);
+      });
+      prevButton.disabled = currentSlide === 0;
+      nextButton.disabled = currentSlide === slides.length - 1;
+      slideCount.textContent = `${currentSlide + 1} / ${slides.length}`;
+    }
+
+    prevButton.addEventListener("click", () => showSlide(currentSlide - 1));
+    nextButton.addEventListener("click", () => showSlide(currentSlide + 1));
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") showSlide(currentSlide - 1);
+      if (event.key === "ArrowRight") showSlide(currentSlide + 1);
+    });
+
+    showSlide(0);
+  </script>
+</body>
+</html>

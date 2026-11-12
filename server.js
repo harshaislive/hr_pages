@@ -82,9 +82,9 @@ function sendLogin(res, message = "") {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>HR Pages Login</title>
     <style>
-      @font-face{font-family:"ABC Arizona Flare";src:url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Light.e9c1597c.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap}
-      @font-face{font-family:"ABC Arizona Flare";src:url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Regular.cbcc518c.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
-      @font-face{font-family:"ABC Arizona Flare";src:url("https://isdbyvwocudnlwzghphw.supabase.co/storage/v1/object/public/fonts_beforest_arizona/ABCArizonaFlare-Medium.7ce0f1db.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+      @font-face{font-family:"ABC Arizona Flare";src:url("https://files.ops.beforest.co/fonts_beforest_arizona/ABCArizonaFlare-Light.e9c1597c.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap}
+      @font-face{font-family:"ABC Arizona Flare";src:url("https://files.ops.beforest.co/fonts_beforest_arizona/ABCArizonaFlare-Regular.cbcc518c.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+      @font-face{font-family:"ABC Arizona Flare";src:url("https://files.ops.beforest.co/fonts_beforest_arizona/ABCArizonaFlare-Medium.7ce0f1db.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
       body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fdfbf7;color:#000000;font-family:"ABC Arizona Flare",Georgia,serif}
       form{width:min(390px,calc(100% - 32px));display:grid;gap:16px}
       h1{margin:0;color:#86312b;font-size:clamp(2.4rem,7vw,4.2rem);font-weight:500;line-height:.95}
